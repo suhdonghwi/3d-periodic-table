@@ -21,9 +21,9 @@ export default function PeriodicTable({
     for (let j = 0; j < placement[i].length; j++) {
       const number = placement[i][j];
       if (number !== 0) {
-        const height = heightData[number - 1] || 0;
-        const realHeight = (height / maxHeight) * 4;
-        const color = heightData[number - 1] !== null
+        const height = heightData[number - 1];
+        const realHeight = height !== null ? (height / maxHeight) * 4 : 0.01;
+        const color = height !== null
           ? "hsl(" + (height / maxHeight) * 250 + ", 66%, 56%)"
           : "#7a7a7a";
 

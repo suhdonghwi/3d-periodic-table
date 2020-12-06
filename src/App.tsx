@@ -37,7 +37,7 @@ function App() {
         <PeriodicTable
           position={[-9, 0, -5]}
           placement={placement}
-          heightData={atomData.map((a) => a.atomicMass)}
+          heightData={atomData.map((a) => a.density)}
         />
         <OrbitControls />
       </Canvas>

@@ -15,16 +15,25 @@ export default function AtomPillar({ atom, position }: AtomPillarProps) {
   return (
     <group>
       <mesh position={position} ref={mesh}>
-        <boxBufferGeometry args={[1, 3, 1]} />
+        <boxBufferGeometry args={[1, 5, 1]} />
         <meshStandardMaterial color={"orange"} />
       </mesh>
       <Text
-        position={[position[0], position[1] + 1.5, position[2]]}
+        position={[position[0], position[1] + 2.5, position[2] + 0.1]}
         rotation={[-Math.PI / 2, 0, 0]}
         fontSize={0.5}
         depthOffset={-0.1}
       >
         {atom.shortName}
+      </Text>
+
+      <Text
+        position={[position[0], position[1] + 2.5, position[2] - 0.3]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        fontSize={0.2}
+        depthOffset={-0.1}
+      >
+        {atom.number.toString()}
       </Text>
     </group>
   );

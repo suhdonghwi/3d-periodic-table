@@ -20,7 +20,8 @@ export default function PeriodicTable({
       if (number !== 0) {
         pillars.push(
           <AtomPillar
-            atom={atomData[number-1]}
+            key={number}
+            atom={atomData[number - 1]}
             position={[position[0] + j, position[1], position[2] + i]}
           />
         );

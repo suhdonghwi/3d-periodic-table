@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import { Mesh } from "three";
+import { useRef, useEffect } from "react";
+import { Mesh, BoxBufferGeometry } from "three";
+import { Text } from "@react-three/drei";
 
 import AtomInfo from "../types/AtomInfo";
-import { Text } from "@react-three/drei";
 
 interface AtomPillarProps {
   atom: AtomInfo;
@@ -18,18 +18,29 @@ export default function AtomPillar({
   color,
 }: AtomPillarProps) {
   const mesh = useRef<Mesh>();
+  const geometry = useRef<BoxBufferGeometry>();
+
+  const symbolText = useRef<Text>();
+  const numberText = useRef<Text>();
+
+  useEffect(() => {
+    mesh.current?.position.setY(height / 2);
+
+    // @ts-ignore
+    symbolText.current?.position.setY(height);
+    // @ts-ignore
+    numberText.current?.position.setY(height);
+  }, [height]);
 
   return (
     <group>
-      <mesh
-        position={[position[0], position[1] + height / 2, position[2]]}
-        ref={mesh}
-      >
-        <boxBufferGeometry args={[1, height, 1]} />
+      <mesh position={[position[0], position[1], position[2]]} ref={mesh}>
+        <boxBufferGeometry ref={geometry} args={[1, height, 1]} />
         <meshStandardMaterial color={color} />
       </mesh>
       <Text
-        position={[position[0], position[1] + height, position[2] + 0.1]}
+        ref={symbolText}
+        position={[position[0], position[1], position[2] + 0.1]}
         rotation={[-Math.PI / 2, 0, 0]}
         fontSize={0.5}
         depthOffset={-0.1}
@@ -38,7 +49,8 @@ export default function AtomPillar({
       </Text>
 
       <Text
-        position={[position[0], position[1] + height, position[2] - 0.3]}
+        ref={numberText}
+        position={[position[0], position[1], position[2] - 0.3]}
         rotation={[-Math.PI / 2, 0, 0]}
         fontSize={0.2}
         depthOffset={-0.1}

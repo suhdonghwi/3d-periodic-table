@@ -15,18 +15,25 @@ export default function PeriodicTable({
   heightData,
 }: PeriodicTableProps) {
   const pillars = [];
-  const maxData = Math.max(...heightData.map((v) => v || 0));
+  const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
   for (let i = 0; i < placement.length; i++) {
     for (let j = 0; j < placement[i].length; j++) {
       const number = placement[i][j];
       if (number !== 0) {
+        const height = heightData[number - 1] || 0;
+        const realHeight = (height / maxHeight) * 4;
+        const color = heightData[number - 1] !== null
+          ? "hsl(" + (height / maxHeight) * 250 + ", 66%, 56%)"
+          : "#7a7a7a";
+
         pillars.push(
           <AtomPillar
             key={number}
             atom={atomData[number - 1]}
             position={[position[0] + j, position[1], position[2] + i]}
-            height={((heightData[number - 1] || 0) / maxData) * 3}
+            height={realHeight}
+            color={color}
           />
         );
       }

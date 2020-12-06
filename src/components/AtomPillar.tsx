@@ -8,12 +8,14 @@ interface AtomPillarProps {
   atom: AtomInfo;
   position: [number, number, number];
   height: number;
+  color: string;
 }
 
 export default function AtomPillar({
   atom,
   position,
   height,
+  color,
 }: AtomPillarProps) {
   const mesh = useRef<Mesh>();
 
@@ -24,7 +26,7 @@ export default function AtomPillar({
         ref={mesh}
       >
         <boxBufferGeometry args={[1, height, 1]} />
-        <meshStandardMaterial color={"orange"} />
+        <meshStandardMaterial color={color} />
       </mesh>
       <Text
         position={[position[0], position[1] + height, position[2] + 0.1]}

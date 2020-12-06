@@ -2,9 +2,28 @@ import React from "react";
 import { Canvas } from "react-three-fiber";
 import { OrbitControls } from "@react-three/drei";
 
-import AtomPillar from "./components/AtomPillar";
+import PeriodicTable from "./components/PeriodicTable";
+
+function range(from: number, to: number) {
+  const result = [];
+  for (let i = from; i <= to; i++) result.push(i);
+  return result;
+}
 
 function App() {
+  const placement = [
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+    [3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 7, 8, 9, 10],
+    [11, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 14, 15, 16, 17, 18],
+    range(19, 36),
+    range(37, 54),
+    [55, 56, 0].concat(range(72, 86)),
+    [87, 88, 0].concat(range(104, 118)),
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0].concat(range(57, 71)),
+    [0, 0, 0].concat(range(89, 103)),
+  ];
+
   return (
     <div className="App">
       <Canvas
@@ -12,18 +31,9 @@ function App() {
         camera={{ position: [0, 5, 5] }}
       >
         <ambientLight intensity={0.25} />
-        <spotLight
-          intensity={0.6}
-          position={[30, 30, 50]}
-          angle={0.2}
-          penumbra={1}
-          castShadow
-        />
+        <spotLight intensity={0.6} position={[30, 30, 50]} />
 
-        <AtomPillar
-          position={[-1.2, 0, 0]}
-          atom={{ shortName: "H", fullName: "Helium" }}
-        />
+        <PeriodicTable position={[-10, 0, -5]} placement={placement} />
         <OrbitControls />
       </Canvas>
     </div>

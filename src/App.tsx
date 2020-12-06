@@ -3,6 +3,7 @@ import { Canvas } from "react-three-fiber";
 import { OrbitControls } from "@react-three/drei";
 
 import PeriodicTable from "./components/PeriodicTable";
+import atomData from "./atomData";
 
 function range(from: number, to: number) {
   const result = [];
@@ -28,12 +29,16 @@ function App() {
     <div className="App">
       <Canvas
         style={{ background: "#212529" }}
-        camera={{ position: [0, 5, 5] }}
+        camera={{ position: [0, 13, 10] }}
       >
         <ambientLight intensity={0.25} />
         <spotLight intensity={0.6} position={[30, 30, 50]} />
 
-        <PeriodicTable position={[-10, 0, -5]} placement={placement} />
+        <PeriodicTable
+          position={[-9, 0, -5]}
+          placement={placement}
+          heightData={atomData.map((a) => a.electronegativityPauling)}
+        />
         <OrbitControls />
       </Canvas>
     </div>

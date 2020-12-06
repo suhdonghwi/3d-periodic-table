@@ -7,7 +7,7 @@ export default function AtomPillar(props: MeshProps) {
 
   return (
     <mesh {...props} ref={mesh}>
-      <boxBufferGeometry args={[3, 3, 3]} />
+      <boxBufferGeometry args={[1, 5, 1]} />
       <meshStandardMaterial color={"orange"} />
     </mesh>
   );

@@ -1,6 +1,4 @@
-import { useRef, useEffect, useState } from "react";
-import { useFrame } from "react-three-fiber";
-import usePrevious from "../hooks/usePrevious";
+import { useRef, useEffect } from "react";
 import { Mesh, BoxBufferGeometry } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
@@ -54,20 +52,20 @@ export default function AtomPillar({
       <animated.group {...textProps}>
         <Text
           ref={symbolText}
-          position={[0, 0, 0.1]}
+          position={[0, 0, 0.05]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.5}
-          depthOffset={-0.1}
+          depthOffset={-1}
         >
           {atom.symbol}
         </Text>
 
         <Text
           ref={numberText}
-          position={[0, 0, -0.25]}
+          position={[0, 0, -0.3]}
           rotation={[-Math.PI / 2, 0, 0]}
-          fontSize={0.2}
-          depthOffset={-0.1}
+          fontSize={0.15}
+          depthOffset={-1}
         >
           {atom.number.toString()}
         </Text>

@@ -3,6 +3,7 @@ import AtomInfo from "./types/AtomInfo";
 const data: AtomInfo[] = [
   {
     name: "Hydrogen",
+    appearance: "colorless gas",
     atomicMass: 1.008,
     boil: 20.271,
     category: "diatomic nonmetal",
@@ -10,19 +11,28 @@ const data: AtomInfo[] = [
     density: 0.08988,
     discoveredBy: "Henry Cavendish",
     melt: 13.99,
+    molarHeat: 28.836,
 
     number: 1,
     period: 1,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Hydrogen",
+
     summary:
       "Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the Universe, constituting roughly 75% of all baryonic mass.",
     symbol: "H",
+    group: 1,
+
+    shells: [1],
+
     electronAffinity: 72.769,
     electronegativityPauling: 2.2,
     ionizationEnergies: [1312],
   },
   {
     name: "Helium",
+    appearance:
+      "colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
     atomicMass: 4.0026022,
     boil: 4.222,
     category: "noble gas",
@@ -30,19 +40,27 @@ const data: AtomInfo[] = [
     density: 0.1786,
     discoveredBy: "Pierre Janssen",
     melt: 0.95,
+    molarHeat: null,
 
     number: 2,
     period: 1,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Helium",
+
     summary:
       "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among all the elements.",
     symbol: "He",
+    group: 18,
+
+    shells: [2],
+
     electronAffinity: -48,
     electronegativityPauling: null,
     ionizationEnergies: [2372.3, 5250.5],
   },
   {
     name: "Lithium",
+    appearance: "silvery-white",
     atomicMass: 6.94,
     boil: 1603,
     category: "alkali metal",
@@ -50,19 +68,27 @@ const data: AtomInfo[] = [
     density: 0.534,
     discoveredBy: "Johan August Arfwedson",
     melt: 453.65,
+    molarHeat: 24.86,
 
     number: 3,
     period: 2,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Lithium",
+
     summary:
       'Lithium (from Greek:λίθος lithos, "stone") is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.',
     symbol: "Li",
+    group: 1,
+
+    shells: [2, 1],
+
     electronAffinity: 59.6326,
     electronegativityPauling: 0.98,
     ionizationEnergies: [520.2, 7298.1, 11815],
   },
   {
     name: "Beryllium",
+    appearance: "white-gray metallic",
     atomicMass: 9.01218315,
     boil: 2742,
     category: "alkaline earth metal",
@@ -70,19 +96,27 @@ const data: AtomInfo[] = [
     density: 1.85,
     discoveredBy: "Louis Nicolas Vauquelin",
     melt: 1560,
+    molarHeat: 16.443,
 
     number: 4,
     period: 2,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Beryllium",
+
     summary:
       "Beryllium is a chemical element with symbol Be and atomic number 4. It is created through stellar nucleosynthesis and is a relatively rare element in the universe. It is a divalent element which occurs naturally only in combination with other elements in minerals.",
     symbol: "Be",
+    group: 2,
+
+    shells: [2, 2],
+
     electronAffinity: -48,
     electronegativityPauling: 1.57,
     ionizationEnergies: [899.5, 1757.1, 14848.7, 21006.6],
   },
   {
     name: "Boron",
+    appearance: "black-brown",
     atomicMass: 10.81,
     boil: 4200,
     category: "metalloid",
@@ -90,19 +124,27 @@ const data: AtomInfo[] = [
     density: 2.08,
     discoveredBy: "Joseph Louis Gay-Lussac",
     melt: 2349,
+    molarHeat: 11.087,
 
     number: 5,
     period: 2,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Boron",
+
     summary:
       "Boron is a metalloid chemical element with symbol B and atomic number 5. Produced entirely by cosmic ray spallation and supernovae and not by stellar nucleosynthesis, it is a low-abundance element in both the Solar system and the Earth's crust. Boron is concentrated on Earth by the water-solubility of its more common naturally occurring compounds, the borate minerals.",
     symbol: "B",
+    group: 13,
+
+    shells: [2, 3],
+
     electronAffinity: 26.989,
     electronegativityPauling: 2.04,
     ionizationEnergies: [800.6, 2427.1, 3659.7, 25025.8, 32826.7],
   },
   {
     name: "Carbon",
+    appearance: null,
     atomicMass: 12.011,
     boil: null,
     category: "polyatomic nonmetal",
@@ -110,19 +152,27 @@ const data: AtomInfo[] = [
     density: 1.821,
     discoveredBy: "Ancient Egypt",
     melt: null,
+    molarHeat: 8.517,
 
     number: 6,
     period: 2,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Carbon",
+
     summary:
       'Carbon (from Latin:carbo "coal") is a chemical element with symbol C and atomic number 6. On the periodic table, it is the first (row 2) of six elements in column (group) 14, which have in common the composition of their outer electron shell. It is nonmetallic and tetravalent—making four electrons available to form covalent chemical bonds.',
     symbol: "C",
+    group: 14,
+
+    shells: [2, 4],
+
     electronAffinity: 121.7763,
     electronegativityPauling: 2.55,
     ionizationEnergies: [1086.5, 2352.6, 4620.5, 6222.7, 37831, 47277],
   },
   {
     name: "Nitrogen",
+    appearance: "colorless gas, liquid or solid",
     atomicMass: 14.007,
     boil: 77.355,
     category: "diatomic nonmetal",
@@ -130,19 +180,27 @@ const data: AtomInfo[] = [
     density: 1.251,
     discoveredBy: "Daniel Rutherford",
     melt: 63.15,
+    molarHeat: null,
 
     number: 7,
     period: 2,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Nitrogen",
+
     summary:
       "Nitrogen is a chemical element with symbol N and atomic number 7. It is the lightest pnictogen and at room temperature, it is a transparent, odorless diatomic gas. Nitrogen is a common element in the universe, estimated at about seventh in total abundance in the Milky Way and the Solar System.",
     symbol: "N",
+    group: 15,
+
+    shells: [2, 5],
+
     electronAffinity: -6.8,
     electronegativityPauling: 3.04,
     ionizationEnergies: [1402.3, 2856, 4578.1, 7475, 9444.9, 53266.6, 64360],
   },
   {
     name: "Oxygen",
+    appearance: null,
     atomicMass: 15.999,
     boil: 90.188,
     category: "diatomic nonmetal",
@@ -150,13 +208,20 @@ const data: AtomInfo[] = [
     density: 1.429,
     discoveredBy: "Carl Wilhelm Scheele",
     melt: 54.36,
+    molarHeat: null,
 
     number: 8,
     period: 2,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Oxygen",
+
     summary:
       "Oxygen is a chemical element with symbol O and atomic number 8. It is a member of the chalcogen group on the periodic table and is a highly reactive nonmetal and oxidizing agent that readily forms compounds (notably oxides) with most elements. By mass, oxygen is the third-most abundant element in the universe, after hydrogen and helium.",
     symbol: "O",
+    group: 16,
+
+    shells: [2, 6],
+
     electronAffinity: 140.976,
     electronegativityPauling: 3.44,
     ionizationEnergies: [
@@ -172,6 +237,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Fluorine",
+    appearance: null,
     atomicMass: 18.9984031636,
     boil: 85.03,
     category: "diatomic nonmetal",
@@ -179,13 +245,20 @@ const data: AtomInfo[] = [
     density: 1.696,
     discoveredBy: "André-Marie Ampère",
     melt: 53.48,
+    molarHeat: null,
 
     number: 9,
     period: 2,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Fluorine",
+
     summary:
       "Fluorine is a chemical element with symbol F and atomic number 9. It is the lightest halogen and exists as a highly toxic pale yellow diatomic gas at standard conditions. As the most electronegative element, it is extremely reactive:almost all other elements, including some noble gases, form compounds with fluorine.",
     symbol: "F",
+    group: 17,
+
+    shells: [2, 7],
+
     electronAffinity: 328.1649,
     electronegativityPauling: 3.98,
     ionizationEnergies: [
@@ -202,6 +275,8 @@ const data: AtomInfo[] = [
   },
   {
     name: "Neon",
+    appearance:
+      "colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
     atomicMass: 20.17976,
     boil: 27.104,
     category: "noble gas",
@@ -209,13 +284,20 @@ const data: AtomInfo[] = [
     density: 0.9002,
     discoveredBy: "Morris Travers",
     melt: 24.56,
+    molarHeat: null,
 
     number: 10,
     period: 2,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Neon",
+
     summary:
       "Neon is a chemical element with symbol Ne and atomic number 10. It is in group 18 (noble gases) of the periodic table. Neon is a colorless, odorless, inert monatomic gas under standard conditions, with about two-thirds the density of air.",
     symbol: "Ne",
+    group: 18,
+
+    shells: [2, 8],
+
     electronAffinity: -116,
     electronegativityPauling: null,
     ionizationEnergies: [
@@ -233,6 +315,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Sodium",
+    appearance: "silvery white metallic",
     atomicMass: 22.989769282,
     boil: 1156.09,
     category: "alkali metal",
@@ -240,13 +323,20 @@ const data: AtomInfo[] = [
     density: 0.968,
     discoveredBy: "Humphry Davy",
     melt: 370.944,
+    molarHeat: 28.23,
 
     number: 11,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Sodium",
+
     summary:
       "Sodium /ˈsoʊdiəm/ is a chemical element with symbol Na (from Ancient Greek Νάτριο) and atomic number 11. It is a soft, silver-white, highly reactive metal. In the Periodic table it is in column 1 (alkali metals), and shares with the other six elements in that column that it has a single electron in its outer shell, which it readily donates, creating a positively charged atom - a cation.",
     symbol: "Na",
+    group: 1,
+
+    shells: [2, 8, 1],
+
     electronAffinity: 52.867,
     electronegativityPauling: 0.93,
     ionizationEnergies: [
@@ -265,6 +355,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Magnesium",
+    appearance: "shiny grey solid",
     atomicMass: 24.305,
     boil: 1363,
     category: "alkaline earth metal",
@@ -272,13 +363,20 @@ const data: AtomInfo[] = [
     density: 1.738,
     discoveredBy: "Joseph Black",
     melt: 923,
+    molarHeat: 24.869,
 
     number: 12,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Magnesium",
+
     summary:
       "Magnesium is a chemical element with symbol Mg and atomic number 12. It is a shiny gray solid which bears a close physical resemblance to the other five elements in the second column (Group 2, or alkaline earth metals) of the periodic table:they each have the same electron configuration in their outer electron shell producing a similar crystal structure. Magnesium is the ninth most abundant element in the universe.",
     symbol: "Mg",
+    group: 2,
+
+    shells: [2, 8, 2],
+
     electronAffinity: -40,
     electronegativityPauling: 1.31,
     ionizationEnergies: [
@@ -298,6 +396,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Aluminium",
+    appearance: "silvery gray metallic",
     atomicMass: 26.98153857,
     boil: 2743,
     category: "post-transition metal",
@@ -305,13 +404,20 @@ const data: AtomInfo[] = [
     density: 2.7,
     discoveredBy: null,
     melt: 933.47,
+    molarHeat: 24.2,
 
     number: 13,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Aluminium",
+
     summary:
       "Aluminium (or aluminum; see different endings) is a chemical element in the boron group with symbol Al and atomic number 13. It is a silvery-white, soft, nonmagnetic, ductile metal. Aluminium is the third most abundant element (after oxygen and silicon), and the most abundant metal, in the Earth's crust.",
     symbol: "Al",
+    group: 13,
+
+    shells: [2, 8, 3],
+
     electronAffinity: 41.762,
     electronegativityPauling: 1.61,
     ionizationEnergies: [
@@ -332,6 +438,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Silicon",
+    appearance: "crystalline, reflective with bluish-tinged faces",
     atomicMass: 28.085,
     boil: 3538,
     category: "metalloid",
@@ -339,13 +446,20 @@ const data: AtomInfo[] = [
     density: 2.329,
     discoveredBy: "Jöns Jacob Berzelius",
     melt: 1687,
+    molarHeat: 19.789,
 
     number: 14,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Silicon",
+
     summary:
       "Silicon is a chemical element with symbol Si and atomic number 14. It is a tetravalent metalloid, more reactive than germanium, the metalloid directly below it in the table. Controversy about silicon's character dates to its discovery.",
     symbol: "Si",
+    group: 14,
+
+    shells: [2, 8, 4],
+
     electronAffinity: 134.0684,
     electronegativityPauling: 1.9,
     ionizationEnergies: [
@@ -367,6 +481,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Phosphorus",
+    appearance: "colourless, waxy white, yellow, scarlet, red, violet, black",
     atomicMass: 30.9737619985,
     boil: null,
     category: "polyatomic nonmetal",
@@ -374,13 +489,20 @@ const data: AtomInfo[] = [
     density: 1.823,
     discoveredBy: "Hennig Brand",
     melt: null,
+    molarHeat: 23.824,
 
     number: 15,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Phosphorus",
+
     summary:
       "Phosphorus is a chemical element with symbol P and atomic number 15. As an element, phosphorus exists in two major forms—white phosphorus and red phosphorus—but due to its high reactivity, phosphorus is never found as a free element on Earth. Instead phosphorus-containing minerals are almost always present in their maximally oxidised state, as inorganic phosphate rocks.",
     symbol: "P",
+    group: 15,
+
+    shells: [2, 8, 5],
+
     electronAffinity: 72.037,
     electronegativityPauling: 2.19,
     ionizationEnergies: [
@@ -403,6 +525,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Sulfur",
+    appearance: "lemon yellow sintered microcrystals",
     atomicMass: 32.06,
     boil: 717.8,
     category: "polyatomic nonmetal",
@@ -410,13 +533,20 @@ const data: AtomInfo[] = [
     density: 2.07,
     discoveredBy: "Ancient china",
     melt: 388.36,
+    molarHeat: 22.75,
 
     number: 16,
     period: 3,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Sulfur",
+
     summary:
       "Sulfur or sulphur (see spelling differences) is a chemical element with symbol S and atomic number 16. It is an abundant, multivalent non-metal. Under normal conditions, sulfur atoms form cyclic octatomic molecules with chemical formula S8.",
     symbol: "S",
+    group: 16,
+
+    shells: [2, 8, 6],
+
     electronAffinity: 200.4101,
     electronegativityPauling: 2.58,
     ionizationEnergies: [
@@ -440,6 +570,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Chlorine",
+    appearance: "pale yellow-green gas",
     atomicMass: 35.45,
     boil: 239.11,
     category: "diatomic nonmetal",
@@ -447,13 +578,20 @@ const data: AtomInfo[] = [
     density: 3.2,
     discoveredBy: "Carl Wilhelm Scheele",
     melt: 171.6,
+    molarHeat: null,
 
     number: 17,
     period: 3,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Chlorine",
+
     summary:
       "Chlorine is a chemical element with symbol Cl and atomic number 17. It also has a relative atomic mass of 35.5. Chlorine is in the halogen group (17) and is the second lightest halogen following fluorine.",
     symbol: "Cl",
+    group: 17,
+
+    shells: [2, 8, 7],
+
     electronAffinity: 348.575,
     electronegativityPauling: 3.16,
     ionizationEnergies: [
@@ -478,6 +616,8 @@ const data: AtomInfo[] = [
   },
   {
     name: "Argon",
+    appearance:
+      "colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
     atomicMass: 39.9481,
     boil: 87.302,
     category: "noble gas",
@@ -485,13 +625,20 @@ const data: AtomInfo[] = [
     density: 1.784,
     discoveredBy: "Lord Rayleigh",
     melt: 83.81,
+    molarHeat: null,
 
     number: 18,
     period: 3,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Argon",
+
     summary:
       "Argon is a chemical element with symbol Ar and atomic number 18. It is in group 18 of the periodic table and is a noble gas. Argon is the third most common gas in the Earth's atmosphere, at 0.934% (9,340 ppmv), making it over twice as abundant as the next most common atmospheric gas, water vapor (which averages about 4000 ppmv, but varies greatly), and 23 times as abundant as the next most common non-condensing atmospheric gas, carbon dioxide (400 ppmv), and more than 500 times as abundant as the next most common noble gas, neon (18 ppmv).",
     symbol: "Ar",
+    group: 18,
+
+    shells: [2, 8, 8],
+
     electronAffinity: -96,
     electronegativityPauling: null,
     ionizationEnergies: [
@@ -517,6 +664,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Potassium",
+    appearance: "silvery gray",
     atomicMass: 39.09831,
     boil: 1032,
     category: "alkali metal",
@@ -524,13 +672,20 @@ const data: AtomInfo[] = [
     density: 0.862,
     discoveredBy: "Humphry Davy",
     melt: 336.7,
+    molarHeat: 29.6,
 
     number: 19,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Potassium",
+
     summary:
       "Potassium is a chemical element with symbol K (derived from Neo-Latin, kalium) and atomic number 19. It was first isolated from potash, the ashes of plants, from which its name is derived. In the Periodic table, potassium is one of seven elements in column (group) 1 (alkali metals):they all have a single valence electron in their outer electron shell, which they readily give up to create an atom with a positive charge - a cation, and combine with anions to form salts.",
     symbol: "K",
+    group: 1,
+
+    shells: [2, 8, 8, 1],
+
     electronAffinity: 48.383,
     electronegativityPauling: 0.82,
     ionizationEnergies: [
@@ -557,6 +712,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Calcium",
+    appearance: null,
     atomicMass: 40.0784,
     boil: 1757,
     category: "alkaline earth metal",
@@ -564,13 +720,20 @@ const data: AtomInfo[] = [
     density: 1.55,
     discoveredBy: "Humphry Davy",
     melt: 1115,
+    molarHeat: 25.929,
 
     number: 20,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Calcium",
+
     summary:
       "Calcium is a chemical element with symbol Ca and atomic number 20. Calcium is a soft gray alkaline earth metal, fifth-most-abundant element by mass in the Earth's crust. The ion Ca2+ is also the fifth-most-abundant dissolved ion in seawater by both molarity and mass, after sodium, chloride, magnesium, and sulfate.",
     symbol: "Ca",
+    group: 2,
+
+    shells: [2, 8, 8, 2],
+
     electronAffinity: 2.37,
     electronegativityPauling: 1,
     ionizationEnergies: [
@@ -598,6 +761,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Scandium",
+    appearance: "silvery white",
     atomicMass: 44.9559085,
     boil: 3109,
     category: "transition metal",
@@ -605,13 +769,20 @@ const data: AtomInfo[] = [
     density: 2.985,
     discoveredBy: "Lars Fredrik Nilson",
     melt: 1814,
+    molarHeat: 25.52,
 
     number: 21,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Scandium",
+
     summary:
       "Scandium is a chemical element with symbol Sc and atomic number 21. A silvery-white metallic d-block element, it has historically been sometimes classified as a rare earth element, together with yttrium and the lanthanoids. It was discovered in 1879 by spectral analysis of the minerals euxenite and gadolinite from Scandinavia.",
     symbol: "Sc",
+    group: 3,
+
+    shells: [2, 8, 9, 2],
+
     electronAffinity: 18,
     electronegativityPauling: 1.36,
     ionizationEnergies: [
@@ -640,6 +811,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Titanium",
+    appearance: "silvery grey-white metallic",
     atomicMass: 47.8671,
     boil: 3560,
     category: "transition metal",
@@ -647,13 +819,20 @@ const data: AtomInfo[] = [
     density: 4.506,
     discoveredBy: "William Gregor",
     melt: 1941,
+    molarHeat: 25.06,
 
     number: 22,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Titanium",
+
     summary:
       "Titanium is a chemical element with symbol Ti and atomic number 22. It is a lustrous transition metal with a silver color, low density and high strength. It is highly resistant to corrosion in sea water, aqua regia and chlorine.",
     symbol: "Ti",
+    group: 4,
+
+    shells: [2, 8, 10, 2],
+
     electronAffinity: 7.289,
     electronegativityPauling: 1.54,
     ionizationEnergies: [
@@ -683,6 +862,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Vanadium",
+    appearance: "blue-silver-grey metal",
     atomicMass: 50.94151,
     boil: 3680,
     category: "transition metal",
@@ -690,13 +870,20 @@ const data: AtomInfo[] = [
     density: 6,
     discoveredBy: "Andrés Manuel del Río",
     melt: 2183,
+    molarHeat: 24.89,
 
     number: 23,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Vanadium",
+
     summary:
       "Vanadium is a chemical element with symbol V and atomic number 23. It is a hard, silvery grey, ductile and malleable transition metal. The element is found only in chemically combined form in nature, but once isolated artificially, the formation of an oxide layer stabilizes the free metal somewhat against further oxidation.",
     symbol: "V",
+    group: 5,
+
+    shells: [2, 8, 11, 2],
+
     electronAffinity: 50.911,
     electronegativityPauling: 1.63,
     ionizationEnergies: [
@@ -727,6 +914,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Chromium",
+    appearance: "silvery metallic",
     atomicMass: 51.99616,
     boil: 2944,
     category: "transition metal",
@@ -734,13 +922,20 @@ const data: AtomInfo[] = [
     density: 7.19,
     discoveredBy: "Louis Nicolas Vauquelin",
     melt: 2180,
+    molarHeat: 23.35,
 
     number: 24,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Chromium",
+
     summary:
       "Chromium is a chemical element with symbol Cr and atomic number 24. It is the first element in Group 6. It is a steely-gray, lustrous, hard and brittle metal which takes a high polish, resists tarnishing, and has a high melting point.",
     symbol: "Cr",
+    group: 6,
+
+    shells: [2, 8, 13, 1],
+
     electronAffinity: 65.21,
     electronegativityPauling: 1.66,
     ionizationEnergies: [
@@ -772,6 +967,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Manganese",
+    appearance: "silvery metallic",
     atomicMass: 54.9380443,
     boil: 2334,
     category: "transition metal",
@@ -779,13 +975,20 @@ const data: AtomInfo[] = [
     density: 7.21,
     discoveredBy: "Torbern Olof Bergman",
     melt: 1519,
+    molarHeat: 26.32,
 
     number: 25,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Manganese",
+
     summary:
       "Manganese is a chemical element with symbol Mn and atomic number 25. It is not found as a free element in nature; it is often found in combination with iron, and in many minerals. Manganese is a metal with important industrial metal alloy uses, particularly in stainless steels.",
     symbol: "Mn",
+    group: 7,
+
+    shells: [2, 8, 13, 2],
+
     electronAffinity: -50,
     electronegativityPauling: 1.55,
     ionizationEnergies: [
@@ -818,6 +1021,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Iron",
+    appearance: "lustrous metallic with a grayish tinge",
     atomicMass: 55.8452,
     boil: 3134,
     category: "transition metal",
@@ -825,13 +1029,20 @@ const data: AtomInfo[] = [
     density: 7.874,
     discoveredBy: "5000 BC",
     melt: 1811,
+    molarHeat: 25.1,
 
     number: 26,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Iron",
+
     summary:
       "Iron is a chemical element with symbol Fe (from Latin:ferrum) and atomic number 26. It is a metal in the first transition series. It is by mass the most common element on Earth, forming much of Earth's outer and inner core.",
     symbol: "Fe",
+    group: 8,
+
+    shells: [2, 8, 14, 2],
+
     electronAffinity: 14.785,
     electronegativityPauling: 1.83,
     ionizationEnergies: [
@@ -865,6 +1076,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Cobalt",
+    appearance: "hard lustrous gray metal",
     atomicMass: 58.9331944,
     boil: 3200,
     category: "transition metal",
@@ -872,13 +1084,20 @@ const data: AtomInfo[] = [
     density: 8.9,
     discoveredBy: "Georg Brandt",
     melt: 1768,
+    molarHeat: 24.81,
 
     number: 27,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Cobalt",
+
     summary:
       "Cobalt is a chemical element with symbol Co and atomic number 27. Like nickel, cobalt in the Earth's crust is found only in chemically combined form, save for small deposits found in alloys of natural meteoric iron. The free element, produced by reductive smelting, is a hard, lustrous, silver-gray metal.",
     symbol: "Co",
+    group: 9,
+
+    shells: [2, 8, 15, 2],
+
     electronAffinity: 63.898,
     electronegativityPauling: 1.88,
     ionizationEnergies: [
@@ -913,6 +1132,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Nickel",
+    appearance: "lustrous, metallic, and silver with a gold tinge",
     atomicMass: 58.69344,
     boil: 3003,
     category: "transition metal",
@@ -920,13 +1140,20 @@ const data: AtomInfo[] = [
     density: 8.908,
     discoveredBy: "Axel Fredrik Cronstedt",
     melt: 1728,
+    molarHeat: 26.07,
 
     number: 28,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Nickel",
+
     summary:
       "Nickel is a chemical element with symbol Ni and atomic number 28. It is a silvery-white lustrous metal with a slight golden tinge. Nickel belongs to the transition metals and is hard and ductile.",
     symbol: "Ni",
+    group: 10,
+
+    shells: [2, 8, 16, 2],
+
     electronAffinity: 111.65,
     electronegativityPauling: 1.91,
     ionizationEnergies: [
@@ -962,6 +1189,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Copper",
+    appearance: "red-orange metallic luster",
     atomicMass: 63.5463,
     boil: 2835,
     category: "transition metal",
@@ -969,13 +1197,20 @@ const data: AtomInfo[] = [
     density: 8.96,
     discoveredBy: "Middle East",
     melt: 1357.77,
+    molarHeat: 24.44,
 
     number: 29,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Copper",
+
     summary:
       "Copper is a chemical element with symbol Cu (from Latin:cuprum) and atomic number 29. It is a soft, malleable and ductile metal with very high thermal and electrical conductivity. A freshly exposed surface of pure copper has a reddish-orange color.",
     symbol: "Cu",
+    group: 11,
+
+    shells: [2, 8, 18, 1],
+
     electronAffinity: 119.235,
     electronegativityPauling: 1.9,
     ionizationEnergies: [
@@ -1012,6 +1247,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Zinc",
+    appearance: "silver-gray",
     atomicMass: 65.382,
     boil: 1180,
     category: "transition metal",
@@ -1019,13 +1255,20 @@ const data: AtomInfo[] = [
     density: 7.14,
     discoveredBy: "India",
     melt: 692.68,
+    molarHeat: 25.47,
 
     number: 30,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Zinc",
+
     summary:
       "Zinc, in commerce also spelter, is a chemical element with symbol Zn and atomic number 30. It is the first element of group 12 of the periodic table. In some respects zinc is chemically similar to magnesium:its ion is of similar size and its only common oxidation state is +2.",
     symbol: "Zn",
+    group: 12,
+
+    shells: [2, 8, 18, 2],
+
     electronAffinity: -58,
     electronegativityPauling: 1.65,
     ionizationEnergies: [
@@ -1054,6 +1297,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Gallium",
+    appearance: "silver-white",
     atomicMass: 69.7231,
     boil: 2673,
     category: "post-transition metal",
@@ -1061,19 +1305,27 @@ const data: AtomInfo[] = [
     density: 5.91,
     discoveredBy: "Lecoq de Boisbaudran",
     melt: 302.9146,
+    molarHeat: 25.86,
 
     number: 31,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Gallium",
+
     summary:
       "Gallium is a chemical element with symbol Ga and atomic number 31. Elemental gallium does not occur in free form in nature, but as the gallium(III) compounds that are in trace amounts in zinc ores and in bauxite. Gallium is a soft, silvery metal, and elemental gallium is a brittle solid at low temperatures, and melts at 29.76 °C (85.57 °F) (slightly above room temperature).",
     symbol: "Ga",
+    group: 13,
+
+    shells: [2, 8, 18, 3],
+
     electronAffinity: 41,
     electronegativityPauling: 1.81,
     ionizationEnergies: [578.8, 1979.3, 2963, 6180],
   },
   {
     name: "Germanium",
+    appearance: "grayish-white",
     atomicMass: 72.6308,
     boil: 3106,
     category: "metalloid",
@@ -1081,19 +1333,27 @@ const data: AtomInfo[] = [
     density: 5.323,
     discoveredBy: "Clemens Winkler",
     melt: 1211.4,
+    molarHeat: 23.222,
 
     number: 32,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Germanium",
+
     summary:
       "Germanium is a chemical element with symbol Ge and atomic number 32. It is a lustrous, hard, grayish-white metalloid in the carbon group, chemically similar to its group neighbors tin and silicon. Purified germanium is a semiconductor, with an appearance most similar to elemental silicon.",
     symbol: "Ge",
+    group: 14,
+
+    shells: [2, 8, 18, 4],
+
     electronAffinity: 118.9352,
     electronegativityPauling: 2.01,
     ionizationEnergies: [762, 1537.5, 3302.1, 4411, 9020],
   },
   {
     name: "Arsenic",
+    appearance: "metallic grey",
     atomicMass: 74.9215956,
     boil: null,
     category: "metalloid",
@@ -1101,19 +1361,27 @@ const data: AtomInfo[] = [
     density: 5.727,
     discoveredBy: "Bronze Age",
     melt: null,
+    molarHeat: 24.64,
 
     number: 33,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Arsenic",
+
     summary:
       "Arsenic is a chemical element with symbol As and atomic number 33. Arsenic occurs in many minerals, usually in conjunction with sulfur and metals, and also as a pure elemental crystal. Arsenic is a metalloid.",
     symbol: "As",
+    group: 15,
+
+    shells: [2, 8, 18, 5],
+
     electronAffinity: 77.65,
     electronegativityPauling: 2.18,
     ionizationEnergies: [947, 1798, 2735, 4837, 6043, 12310],
   },
   {
     name: "Selenium",
+    appearance: "black, red, and gray (not pictured) allotropes",
     atomicMass: 78.9718,
     boil: 958,
     category: "polyatomic nonmetal",
@@ -1121,19 +1389,27 @@ const data: AtomInfo[] = [
     density: 4.81,
     discoveredBy: "Jöns Jakob Berzelius",
     melt: 494,
+    molarHeat: 25.363,
 
     number: 34,
     period: 4,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Selenium",
+
     summary:
       "Selenium is a chemical element with symbol Se and atomic number 34. It is a nonmetal with properties that are intermediate between those of its periodic table column-adjacent chalcogen elements sulfur and tellurium. It rarely occurs in its elemental state in nature, or as pure ore compounds.",
     symbol: "Se",
+    group: 16,
+
+    shells: [2, 8, 18, 6],
+
     electronAffinity: 194.9587,
     electronegativityPauling: 2.55,
     ionizationEnergies: [941, 2045, 2973.7, 4144, 6590, 7880, 14990],
   },
   {
     name: "Bromine",
+    appearance: null,
     atomicMass: 79.904,
     boil: 332,
     category: "diatomic nonmetal",
@@ -1141,19 +1417,28 @@ const data: AtomInfo[] = [
     density: 3.1028,
     discoveredBy: "Antoine Jérôme Balard",
     melt: 265.8,
+    molarHeat: null,
 
     number: 35,
     period: 4,
     phase: "Liquid",
+    source: "https://en.wikipedia.org/wiki/Bromine",
+
     summary:
       'Bromine (from Ancient Greek:βρῶμος, brómos, meaning "stench") is a chemical element with symbol Br, and atomic number 35. It is a halogen. The element was isolated independently by two chemists, Carl Jacob Löwig and Antoine Jerome Balard, in 1825–1826.',
     symbol: "Br",
+    group: 17,
+
+    shells: [2, 8, 18, 7],
+
     electronAffinity: 324.537,
     electronegativityPauling: 2.96,
     ionizationEnergies: [1139.9, 2103, 3470, 4560, 5760, 8550, 9940, 18600],
   },
   {
     name: "Krypton",
+    appearance:
+      "colorless gas, exhibiting a whitish glow in a high electric field",
     atomicMass: 83.7982,
     boil: 119.93,
     category: "noble gas",
@@ -1161,13 +1446,20 @@ const data: AtomInfo[] = [
     density: 3.749,
     discoveredBy: "William Ramsay",
     melt: 115.78,
+    molarHeat: null,
 
     number: 36,
     period: 4,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Krypton",
+
     summary:
       'Krypton (from Greek:κρυπτός kryptos "the hidden one") is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere, is isolated by fractionally distilling liquefied air, and is often used with other rare gases in fluorescent lamps.',
     symbol: "Kr",
+    group: 18,
+
+    shells: [2, 8, 18, 8],
+
     electronAffinity: -96,
     electronegativityPauling: 3,
     ionizationEnergies: [
@@ -1205,6 +1497,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Rubidium",
+    appearance: "grey white",
     atomicMass: 85.46783,
     boil: 961,
     category: "alkali metal",
@@ -1212,13 +1505,20 @@ const data: AtomInfo[] = [
     density: 1.532,
     discoveredBy: "Robert Bunsen",
     melt: 312.45,
+    molarHeat: 31.06,
 
     number: 37,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Rubidium",
+
     summary:
       "Rubidium is a chemical element with symbol Rb and atomic number 37. Rubidium is a soft, silvery-white metallic element of the alkali metal group, with an atomic mass of 85.4678. Elemental rubidium is highly reactive, with properties similar to those of other alkali metals, such as very rapid oxidation in air.",
     symbol: "Rb",
+    group: 1,
+
+    shells: [2, 8, 18, 8, 1],
+
     electronAffinity: 46.884,
     electronegativityPauling: 0.82,
     ionizationEnergies: [
@@ -1236,6 +1536,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Strontium",
+    appearance: null,
     atomicMass: 87.621,
     boil: 1650,
     category: "alkaline earth metal",
@@ -1243,13 +1544,20 @@ const data: AtomInfo[] = [
     density: 2.64,
     discoveredBy: "William Cruickshank (chemist)",
     melt: 1050,
+    molarHeat: 26.4,
 
     number: 38,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Strontium",
+
     summary:
       "Strontium is a chemical element with symbol Sr and atomic number 38. An alkaline earth metal, strontium is a soft silver-white or yellowish metallic element that is highly reactive chemically. The metal turns yellow when it is exposed to air.",
     symbol: "Sr",
+    group: 2,
+
+    shells: [2, 8, 18, 8, 2],
+
     electronAffinity: 5.023,
     electronegativityPauling: 0.95,
     ionizationEnergies: [
@@ -1268,6 +1576,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Yttrium",
+    appearance: "silvery white",
     atomicMass: 88.905842,
     boil: 3203,
     category: "transition metal",
@@ -1275,13 +1584,20 @@ const data: AtomInfo[] = [
     density: 4.472,
     discoveredBy: "Johan Gadolin",
     melt: 1799,
+    molarHeat: 26.53,
 
     number: 39,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Yttrium",
+
     summary:
       'Yttrium is a chemical element with symbol Y and atomic number 39. It is a silvery-metallic transition metal chemically similar to the lanthanides and it has often been classified as a "rare earth element". Yttrium is almost always found combined with the lanthanides in rare earth minerals and is never found in nature as a free element.',
     symbol: "Y",
+    group: 3,
+
+    shells: [2, 8, 18, 9, 2],
+
     electronAffinity: 29.6,
     electronegativityPauling: 1.22,
     ionizationEnergies: [
@@ -1301,6 +1617,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Zirconium",
+    appearance: "silvery white",
     atomicMass: 91.2242,
     boil: 4650,
     category: "transition metal",
@@ -1308,19 +1625,27 @@ const data: AtomInfo[] = [
     density: 6.52,
     discoveredBy: "Martin Heinrich Klaproth",
     melt: 2128,
+    molarHeat: 25.36,
 
     number: 40,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Zirconium",
+
     summary:
       'Zirconium is a chemical element with symbol Zr and atomic number 40. The name of zirconium is taken from the name of the mineral zircon, the most important source of zirconium. The word zircon comes from the Persian word zargun زرگون, meaning "gold-colored".',
     symbol: "Zr",
+    group: 4,
+
+    shells: [2, 8, 18, 10, 2],
+
     electronAffinity: 41.806,
     electronegativityPauling: 1.33,
     ionizationEnergies: [640.1, 1270, 2218, 3313, 7752, 9500],
   },
   {
     name: "Niobium",
+    appearance: "gray metallic, bluish when oxidized",
     atomicMass: 92.906372,
     boil: 5017,
     category: "transition metal",
@@ -1328,19 +1653,27 @@ const data: AtomInfo[] = [
     density: 8.57,
     discoveredBy: "Charles Hatchett",
     melt: 2750,
+    molarHeat: 24.6,
 
     number: 41,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Niobium",
+
     summary:
       "Niobium, formerly columbium, is a chemical element with symbol Nb (formerly Cb) and atomic number 41. It is a soft, grey, ductile transition metal, which is often found in the pyrochlore mineral, the main commercial source for niobium, and columbite. The name comes from Greek mythology:Niobe, daughter of Tantalus since it is so similar to tantalum.",
     symbol: "Nb",
+    group: 5,
+
+    shells: [2, 8, 18, 12, 1],
+
     electronAffinity: 88.516,
     electronegativityPauling: 1.6,
     ionizationEnergies: [652.1, 1380, 2416, 3700, 4877, 9847, 12100],
   },
   {
     name: "Molybdenum",
+    appearance: "gray metallic",
     atomicMass: 95.951,
     boil: 4912,
     category: "transition metal",
@@ -1348,13 +1681,20 @@ const data: AtomInfo[] = [
     density: 10.28,
     discoveredBy: "Carl Wilhelm Scheele",
     melt: 2896,
+    molarHeat: 24.06,
 
     number: 42,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Molybdenum",
+
     summary:
       "Molybdenum is a chemical element with symbol Mo and atomic number 42. The name is from Neo-Latin molybdaenum, from Ancient Greek Μόλυβδος molybdos, meaning lead, since its ores were confused with lead ores. Molybdenum minerals have been known throughout history, but the element was discovered (in the sense of differentiating it as a new entity from the mineral salts of other metals) in 1778 by Carl Wilhelm Scheele.",
     symbol: "Mo",
+    group: 6,
+
+    shells: [2, 8, 18, 13, 1],
+
     electronAffinity: 72.1,
     electronegativityPauling: 2.16,
     ionizationEnergies: [
@@ -1392,6 +1732,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Technetium",
+    appearance: "shiny gray metal",
     atomicMass: 98,
     boil: 4538,
     category: "transition metal",
@@ -1399,19 +1740,27 @@ const data: AtomInfo[] = [
     density: 11,
     discoveredBy: "Emilio Segrè",
     melt: 2430,
+    molarHeat: 24.27,
 
     number: 43,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Technetium",
+
     summary:
       "Technetium (/tɛkˈniːʃiəm/) is a chemical element with symbol Tc and atomic number 43. It is the element with the lowest atomic number in the periodic table that has no stable isotopes:every form of it is radioactive. Nearly all technetium is produced synthetically, and only minute amounts are found in nature.",
     symbol: "Tc",
+    group: 7,
+
+    shells: [2, 8, 18, 13, 2],
+
     electronAffinity: 53,
     electronegativityPauling: 1.9,
     ionizationEnergies: [702, 1470, 2850],
   },
   {
     name: "Ruthenium",
+    appearance: "silvery white metallic",
     atomicMass: 101.072,
     boil: 4423,
     category: "transition metal",
@@ -1419,19 +1768,27 @@ const data: AtomInfo[] = [
     density: 12.45,
     discoveredBy: "Karl Ernst Claus",
     melt: 2607,
+    molarHeat: 24.06,
 
     number: 44,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Ruthenium",
+
     summary:
       "Ruthenium is a chemical element with symbol Ru and atomic number 44. It is a rare transition metal belonging to the platinum group of the periodic table. Like the other metals of the platinum group, ruthenium is inert to most other chemicals.",
     symbol: "Ru",
+    group: 8,
+
+    shells: [2, 8, 18, 15, 1],
+
     electronAffinity: 100.96,
     electronegativityPauling: 2.2,
     ionizationEnergies: [710.2, 1620, 2747],
   },
   {
     name: "Rhodium",
+    appearance: "silvery white metallic",
     atomicMass: 102.905502,
     boil: 3968,
     category: "transition metal",
@@ -1439,19 +1796,27 @@ const data: AtomInfo[] = [
     density: 12.41,
     discoveredBy: "William Hyde Wollaston",
     melt: 2237,
+    molarHeat: 24.98,
 
     number: 45,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Rhodium",
+
     summary:
       "Rhodium is a chemical element with symbol Rh and atomic number 45. It is a rare, silvery-white, hard, and chemically inert transition metal. It is a member of the platinum group.",
     symbol: "Rh",
+    group: 9,
+
+    shells: [2, 8, 18, 16, 1],
+
     electronAffinity: 110.27,
     electronegativityPauling: 2.28,
     ionizationEnergies: [719.7, 1740, 2997],
   },
   {
     name: "Palladium",
+    appearance: "silvery white",
     atomicMass: 106.421,
     boil: 3236,
     category: "transition metal",
@@ -1459,19 +1824,27 @@ const data: AtomInfo[] = [
     density: 12.023,
     discoveredBy: "William Hyde Wollaston",
     melt: 1828.05,
+    molarHeat: 25.98,
 
     number: 46,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Palladium",
+
     summary:
       "Palladium is a chemical element with symbol Pd and atomic number 46. It is a rare and lustrous silvery-white metal discovered in 1803 by William Hyde Wollaston. He named it after the asteroid Pallas, which was itself named after the epithet of the Greek goddess Athena, acquired by her when she slew Pallas.",
     symbol: "Pd",
+    group: 10,
+
+    shells: [2, 8, 18, 18],
+
     electronAffinity: 54.24,
     electronegativityPauling: 2.2,
     ionizationEnergies: [804.4, 1870, 3177],
   },
   {
     name: "Silver",
+    appearance: "lustrous white metal",
     atomicMass: 107.86822,
     boil: 2435,
     category: "transition metal",
@@ -1479,19 +1852,27 @@ const data: AtomInfo[] = [
     density: 10.49,
     discoveredBy: "unknown, before 5000 BC",
     melt: 1234.93,
+    molarHeat: 25.35,
 
     number: 47,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Silver",
+
     summary:
       'Silver is a chemical element with symbol Ag (Greek:άργυρος árguros, Latin:argentum, both from the Indo-European root *h₂erǵ- for "grey" or "shining") and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal. The metal occurs naturally in its pure, free form (native silver), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite.',
     symbol: "Ag",
+    group: 11,
+
+    shells: [2, 8, 18, 18, 1],
+
     electronAffinity: 125.862,
     electronegativityPauling: 1.93,
     ionizationEnergies: [731, 2070, 3361],
   },
   {
     name: "Cadmium",
+    appearance: "silvery bluish-gray metallic",
     atomicMass: 112.4144,
     boil: 1040,
     category: "transition metal",
@@ -1499,19 +1880,27 @@ const data: AtomInfo[] = [
     density: 8.65,
     discoveredBy: "Karl Samuel Leberecht Hermann",
     melt: 594.22,
+    molarHeat: 26.02,
 
     number: 48,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Cadmium",
+
     summary:
       "Cadmium is a chemical element with symbol Cd and atomic number 48. This soft, bluish-white metal is chemically similar to the two other stable metals in group 12, zinc and mercury. Like zinc, it prefers oxidation state +2 in most of its compounds and like mercury it shows a low melting point compared to transition metals.",
     symbol: "Cd",
+    group: 12,
+
+    shells: [2, 8, 18, 18, 2],
+
     electronAffinity: -68,
     electronegativityPauling: 1.69,
     ionizationEnergies: [867.8, 1631.4, 3616],
   },
   {
     name: "Indium",
+    appearance: "silvery lustrous gray",
     atomicMass: 114.8181,
     boil: 2345,
     category: "post-transition metal",
@@ -1519,19 +1908,27 @@ const data: AtomInfo[] = [
     density: 7.31,
     discoveredBy: "Ferdinand Reich",
     melt: 429.7485,
+    molarHeat: 26.74,
 
     number: 49,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Indium",
+
     summary:
       "Indium is a chemical element with symbol In and atomic number 49. It is a post-transition metallic element that is rare in Earth's crust. The metal is very soft, malleable and easily fusible, with a melting point higher than sodium, but lower than lithium or tin.",
     symbol: "In",
+    group: 13,
+
+    shells: [2, 8, 18, 18, 3],
+
     electronAffinity: 37.043,
     electronegativityPauling: 1.78,
     ionizationEnergies: [558.3, 1820.7, 2704, 5210],
   },
   {
     name: "Tin",
+    appearance: "silvery-white (beta, β) or gray (alpha, α)",
     atomicMass: 118.7107,
     boil: 2875,
     category: "post-transition metal",
@@ -1539,19 +1936,27 @@ const data: AtomInfo[] = [
     density: 7.365,
     discoveredBy: "unknown, before 3500 BC",
     melt: 505.08,
+    molarHeat: 27.112,
 
     number: 50,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Tin",
+
     summary:
       "Tin is a chemical element with the symbol Sn (for Latin:stannum) and atomic number 50. It is a main group metal in group 14 of the periodic table. Tin shows a chemical similarity to both neighboring group-14 elements, germanium and lead, and has two possible oxidation states, +2 and the slightly more stable +4.",
     symbol: "Sn",
+    group: 14,
+
+    shells: [2, 8, 18, 18, 4],
+
     electronAffinity: 107.2984,
     electronegativityPauling: 1.96,
     ionizationEnergies: [708.6, 1411.8, 2943, 3930.3, 7456],
   },
   {
     name: "Antimony",
+    appearance: "silvery lustrous gray",
     atomicMass: 121.7601,
     boil: 1908,
     category: "metalloid",
@@ -1559,19 +1964,27 @@ const data: AtomInfo[] = [
     density: 6.697,
     discoveredBy: "unknown, before 3000 BC",
     melt: 903.78,
+    molarHeat: 25.23,
 
     number: 51,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Antimony",
+
     summary:
       "Antimony is a chemical element with symbol Sb (from Latin:stibium) and atomic number 51. A lustrous gray metalloid, it is found in nature mainly as the sulfide mineral stibnite (Sb2S3). Antimony compounds have been known since ancient times and were used for cosmetics; metallic antimony was also known, but it was erroneously identified as lead upon its discovery.",
     symbol: "Sb",
+    group: 15,
+
+    shells: [2, 8, 18, 18, 5],
+
     electronAffinity: 101.059,
     electronegativityPauling: 2.05,
     ionizationEnergies: [834, 1594.9, 2440, 4260, 5400, 10400],
   },
   {
     name: "Tellurium",
+    appearance: null,
     atomicMass: 127.603,
     boil: 1261,
     category: "metalloid",
@@ -1579,19 +1992,27 @@ const data: AtomInfo[] = [
     density: 6.24,
     discoveredBy: "Franz-Joseph Müller von Reichenstein",
     melt: 722.66,
+    molarHeat: 25.73,
 
     number: 52,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Tellurium",
+
     summary:
       "Tellurium is a chemical element with symbol Te and atomic number 52. It is a brittle, mildly toxic, rare, silver-white metalloid. Tellurium is chemically related to selenium and sulfur.",
     symbol: "Te",
+    group: 16,
+
+    shells: [2, 8, 18, 18, 6],
+
     electronAffinity: 190.161,
     electronegativityPauling: 2.1,
     ionizationEnergies: [869.3, 1790, 2698, 3610, 5668, 6820, 13200],
   },
   {
     name: "Iodine",
+    appearance: "lustrous metallic gray, violet as a gas",
     atomicMass: 126.904473,
     boil: 457.4,
     category: "diatomic nonmetal",
@@ -1599,19 +2020,28 @@ const data: AtomInfo[] = [
     density: 4.933,
     discoveredBy: "Bernard Courtois",
     melt: 386.85,
+    molarHeat: null,
 
     number: 53,
     period: 5,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Iodine",
+
     summary:
       "Iodine is a chemical element with symbol I and atomic number 53. The name is from Greek ἰοειδής ioeidēs, meaning violet or purple, due to the color of iodine vapor. Iodine and its compounds are primarily used in nutrition, and industrially in the production of acetic acid and certain polymers.",
     symbol: "I",
+    group: 17,
+
+    shells: [2, 8, 18, 18, 7],
+
     electronAffinity: 295.1531,
     electronegativityPauling: 2.66,
     ionizationEnergies: [1008.4, 1845.9, 3180],
   },
   {
     name: "Xenon",
+    appearance:
+      "colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
     atomicMass: 131.2936,
     boil: 165.051,
     category: "noble gas",
@@ -1619,19 +2049,27 @@ const data: AtomInfo[] = [
     density: 5.894,
     discoveredBy: "William Ramsay",
     melt: 161.4,
+    molarHeat: null,
 
     number: 54,
     period: 5,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Xenon",
+
     summary:
       "Xenon is a chemical element with symbol Xe and atomic number 54. It is a colorless, dense, odorless noble gas, that occurs in the Earth's atmosphere in trace amounts. Although generally unreactive, xenon can undergo a few chemical reactions such as the formation of xenon hexafluoroplatinate, the first noble gas compound to be synthesized.",
     symbol: "Xe",
+    group: 18,
+
+    shells: [2, 8, 18, 18, 8],
+
     electronAffinity: -77,
     electronegativityPauling: 2.6,
     ionizationEnergies: [1170.4, 2046.4, 3099.4],
   },
   {
     name: "Cesium",
+    appearance: "silvery gold",
     atomicMass: 132.905451966,
     boil: 944,
     category: "alkali metal",
@@ -1639,19 +2077,27 @@ const data: AtomInfo[] = [
     density: 1.93,
     discoveredBy: "Robert Bunsen",
     melt: 301.7,
+    molarHeat: 32.21,
 
     number: 55,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Cesium",
+
     summary:
       "Caesium or cesium is a chemical element with symbol Cs and atomic number 55. It is a soft, silvery-gold alkali metal with a melting point of 28 °C (82 °F), which makes it one of only five elemental metals that are liquid at or near room temperature. Caesium is an alkali metal and has physical and chemical properties similar to those of rubidium and potassium.",
     symbol: "Cs",
+    group: 1,
+
+    shells: [2, 8, 18, 18, 8, 1],
+
     electronAffinity: 45.505,
     electronegativityPauling: 0.79,
     ionizationEnergies: [375.7, 2234.3, 3400],
   },
   {
     name: "Barium",
+    appearance: null,
     atomicMass: 137.3277,
     boil: 2118,
     category: "alkaline earth metal",
@@ -1659,19 +2105,27 @@ const data: AtomInfo[] = [
     density: 3.51,
     discoveredBy: "Carl Wilhelm Scheele",
     melt: 1000,
+    molarHeat: 28.07,
 
     number: 56,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Barium",
+
     summary:
       "Barium is a chemical element with symbol Ba and atomic number 56. It is the fifth element in Group 2, a soft silvery metallic alkaline earth metal. Because of its high chemical reactivity barium is never found in nature as a free element.",
     symbol: "Ba",
+    group: 2,
+
+    shells: [2, 8, 18, 18, 8, 2],
+
     electronAffinity: 13.954,
     electronegativityPauling: 0.89,
     ionizationEnergies: [502.9, 965.2, 3600],
   },
   {
     name: "Lanthanum",
+    appearance: "silvery white",
     atomicMass: 138.905477,
     boil: 3737,
     category: "lanthanide",
@@ -1679,19 +2133,27 @@ const data: AtomInfo[] = [
     density: 6.162,
     discoveredBy: "Carl Gustaf Mosander",
     melt: 1193,
+    molarHeat: 27.11,
 
     number: 57,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Lanthanum",
+
     summary:
       "Lanthanum is a soft, ductile, silvery-white metallic chemical element with symbol La and atomic number 57. It tarnishes rapidly when exposed to air and is soft enough to be cut with a knife. It gave its name to the lanthanide series, a group of 15 similar elements between lanthanum and lutetium in the periodic table:it is also sometimes considered the first element of the 6th-period transition metals.",
     symbol: "La",
+    group: 3,
+
+    shells: [2, 8, 18, 18, 9, 2],
+
     electronAffinity: 53,
     electronegativityPauling: 1.1,
     ionizationEnergies: [538.1, 1067, 1850.3, 4819, 5940],
   },
   {
     name: "Cerium",
+    appearance: "silvery white",
     atomicMass: 140.1161,
     boil: 3716,
     category: "lanthanide",
@@ -1699,19 +2161,27 @@ const data: AtomInfo[] = [
     density: 6.77,
     discoveredBy: "Martin Heinrich Klaproth",
     melt: 1068,
+    molarHeat: 26.94,
 
     number: 58,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Cerium",
+
     summary:
       "Cerium is a chemical element with symbol Ce and atomic number 58. It is a soft, silvery, ductile metal which easily oxidizes in air. Cerium was named after the dwarf planet Ceres (itself named after the Roman goddess of agriculture).",
     symbol: "Ce",
+    group: 4,
+
+    shells: [2, 8, 18, 19, 9, 2],
+
     electronAffinity: 55,
     electronegativityPauling: 1.12,
     ionizationEnergies: [534.4, 1050, 1949, 3547, 6325, 7490],
   },
   {
     name: "Praseodymium",
+    appearance: "grayish white",
     atomicMass: 140.907662,
     boil: 3403,
     category: "lanthanide",
@@ -1719,19 +2189,27 @@ const data: AtomInfo[] = [
     density: 6.77,
     discoveredBy: "Carl Auer von Welsbach",
     melt: 1208,
+    molarHeat: 27.2,
 
     number: 59,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Praseodymium",
+
     summary:
       "Praseodymium is a chemical element with symbol Pr and atomic number 59. Praseodymium is a soft, silvery, malleable and ductile metal in the lanthanide group. It is valued for its magnetic, electrical, chemical, and optical properties.",
     symbol: "Pr",
+    group: 5,
+
+    shells: [2, 8, 18, 21, 8, 2],
+
     electronAffinity: 93,
     electronegativityPauling: 1.13,
     ionizationEnergies: [527, 1020, 2086, 3761, 5551],
   },
   {
     name: "Neodymium",
+    appearance: "silvery white",
     atomicMass: 144.2423,
     boil: 3347,
     category: "lanthanide",
@@ -1739,19 +2217,27 @@ const data: AtomInfo[] = [
     density: 7.01,
     discoveredBy: "Carl Auer von Welsbach",
     melt: 1297,
+    molarHeat: 27.45,
 
     number: 60,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Neodymium",
+
     summary:
       "Neodymium is a chemical element with symbol Nd and atomic number 60. It is a soft silvery metal that tarnishes in air. Neodymium was discovered in 1885 by the Austrian chemist Carl Auer von Welsbach.",
     symbol: "Nd",
+    group: 6,
+
+    shells: [2, 8, 18, 22, 8, 2],
+
     electronAffinity: 184.87,
     electronegativityPauling: 1.14,
     ionizationEnergies: [533.1, 1040, 2130, 3900],
   },
   {
     name: "Promethium",
+    appearance: "metallic",
     atomicMass: 145,
     boil: 3273,
     category: "lanthanide",
@@ -1759,19 +2245,27 @@ const data: AtomInfo[] = [
     density: 7.26,
     discoveredBy: "Chien Shiung Wu",
     melt: 1315,
+    molarHeat: null,
 
     number: 61,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Promethium",
+
     summary:
       "Promethium, originally prometheum, is a chemical element with the symbol Pm and atomic number 61. All of its isotopes are radioactive; it is one of only two such elements that are followed in the periodic table by elements with stable forms, a distinction shared with technetium. Chemically, promethium is a lanthanide, which forms salts when combined with other elements.",
     symbol: "Pm",
+    group: 7,
+
+    shells: [2, 8, 18, 23, 8, 2],
+
     electronAffinity: 12.45,
     electronegativityPauling: 1.13,
     ionizationEnergies: [540, 1050, 2150, 3970],
   },
   {
     name: "Samarium",
+    appearance: "silvery white",
     atomicMass: 150.362,
     boil: 2173,
     category: "lanthanide",
@@ -1779,19 +2273,27 @@ const data: AtomInfo[] = [
     density: 7.52,
     discoveredBy: "Lecoq de Boisbaudran",
     melt: 1345,
+    molarHeat: 29.54,
 
     number: 62,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Samarium",
+
     summary:
       "Samarium is a chemical element with symbol Sm and atomic number 62. It is a moderately hard silvery metal that readily oxidizes in air. Being a typical member of the lanthanide series, samarium usually assumes the oxidation state +3.",
     symbol: "Sm",
+    group: 8,
+
+    shells: [2, 8, 18, 24, 8, 2],
+
     electronAffinity: 15.63,
     electronegativityPauling: 1.17,
     ionizationEnergies: [544.5, 1070, 2260, 3990],
   },
   {
     name: "Europium",
+    appearance: null,
     atomicMass: 151.9641,
     boil: 1802,
     category: "lanthanide",
@@ -1799,19 +2301,27 @@ const data: AtomInfo[] = [
     density: 5.264,
     discoveredBy: "Eugène-Anatole Demarçay",
     melt: 1099,
+    molarHeat: 27.66,
 
     number: 63,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Europium",
+
     summary:
       "Europium is a chemical element with symbol Eu and atomic number 63. It was isolated in 1901 and is named after the continent of Europe. It is a moderately hard, silvery metal which readily oxidizes in air and water.",
     symbol: "Eu",
+    group: 9,
+
+    shells: [2, 8, 18, 25, 8, 2],
+
     electronAffinity: 11.2,
     electronegativityPauling: 1.2,
     ionizationEnergies: [547.1, 1085, 2404, 4120],
   },
   {
     name: "Gadolinium",
+    appearance: "silvery white",
     atomicMass: 157.253,
     boil: 3273,
     category: "lanthanide",
@@ -1819,19 +2329,27 @@ const data: AtomInfo[] = [
     density: 7.9,
     discoveredBy: "Jean Charles Galissard de Marignac",
     melt: 1585,
+    molarHeat: 37.03,
 
     number: 64,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Gadolinium",
+
     summary:
       "Gadolinium is a chemical element with symbol Gd and atomic number 64. It is a silvery-white, malleable and ductile rare-earth metal. It is found in nature only in combined (salt) form.",
     symbol: "Gd",
+    group: 10,
+
+    shells: [2, 8, 18, 25, 9, 2],
+
     electronAffinity: 13.22,
     electronegativityPauling: 1.2,
     ionizationEnergies: [593.4, 1170, 1990, 4250],
   },
   {
     name: "Terbium",
+    appearance: "silvery white",
     atomicMass: 158.925352,
     boil: 3396,
     category: "lanthanide",
@@ -1839,19 +2357,27 @@ const data: AtomInfo[] = [
     density: 8.23,
     discoveredBy: "Carl Gustaf Mosander",
     melt: 1629,
+    molarHeat: 28.91,
 
     number: 65,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Terbium",
+
     summary:
       "Terbium is a chemical element with symbol Tb and atomic number 65. It is a silvery-white rare earth metal that is malleable, ductile and soft enough to be cut with a knife. Terbium is never found in nature as a free element, but it is contained in many minerals, including cerite, gadolinite, monazite, xenotime and euxenite.",
     symbol: "Tb",
+    group: 11,
+
+    shells: [2, 8, 18, 27, 8, 2],
+
     electronAffinity: 112.4,
     electronegativityPauling: 1.1,
     ionizationEnergies: [565.8, 1110, 2114, 3839],
   },
   {
     name: "Dysprosium",
+    appearance: "silvery white",
     atomicMass: 162.5001,
     boil: 2840,
     category: "lanthanide",
@@ -1859,19 +2385,27 @@ const data: AtomInfo[] = [
     density: 8.54,
     discoveredBy: "Lecoq de Boisbaudran",
     melt: 1680,
+    molarHeat: 27.7,
 
     number: 66,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Dysprosium",
+
     summary:
       "Dysprosium is a chemical element with the symbol Dy and atomic number 66. It is a rare earth element with a metallic silver luster. Dysprosium is never found in nature as a free element, though it is found in various minerals, such as xenotime.",
     symbol: "Dy",
+    group: 12,
+
+    shells: [2, 8, 18, 28, 8, 2],
+
     electronAffinity: 33.96,
     electronegativityPauling: 1.22,
     ionizationEnergies: [573, 1130, 2200, 3990],
   },
   {
     name: "Holmium",
+    appearance: "silvery white",
     atomicMass: 164.930332,
     boil: 2873,
     category: "lanthanide",
@@ -1879,19 +2413,27 @@ const data: AtomInfo[] = [
     density: 8.79,
     discoveredBy: "Marc Delafontaine",
     melt: 1734,
+    molarHeat: 27.15,
 
     number: 67,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Holmium",
+
     summary:
       "Holmium is a chemical element with symbol Ho and atomic number 67. Part of the lanthanide series, holmium is a rare earth element. Holmium was discovered by Swedish chemist Per Theodor Cleve.",
     symbol: "Ho",
+    group: 13,
+
+    shells: [2, 8, 18, 29, 8, 2],
+
     electronAffinity: 32.61,
     electronegativityPauling: 1.23,
     ionizationEnergies: [581, 1140, 2204, 4100],
   },
   {
     name: "Erbium",
+    appearance: "silvery white",
     atomicMass: 167.2593,
     boil: 3141,
     category: "lanthanide",
@@ -1899,19 +2441,27 @@ const data: AtomInfo[] = [
     density: 9.066,
     discoveredBy: "Carl Gustaf Mosander",
     melt: 1802,
+    molarHeat: 28.12,
 
     number: 68,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Erbium",
+
     summary:
       "Erbium is a chemical element in the lanthanide series, with symbol Er and atomic number 68. A silvery-white solid metal when artificially isolated, natural erbium is always found in chemical combination with other elements on Earth. As such, it is a rare earth element which is associated with several other rare elements in the mineral gadolinite from Ytterby in Sweden, where yttrium, ytterbium, and terbium were discovered.",
     symbol: "Er",
+    group: 14,
+
+    shells: [2, 8, 18, 30, 8, 2],
+
     electronAffinity: 30.1,
     electronegativityPauling: 1.24,
     ionizationEnergies: [589.3, 1150, 2194, 4120],
   },
   {
     name: "Thulium",
+    appearance: "silvery gray",
     atomicMass: 168.934222,
     boil: 2223,
     category: "lanthanide",
@@ -1919,19 +2469,27 @@ const data: AtomInfo[] = [
     density: 9.32,
     discoveredBy: "Per Teodor Cleve",
     melt: 1818,
+    molarHeat: 27.03,
 
     number: 69,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Thulium",
+
     summary:
       "Thulium is a chemical element with symbol Tm and atomic number 69. It is the thirteenth and antepenultimate (third-last) element in the lanthanide series. Like the other lanthanides, the most common oxidation state is +3, seen in its oxide, halides and other compounds.",
     symbol: "Tm",
+    group: 15,
+
+    shells: [2, 8, 18, 31, 8, 2],
+
     electronAffinity: 99,
     electronegativityPauling: 1.25,
     ionizationEnergies: [596.7, 1160, 2285, 4120],
   },
   {
     name: "Ytterbium",
+    appearance: null,
     atomicMass: 173.0451,
     boil: 1469,
     category: "lanthanide",
@@ -1939,19 +2497,27 @@ const data: AtomInfo[] = [
     density: 6.9,
     discoveredBy: "Jean Charles Galissard de Marignac",
     melt: 1097,
+    molarHeat: 26.74,
 
     number: 70,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Ytterbium",
+
     summary:
       "Ytterbium is a chemical element with symbol Yb and atomic number 70. It is the fourteenth and penultimate element in the lanthanide series, which is the basis of the relative stability of its +2 oxidation state. However, like the other lanthanides, its most common oxidation state is +3, seen in its oxide, halides and other compounds.",
     symbol: "Yb",
+    group: 16,
+
+    shells: [2, 8, 18, 32, 8, 2],
+
     electronAffinity: -1.93,
     electronegativityPauling: 1.1,
     ionizationEnergies: [603.4, 1174.8, 2417, 4203],
   },
   {
     name: "Lutetium",
+    appearance: "silvery white",
     atomicMass: 174.96681,
     boil: 3675,
     category: "lanthanide",
@@ -1959,19 +2525,27 @@ const data: AtomInfo[] = [
     density: 9.841,
     discoveredBy: "Georges Urbain",
     melt: 1925,
+    molarHeat: 26.86,
 
     number: 71,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Lutetium",
+
     summary:
       "Lutetium is a chemical element with symbol Lu and atomic number 71. It is a silvery white metal, which resists corrosion in dry, but not in moist air. It is considered the first element of the 6th-period transition metals and the last element in the lanthanide series, and is traditionally counted among the rare earths.",
     symbol: "Lu",
+    group: 17,
+
+    shells: [2, 8, 18, 32, 9, 2],
+
     electronAffinity: 33.4,
     electronegativityPauling: 1.27,
     ionizationEnergies: [523.5, 1340, 2022.3, 4370, 6445],
   },
   {
     name: "Hafnium",
+    appearance: "steel gray",
     atomicMass: 178.492,
     boil: 4876,
     category: "transition metal",
@@ -1979,19 +2553,27 @@ const data: AtomInfo[] = [
     density: 13.31,
     discoveredBy: "Dirk Coster",
     melt: 2506,
+    molarHeat: 25.73,
 
     number: 72,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Hafnium",
+
     summary:
       "Hafnium is a chemical element with symbol Hf and atomic number 72. A lustrous, silvery gray, tetravalent transition metal, hafnium chemically resembles zirconium and is found in zirconium minerals. Its existence was predicted by Dmitri Mendeleev in 1869, though it was not identified until 1923, making it the penultimate stable element to be discovered (rhenium was identified two years later).",
     symbol: "Hf",
+    group: 4,
+
+    shells: [2, 8, 18, 32, 10, 2],
+
     electronAffinity: 17.18,
     electronegativityPauling: 1.3,
     ionizationEnergies: [658.5, 1440, 2250, 3216],
   },
   {
     name: "Tantalum",
+    appearance: "gray blue",
     atomicMass: 180.947882,
     boil: 5731,
     category: "transition metal",
@@ -1999,19 +2581,27 @@ const data: AtomInfo[] = [
     density: 16.69,
     discoveredBy: "Anders Gustaf Ekeberg",
     melt: 3290,
+    molarHeat: 25.36,
 
     number: 73,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Tantalum",
+
     summary:
       "Tantalum is a chemical element with symbol Ta and atomic number 73. Previously known as tantalium, its name comes from Tantalus, an antihero from Greek mythology. Tantalum is a rare, hard, blue-gray, lustrous transition metal that is highly corrosion-resistant.",
     symbol: "Ta",
+    group: 5,
+
+    shells: [2, 8, 18, 32, 11, 2],
+
     electronAffinity: 31,
     electronegativityPauling: 1.5,
     ionizationEnergies: [761, 1500],
   },
   {
     name: "Tungsten",
+    appearance: "grayish white, lustrous",
     atomicMass: 183.841,
     boil: 6203,
     category: "transition metal",
@@ -2019,19 +2609,27 @@ const data: AtomInfo[] = [
     density: 19.25,
     discoveredBy: "Carl Wilhelm Scheele",
     melt: 3695,
+    molarHeat: 24.27,
 
     number: 74,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Tungsten",
+
     summary:
       "Tungsten, also known as wolfram, is a chemical element with symbol W and atomic number 74. The word tungsten comes from the Swedish language tung sten, which directly translates to heavy stone. Its name in Swedish is volfram, however, in order to distinguish it from scheelite, which in Swedish is alternatively named tungsten.",
     symbol: "W",
+    group: 6,
+
+    shells: [2, 8, 18, 32, 12, 2],
+
     electronAffinity: 78.76,
     electronegativityPauling: 2.36,
     ionizationEnergies: [770, 1700],
   },
   {
     name: "Rhenium",
+    appearance: "silvery-grayish",
     atomicMass: 186.2071,
     boil: 5869,
     category: "transition metal",
@@ -2039,19 +2637,27 @@ const data: AtomInfo[] = [
     density: 21.02,
     discoveredBy: "Masataka Ogawa",
     melt: 3459,
+    molarHeat: 25.48,
 
     number: 75,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Rhenium",
+
     summary:
       "Rhenium is a chemical element with symbol Re and atomic number 75. It is a silvery-white, heavy, third-row transition metal in group 7 of the periodic table. With an estimated average concentration of 1 part per billion (ppb), rhenium is one of the rarest elements in the Earth's crust.",
     symbol: "Re",
+    group: 7,
+
+    shells: [2, 8, 18, 32, 13, 2],
+
     electronAffinity: 5.8273,
     electronegativityPauling: 1.9,
     ionizationEnergies: [760, 1260, 2510, 3640],
   },
   {
     name: "Osmium",
+    appearance: "silvery, blue cast",
     atomicMass: 190.233,
     boil: 5285,
     category: "transition metal",
@@ -2059,19 +2665,27 @@ const data: AtomInfo[] = [
     density: 22.59,
     discoveredBy: "Smithson Tennant",
     melt: 3306,
+    molarHeat: 24.7,
 
     number: 76,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Osmium",
+
     summary:
       'Osmium (from Greek osme (ὀσμή) meaning "smell") is a chemical element with symbol Os and atomic number 76. It is a hard, brittle, bluish-white transition metal in the platinum group that is found as a trace element in alloys, mostly in platinum ores. Osmium is the densest naturally occurring element, with a density of 22.59 g/cm3.',
     symbol: "Os",
+    group: 8,
+
+    shells: [2, 8, 18, 32, 14, 2],
+
     electronAffinity: 103.99,
     electronegativityPauling: 2.2,
     ionizationEnergies: [840, 1600],
   },
   {
     name: "Iridium",
+    appearance: "silvery white",
     atomicMass: 192.2173,
     boil: 4403,
     category: "transition metal",
@@ -2079,19 +2693,27 @@ const data: AtomInfo[] = [
     density: 22.56,
     discoveredBy: "Smithson Tennant",
     melt: 2719,
+    molarHeat: 25.1,
 
     number: 77,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Iridium",
+
     summary:
       "Iridium is a chemical element with symbol Ir and atomic number 77. A very hard, brittle, silvery-white transition metal of the platinum group, iridium is generally credited with being the second densest element (after osmium) based on measured density, although calculations involving the space lattices of the elements show that iridium is denser. It is also the most corrosion-resistant metal, even at temperatures as high as 2000 °C. Although only certain molten salts and halogens are corrosive to solid iridium, finely divided iridium dust is much more reactive and can be flammable.",
     symbol: "Ir",
+    group: 9,
+
+    shells: [2, 8, 18, 32, 15, 2],
+
     electronAffinity: 150.94,
     electronegativityPauling: 2.2,
     ionizationEnergies: [880, 1600],
   },
   {
     name: "Platinum",
+    appearance: "silvery white",
     atomicMass: 195.0849,
     boil: 4098,
     category: "transition metal",
@@ -2099,19 +2721,27 @@ const data: AtomInfo[] = [
     density: 21.45,
     discoveredBy: "Antonio de Ulloa",
     melt: 2041.4,
+    molarHeat: 25.86,
 
     number: 78,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Platinum",
+
     summary:
       'Platinum is a chemical element with symbol Pt and atomic number 78. It is a dense, malleable, ductile, highly unreactive, precious, gray-white transition metal. Its name is derived from the Spanish term platina, which is literally translated into "little silver".',
     symbol: "Pt",
+    group: 10,
+
+    shells: [2, 8, 18, 32, 17, 1],
+
     electronAffinity: 205.041,
     electronegativityPauling: 2.28,
     ionizationEnergies: [870, 1791],
   },
   {
     name: "Gold",
+    appearance: "metallic yellow",
     atomicMass: 196.9665695,
     boil: 3243,
     category: "transition metal",
@@ -2119,19 +2749,27 @@ const data: AtomInfo[] = [
     density: 19.3,
     discoveredBy: "Middle East",
     melt: 1337.33,
+    molarHeat: 25.418,
 
     number: 79,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Gold",
+
     summary:
       "Gold is a chemical element with symbol Au (from Latin:aurum) and atomic number 79. In its purest form, it is a bright, slightly reddish yellow, dense, soft, malleable and ductile metal. Chemically, gold is a transition metal and a group 11 element.",
     symbol: "Au",
+    group: 11,
+
+    shells: [2, 8, 18, 32, 18, 1],
+
     electronAffinity: 222.747,
     electronegativityPauling: 2.54,
     ionizationEnergies: [890.1, 1980],
   },
   {
     name: "Mercury",
+    appearance: "silvery",
     atomicMass: 200.5923,
     boil: 629.88,
     category: "transition metal",
@@ -2139,19 +2777,27 @@ const data: AtomInfo[] = [
     density: 13.534,
     discoveredBy: "unknown, before 2000 BCE",
     melt: 234.321,
+    molarHeat: 27.983,
 
     number: 80,
     period: 6,
     phase: "Liquid",
+    source: "https://en.wikipedia.org/wiki/Mercury (Element)",
+
     summary:
       "Mercury is a chemical element with symbol Hg and atomic number 80. It is commonly known as quicksilver and was formerly named hydrargyrum (/haɪˈdrɑːrdʒərəm/). A heavy, silvery d-block element, mercury is the only metallic element that is liquid at standard conditions for temperature and pressure; the only other element that is liquid under these conditions is bromine, though metals such as caesium, gallium, and rubidium melt just above room temperature.",
     symbol: "Hg",
+    group: 12,
+
+    shells: [2, 8, 18, 32, 18, 2],
+
     electronAffinity: -48,
     electronegativityPauling: 2,
     ionizationEnergies: [1007.1, 1810, 3300],
   },
   {
     name: "Thallium",
+    appearance: "silvery white",
     atomicMass: 204.38,
     boil: 1746,
     category: "post-transition metal",
@@ -2159,19 +2805,27 @@ const data: AtomInfo[] = [
     density: 11.85,
     discoveredBy: "William Crookes",
     melt: 577,
+    molarHeat: 26.32,
 
     number: 81,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Thallium",
+
     summary:
       "Thallium is a chemical element with symbol Tl and atomic number 81. This soft gray post-transition metal is not found free in nature. When isolated, it resembles tin, but discolors when exposed to air.",
     symbol: "Tl",
+    group: 13,
+
+    shells: [2, 8, 18, 32, 18, 3],
+
     electronAffinity: 36.4,
     electronegativityPauling: 1.62,
     ionizationEnergies: [589.4, 1971, 2878],
   },
   {
     name: "Lead",
+    appearance: "metallic gray",
     atomicMass: 207.21,
     boil: 2022,
     category: "post-transition metal",
@@ -2179,19 +2833,27 @@ const data: AtomInfo[] = [
     density: 11.34,
     discoveredBy: "Middle East",
     melt: 600.61,
+    molarHeat: 26.65,
 
     number: 82,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Lead_(element)",
+
     summary:
       "Lead (/lɛd/) is a chemical element in the carbon group with symbol Pb (from Latin:plumbum) and atomic number 82. Lead is a soft, malleable and heavy post-transition metal. Metallic lead has a bluish-white color after being freshly cut, but it soon tarnishes to a dull grayish color when exposed to air.",
     symbol: "Pb",
+    group: 14,
+
+    shells: [2, 8, 18, 32, 18, 4],
+
     electronAffinity: 34.4204,
     electronegativityPauling: 1.87,
     ionizationEnergies: [715.6, 1450.5, 3081.5, 4083, 6640],
   },
   {
     name: "Bismuth",
+    appearance: "lustrous silver",
     atomicMass: 208.980401,
     boil: 1837,
     category: "post-transition metal",
@@ -2199,19 +2861,27 @@ const data: AtomInfo[] = [
     density: 9.78,
     discoveredBy: "Claude François Geoffroy",
     melt: 544.7,
+    molarHeat: 25.52,
 
     number: 83,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Bismuth",
+
     summary:
       "Bismuth is a chemical element with symbol Bi and atomic number 83. Bismuth, a pentavalent post-transition metal, chemically resembles arsenic and antimony. Elemental bismuth may occur naturally, although its sulfide and oxide form important commercial ores.",
     symbol: "Bi",
+    group: 15,
+
+    shells: [2, 8, 18, 32, 18, 5],
+
     electronAffinity: 90.924,
     electronegativityPauling: 2.02,
     ionizationEnergies: [703, 1610, 2466, 4370, 5400, 8520],
   },
   {
     name: "Polonium",
+    appearance: "silvery",
     atomicMass: 209,
     boil: 1235,
     category: "post-transition metal",
@@ -2219,19 +2889,27 @@ const data: AtomInfo[] = [
     density: 9.196,
     discoveredBy: "Pierre Curie",
     melt: 527,
+    molarHeat: 26.4,
 
     number: 84,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Polonium",
+
     summary:
       "Polonium is a chemical element with symbol Po and atomic number 84, discovered in 1898 by Marie Curie and Pierre Curie. A rare and highly radioactive element with no stable isotopes, polonium is chemically similar to bismuth and tellurium, and it occurs in uranium ores. Applications of polonium are few.",
     symbol: "Po",
+    group: 16,
+
+    shells: [2, 8, 18, 32, 18, 6],
+
     electronAffinity: 136,
     electronegativityPauling: 2,
     ionizationEnergies: [812.1],
   },
   {
     name: "Astatine",
+    appearance: "unknown, probably metallic",
     atomicMass: 210,
     boil: 610,
     category: "metalloid",
@@ -2239,19 +2917,28 @@ const data: AtomInfo[] = [
     density: 6.35,
     discoveredBy: "Dale R. Corson",
     melt: 575,
+    molarHeat: null,
 
     number: 85,
     period: 6,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Astatine",
+
     summary:
       "Astatine is a very rare radioactive chemical element with the chemical symbol At and atomic number 85. It occurs on Earth as the decay product of various heavier elements. All its isotopes are short-lived; the most stable is astatine-210, with a half-life of 8.1 hours.",
     symbol: "At",
+    group: 17,
+
+    shells: [2, 8, 18, 32, 18, 7],
+
     electronAffinity: 233,
     electronegativityPauling: 2.2,
     ionizationEnergies: [899.003],
   },
   {
     name: "Radon",
+    appearance:
+      "colorless gas, occasionally glows green or red in discharge tubes",
     atomicMass: 222,
     boil: 211.5,
     category: "noble gas",
@@ -2259,19 +2946,27 @@ const data: AtomInfo[] = [
     density: 9.73,
     discoveredBy: "Friedrich Ernst Dorn",
     melt: 202,
+    molarHeat: null,
 
     number: 86,
     period: 6,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Radon",
+
     summary:
       "Radon is a chemical element with symbol Rn and atomic number 86. It is a radioactive, colorless, odorless, tasteless noble gas, occurring naturally as a decay product of radium. Its most stable isotope, 222Rn, has a half-life of 3.8 days.",
     symbol: "Rn",
+    group: 18,
+
+    shells: [2, 8, 18, 32, 18, 8],
+
     electronAffinity: -68,
     electronegativityPauling: 2.2,
     ionizationEnergies: [1037],
   },
   {
     name: "Francium",
+    appearance: null,
     atomicMass: 223,
     boil: 950,
     category: "alkali metal",
@@ -2279,19 +2974,27 @@ const data: AtomInfo[] = [
     density: 1.87,
     discoveredBy: "Marguerite Perey",
     melt: 300,
+    molarHeat: null,
 
     number: 87,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Francium",
+
     summary:
       "Francium is a chemical element with symbol Fr and atomic number 87. It used to be known as eka-caesium and actinium K. It is the second-least electronegative element, behind only caesium. Francium is a highly radioactive metal that decays into astatine, radium, and radon.",
     symbol: "Fr",
+    group: 1,
+
+    shells: [2, 8, 18, 32, 18, 8, 1],
+
     electronAffinity: 46.89,
     electronegativityPauling: 0.79,
     ionizationEnergies: [380],
   },
   {
     name: "Radium",
+    appearance: "silvery white metallic",
     atomicMass: 226,
     boil: 2010,
     category: "alkaline earth metal",
@@ -2299,19 +3002,27 @@ const data: AtomInfo[] = [
     density: 5.5,
     discoveredBy: "Pierre Curie",
     melt: 1233,
+    molarHeat: null,
 
     number: 88,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Radium",
+
     summary:
       "Radium is a chemical element with symbol Ra and atomic number 88. It is the sixth element in group 2 of the periodic table, also known as the alkaline earth metals. Pure radium is almost colorless, but it readily combines with nitrogen (rather than oxygen) on exposure to air, forming a black surface layer of radium nitride (Ra3N2).",
     symbol: "Ra",
+    group: 2,
+
+    shells: [2, 8, 18, 32, 18, 8, 2],
+
     electronAffinity: 9.6485,
     electronegativityPauling: 0.9,
     ionizationEnergies: [509.3, 979],
   },
   {
     name: "Actinium",
+    appearance: null,
     atomicMass: 227,
     boil: 3500,
     category: "actinide",
@@ -2319,19 +3030,27 @@ const data: AtomInfo[] = [
     density: 10,
     discoveredBy: "Friedrich Oskar Giesel",
     melt: 1500,
+    molarHeat: 27.2,
 
     number: 89,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Actinium",
+
     summary:
       "Actinium is a radioactive chemical element with symbol Ac (not to be confused with the abbreviation for an acetyl group) and atomic number 89, which was discovered in 1899. It was the first non-primordial radioactive element to be isolated. Polonium, radium and radon were observed before actinium, but they were not isolated until 1902.",
     symbol: "Ac",
+    group: 3,
+
+    shells: [2, 8, 18, 32, 18, 9, 2],
+
     electronAffinity: 33.77,
     electronegativityPauling: 1.1,
     ionizationEnergies: [499, 1170],
   },
   {
     name: "Thorium",
+    appearance: "silvery, often with black tarnish",
     atomicMass: 232.03774,
     boil: 5061,
     category: "actinide",
@@ -2339,19 +3058,27 @@ const data: AtomInfo[] = [
     density: 11.724,
     discoveredBy: "Jöns Jakob Berzelius",
     melt: 2023,
+    molarHeat: 26.23,
 
     number: 90,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Thorium",
+
     summary:
       "Thorium is a chemical element with symbol Th and atomic number 90. A radioactive actinide metal, thorium is one of only two significantly radioactive elements that still occur naturally in large quantities as a primordial element (the other being uranium). It was discovered in 1828 by the Norwegian Reverend and amateur mineralogist Morten Thrane Esmark and identified by the Swedish chemist Jöns Jakob Berzelius, who named it after Thor, the Norse god of thunder.",
     symbol: "Th",
+    group: 4,
+
+    shells: [2, 8, 18, 32, 18, 10, 2],
+
     electronAffinity: 112.72,
     electronegativityPauling: 1.3,
     ionizationEnergies: [587, 1110, 1930, 2780],
   },
   {
     name: "Protactinium",
+    appearance: "bright, silvery metallic luster",
     atomicMass: 231.035882,
     boil: 4300,
     category: "actinide",
@@ -2359,19 +3086,27 @@ const data: AtomInfo[] = [
     density: 15.37,
     discoveredBy: "William Crookes",
     melt: 1841,
+    molarHeat: null,
 
     number: 91,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Protactinium",
+
     summary:
       "Protactinium is a chemical element with symbol Pa and atomic number 91. It is a dense, silvery-gray metal which readily reacts with oxygen, water vapor and inorganic acids. It forms various chemical compounds where protactinium is usually present in the oxidation state +5, but can also assume +4 and even +2 or +3 states.",
     symbol: "Pa",
+    group: 5,
+
+    shells: [2, 8, 18, 32, 20, 9, 2],
+
     electronAffinity: 53.03,
     electronegativityPauling: 1.5,
     ionizationEnergies: [568],
   },
   {
     name: "Uranium",
+    appearance: null,
     atomicMass: 238.028913,
     boil: 4404,
     category: "actinide",
@@ -2379,19 +3114,27 @@ const data: AtomInfo[] = [
     density: 19.1,
     discoveredBy: "Martin Heinrich Klaproth",
     melt: 1405.3,
+    molarHeat: 27.665,
 
     number: 92,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Uranium",
+
     summary:
       "Uranium is a chemical element with symbol U and atomic number 92. It is a silvery-white metal in the actinide series of the periodic table. A uranium atom has 92 protons and 92 electrons, of which 6 are valence electrons.",
     symbol: "U",
+    group: 6,
+
+    shells: [2, 8, 18, 32, 21, 9, 2],
+
     electronAffinity: 50.94,
     electronegativityPauling: 1.38,
     ionizationEnergies: [597.6, 1420],
   },
   {
     name: "Neptunium",
+    appearance: "silvery metallic",
     atomicMass: 237,
     boil: 4447,
     category: "actinide",
@@ -2399,19 +3142,27 @@ const data: AtomInfo[] = [
     density: 20.45,
     discoveredBy: "Edwin McMillan",
     melt: 912,
+    molarHeat: 29.46,
 
     number: 93,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Neptunium",
+
     summary:
       "Neptunium is a chemical element with symbol Np and atomic number 93. A radioactive actinide metal, neptunium is the first transuranic element. Its position in the periodic table just after uranium, named after the planet Uranus, led to it being named after Neptune, the next planet beyond Uranus.",
     symbol: "Np",
+    group: 7,
+
+    shells: [2, 8, 18, 32, 22, 9, 2],
+
     electronAffinity: 45.85,
     electronegativityPauling: 1.36,
     ionizationEnergies: [604.5],
   },
   {
     name: "Plutonium",
+    appearance: "silvery white, tarnishing to dark gray in air",
     atomicMass: 244,
     boil: 3505,
     category: "actinide",
@@ -2419,19 +3170,27 @@ const data: AtomInfo[] = [
     density: 19.816,
     discoveredBy: "Glenn T. Seaborg",
     melt: 912.5,
+    molarHeat: 35.5,
 
     number: 94,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Plutonium",
+
     summary:
       "Plutonium is a transuranic radioactive chemical element with symbol Pu and atomic number 94. It is an actinide metal of silvery-gray appearance that tarnishes when exposed to air, and forms a dull coating when oxidized. The element normally exhibits six allotropes and four oxidation states.",
     symbol: "Pu",
+    group: 8,
+
+    shells: [2, 8, 18, 32, 24, 8, 2],
+
     electronAffinity: -48.33,
     electronegativityPauling: 1.28,
     ionizationEnergies: [584.7],
   },
   {
     name: "Americium",
+    appearance: "silvery white",
     atomicMass: 243,
     boil: 2880,
     category: "actinide",
@@ -2439,19 +3198,27 @@ const data: AtomInfo[] = [
     density: 12,
     discoveredBy: "Glenn T. Seaborg",
     melt: 1449,
+    molarHeat: 62.7,
 
     number: 95,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Americium",
+
     summary:
       "Americium is a radioactive transuranic chemical element with symbol Am and atomic number 95. This member of the actinide series is located in the periodic table under the lanthanide element europium, and thus by analogy was named after the Americas. Americium was first produced in 1944 by the group of Glenn T.Seaborg from Berkeley, California, at the metallurgical laboratory of University of Chicago.",
     symbol: "Am",
+    group: 9,
+
+    shells: [2, 8, 18, 32, 25, 8, 2],
+
     electronAffinity: 9.93,
     electronegativityPauling: 1.13,
     ionizationEnergies: [578],
   },
   {
     name: "Curium",
+    appearance: "silvery metallic, glows purple in the dark",
     atomicMass: 247,
     boil: 3383,
     category: "actinide",
@@ -2459,19 +3226,27 @@ const data: AtomInfo[] = [
     density: 13.51,
     discoveredBy: "Glenn T. Seaborg",
     melt: 1613,
+    molarHeat: null,
 
     number: 96,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Curium",
+
     summary:
       "Curium is a transuranic radioactive chemical element with symbol Cm and atomic number 96. This element of the actinide series was named after Marie and Pierre Curie – both were known for their research on radioactivity. Curium was first intentionally produced and identified in July 1944 by the group of Glenn T. Seaborg at the University of California, Berkeley.",
     symbol: "Cm",
+    group: 10,
+
+    shells: [2, 8, 18, 32, 25, 9, 2],
+
     electronAffinity: 27.17,
     electronegativityPauling: 1.28,
     ionizationEnergies: [581],
   },
   {
     name: "Berkelium",
+    appearance: "silvery",
     atomicMass: 247,
     boil: 2900,
     category: "actinide",
@@ -2479,19 +3254,27 @@ const data: AtomInfo[] = [
     density: 14.78,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1259,
+    molarHeat: null,
 
     number: 97,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Berkelium",
+
     summary:
       "Berkelium is a transuranic radioactive chemical element with symbol Bk and atomic number 97. It is a member of the actinide and transuranium element series. It is named after the city of Berkeley, California, the location of the University of California Radiation Laboratory where it was discovered in December 1949.",
     symbol: "Bk",
+    group: 11,
+
+    shells: [2, 8, 18, 32, 27, 8, 2],
+
     electronAffinity: -165.24,
     electronegativityPauling: 1.3,
     ionizationEnergies: [601],
   },
   {
     name: "Californium",
+    appearance: "silvery",
     atomicMass: 251,
     boil: 1743,
     category: "actinide",
@@ -2499,19 +3282,27 @@ const data: AtomInfo[] = [
     density: 15.1,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1173,
+    molarHeat: null,
 
     number: 98,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Californium",
+
     summary:
       "Californium is a radioactive metallic chemical element with symbol Cf and atomic number 98. The element was first made in 1950 at the University of California Radiation Laboratory in Berkeley, by bombarding curium with alpha particles (helium-4 ions). It is an actinide element, the sixth transuranium element to be synthesized, and has the second-highest atomic mass of all the elements that have been produced in amounts large enough to see with the unaided eye (after einsteinium).",
     symbol: "Cf",
+    group: 12,
+
+    shells: [2, 8, 18, 32, 28, 8, 2],
+
     electronAffinity: -97.31,
     electronegativityPauling: 1.3,
     ionizationEnergies: [608],
   },
   {
     name: "Einsteinium",
+    appearance: "silver-colored",
     atomicMass: 252,
     boil: 1269,
     category: "actinide",
@@ -2519,19 +3310,27 @@ const data: AtomInfo[] = [
     density: 8.84,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1133,
+    molarHeat: null,
 
     number: 99,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Einsteinium",
+
     summary:
       "Einsteinium is a synthetic element with symbol Es and atomic number 99. It is the seventh transuranic element, and an actinide. Einsteinium was discovered as a component of the debris of the first hydrogen bomb explosion in 1952, and named after Albert Einstein.",
     symbol: "Es",
+    group: 13,
+
+    shells: [2, 8, 18, 32, 29, 8, 2],
+
     electronAffinity: -28.6,
     electronegativityPauling: 1.3,
     ionizationEnergies: [619],
   },
   {
     name: "Fermium",
+    appearance: null,
     atomicMass: 257,
     boil: null,
     category: "actinide",
@@ -2539,19 +3338,27 @@ const data: AtomInfo[] = [
     density: null,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1800,
+    molarHeat: null,
 
     number: 100,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Fermium",
+
     summary:
       "Fermium is a synthetic element with symbol Fm and atomic number 100. It is a member of the actinide series. It is the heaviest element that can be formed by neutron bombardment of lighter elements, and hence the last element that can be prepared in macroscopic quantities, although pure fermium metal has not yet been prepared.",
     symbol: "Fm",
+    group: 14,
+
+    shells: [2, 8, 18, 32, 30, 8, 2],
+
     electronAffinity: 33.96,
     electronegativityPauling: 1.3,
     ionizationEnergies: [627],
   },
   {
     name: "Mendelevium",
+    appearance: null,
     atomicMass: 258,
     boil: null,
     category: "actinide",
@@ -2559,19 +3366,27 @@ const data: AtomInfo[] = [
     density: null,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1100,
+    molarHeat: null,
 
     number: 101,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Mendelevium",
+
     summary:
       "Mendelevium is a synthetic element with chemical symbol Md (formerly Mv) and atomic number 101. A metallic radioactive transuranic element in the actinide series, it is the first element that currently cannot be produced in macroscopic quantities through neutron bombardment of lighter elements. It is the antepenultimate actinide and the ninth transuranic element.",
     symbol: "Md",
+    group: 15,
+
+    shells: [2, 8, 18, 32, 31, 8, 2],
+
     electronAffinity: 93.91,
     electronegativityPauling: 1.3,
     ionizationEnergies: [635],
   },
   {
     name: "Nobelium",
+    appearance: null,
     atomicMass: 259,
     boil: null,
     category: "actinide",
@@ -2579,19 +3394,27 @@ const data: AtomInfo[] = [
     density: null,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 1100,
+    molarHeat: null,
 
     number: 102,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Nobelium",
+
     summary:
       "Nobelium is a synthetic chemical element with symbol No and atomic number 102. It is named in honor of Alfred Nobel, the inventor of dynamite and benefactor of science. A radioactive metal, it is the tenth transuranic element and is the penultimate member of the actinide series.",
     symbol: "No",
+    group: 16,
+
+    shells: [2, 8, 18, 32, 32, 8, 2],
+
     electronAffinity: -223.22,
     electronegativityPauling: 1.3,
     ionizationEnergies: [642],
   },
   {
     name: "Lawrencium",
+    appearance: null,
     atomicMass: 266,
     boil: null,
     category: "actinide",
@@ -2599,19 +3422,27 @@ const data: AtomInfo[] = [
     density: null,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: 1900,
+    molarHeat: null,
 
     number: 103,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Lawrencium",
+
     summary:
       "Lawrencium is a synthetic chemical element with chemical symbol Lr (formerly Lw) and atomic number 103. It is named in honor of Ernest Lawrence, inventor of the cyclotron, a device that was used to discover many artificial radioactive elements. A radioactive metal, lawrencium is the eleventh transuranic element and is also the final member of the actinide series.",
     symbol: "Lr",
+    group: 17,
+
+    shells: [2, 8, 18, 32, 32, 8, 3],
+
     electronAffinity: -30.04,
     electronegativityPauling: 1.3,
     ionizationEnergies: [470],
   },
   {
     name: "Rutherfordium",
+    appearance: null,
     atomicMass: 267,
     boil: 5800,
     category: "transition metal",
@@ -2619,19 +3450,27 @@ const data: AtomInfo[] = [
     density: 23.2,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 2400,
+    molarHeat: null,
 
     number: 104,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Rutherfordium",
+
     summary:
       "Rutherfordium is a chemical element with symbol Rf and atomic number 104, named in honor of physicist Ernest Rutherford. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, 267Rf, has a half-life of approximately 1.3 hours. In the periodic table of the elements, it is a d - block element and the second of the fourth - row transition elements.",
     symbol: "Rf",
+    group: 4,
+
+    shells: [2, 8, 18, 32, 32, 10, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [580],
   },
   {
     name: "Dubnium",
+    appearance: null,
     atomicMass: 268,
     boil: null,
     category: "transition metal",
@@ -2639,19 +3478,27 @@ const data: AtomInfo[] = [
     density: 29.3,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: null,
+    molarHeat: null,
 
     number: 105,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Dubnium",
+
     summary:
       "Dubnium is a chemical element with symbol Db and atomic number 105. It is named after the town of Dubna in Russia (north of Moscow), where it was first produced. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, dubnium-268, has a half-life of approximately 28 hours.",
     symbol: "Db",
+    group: 5,
+
+    shells: [2, 8, 18, 32, 32, 11, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Seaborgium",
+    appearance: null,
     atomicMass: 269,
     boil: null,
     category: "transition metal",
@@ -2659,19 +3506,27 @@ const data: AtomInfo[] = [
     density: 35,
     discoveredBy: "Lawrence Berkeley National Laboratory",
     melt: null,
+    molarHeat: null,
 
     number: 106,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Seaborgium",
+
     summary:
       "Seaborgium is a synthetic element with symbol Sg and atomic number 106. Its most stable isotope 271Sg has a half-life of 1.9 minutes. A more recently discovered isotope 269Sg has a potentially slightly longer half-life (ca.",
     symbol: "Sg",
+    group: 6,
+
+    shells: [2, 8, 18, 32, 32, 12, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Bohrium",
+    appearance: null,
     atomicMass: 270,
     boil: null,
     category: "transition metal",
@@ -2679,19 +3534,27 @@ const data: AtomInfo[] = [
     density: 37.1,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: null,
+    molarHeat: null,
 
     number: 107,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Bohrium",
+
     summary:
       "Bohrium is a chemical element with symbol Bh and atomic number 107. It is named after Danish physicist Niels Bohr. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, 270Bh, has a half-life of approximately 61 seconds.",
     symbol: "Bh",
+    group: 7,
+
+    shells: [2, 8, 18, 32, 32, 13, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Hassium",
+    appearance: null,
     atomicMass: 269,
     boil: null,
     category: "transition metal",
@@ -2699,19 +3562,27 @@ const data: AtomInfo[] = [
     density: 40.7,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: 126,
+    molarHeat: null,
 
     number: 108,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Hassium",
+
     summary:
       "Hassium is a chemical element with symbol Hs and atomic number 108, named after the German state of Hesse. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, 269Hs, has a half-life of approximately 9.7 seconds, although an unconfirmed metastable state, 277mHs, may have a longer half-life of about 130 seconds. More than 100 atoms of hassium have been synthesized to date.",
     symbol: "Hs",
+    group: 8,
+
+    shells: [2, 8, 18, 32, 32, 14, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Meitnerium",
+    appearance: null,
     atomicMass: 278,
     boil: null,
     category: "unknown, probably transition metal",
@@ -2719,19 +3590,27 @@ const data: AtomInfo[] = [
     density: 37.4,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: null,
+    molarHeat: null,
 
     number: 109,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Meitnerium",
+
     summary:
       "Meitnerium is a chemical element with symbol Mt and atomic number 109. It is an extremely radioactive synthetic element (an element not found in nature that can be created in a laboratory). The most stable known isotope, meitnerium-278, has a half-life of 7.6 seconds.",
     symbol: "Mt",
+    group: 9,
+
+    shells: [2, 8, 18, 32, 32, 15, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Darmstadtium",
+    appearance: null,
     atomicMass: 281,
     boil: null,
     category: "unknown, probably transition metal",
@@ -2739,19 +3618,27 @@ const data: AtomInfo[] = [
     density: 34.8,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: null,
+    molarHeat: null,
 
     number: 110,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Darmstadtium",
+
     summary:
       "Darmstadtium is a chemical element with symbol Ds and atomic number 110. It is an extremely radioactive synthetic element. The most stable known isotope, darmstadtium-281, has a half-life of approximately 10 seconds.",
     symbol: "Ds",
+    group: 10,
+
+    shells: [2, 8, 18, 32, 32, 16, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Roentgenium",
+    appearance: null,
     atomicMass: 282,
     boil: null,
     category: "unknown, probably transition metal",
@@ -2759,19 +3646,27 @@ const data: AtomInfo[] = [
     density: 28.7,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: null,
+    molarHeat: null,
 
     number: 111,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Roentgenium",
+
     summary:
       "Roentgenium is a chemical element with symbol Rg and atomic number 111. It is an extremely radioactive synthetic element (an element that can be created in a laboratory but is not found in nature); the most stable known isotope, roentgenium-282, has a half-life of 2.1 minutes. Roentgenium was first created in 1994 by the GSI Helmholtz Centre for Heavy Ion Research near Darmstadt, Germany.",
     symbol: "Rg",
+    group: 11,
+
+    shells: [2, 8, 18, 32, 32, 17, 2],
+
     electronAffinity: 151,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Copernicium",
+    appearance: null,
     atomicMass: 285,
     boil: 3570,
     category: "transition metal",
@@ -2779,19 +3674,27 @@ const data: AtomInfo[] = [
     density: 23.7,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
     melt: null,
+    molarHeat: null,
 
     number: 112,
     period: 7,
     phase: "Gas",
+    source: "https://en.wikipedia.org/wiki/Copernicium",
+
     summary:
       "Copernicium is a chemical element with symbol Cn and atomic number 112. It is an extremely radioactive synthetic element that can only be created in a laboratory. The most stable known isotope, copernicium-285, has a half-life of approximately 29 seconds, but it is possible that this copernicium isotope may have a nuclear isomer with a longer half-life, 8.9 min.",
     symbol: "Cn",
+    group: 12,
+
+    shells: [2, 8, 18, 32, 32, 18, 2],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Nihonium",
+    appearance: null,
     atomicMass: 286,
     boil: 1430,
     category: "unknown, probably transition metal",
@@ -2799,19 +3702,27 @@ const data: AtomInfo[] = [
     density: 16,
     discoveredBy: "RIKEN",
     melt: 700,
+    molarHeat: null,
 
     number: 113,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Ununtrium",
+
     summary:
       "Nihonium is a chemical element with atomic number 113. It has a symbol Nh. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and is extremely radioactive; its most stable known isotope, nihonium-286, has a half-life of 20 seconds.",
     symbol: "Nh",
+    group: 13,
+
+    shells: [2, 8, 18, 32, 32, 18, 3],
+
     electronAffinity: 66.6,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Flerovium",
+    appearance: null,
     atomicMass: 289,
     boil: 420,
     category: "post-transition metal",
@@ -2819,19 +3730,27 @@ const data: AtomInfo[] = [
     density: 14,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 340,
+    molarHeat: null,
 
     number: 114,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Flerovium",
+
     summary:
       "Flerovium is a superheavy artificial chemical element with symbol Fl and atomic number 114. It is an extremely radioactive synthetic element. The element is named after the Flerov Laboratory of Nuclear Reactions of the Joint Institute for Nuclear Research in Dubna, Russia, where the element was discovered in 1998.",
     symbol: "Fl",
+    group: 14,
+
+    shells: [2, 8, 18, 32, 32, 18, 4],
+
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Moscovium",
+    appearance: null,
     atomicMass: 289,
     boil: 1400,
     category: "unknown, probably post-transition metal",
@@ -2839,19 +3758,27 @@ const data: AtomInfo[] = [
     density: 13.5,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 670,
+    molarHeat: null,
 
     number: 115,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Ununpentium",
+
     summary:
       "Moscovium is the name of a synthetic superheavy element in the periodic table that has the symbol Mc and has the atomic number 115. It is an extremely radioactive element; its most stable known isotope, moscovium-289, has a half-life of only 220 milliseconds. It is also known as eka-bismuth or simply element 115.",
     symbol: "Mc",
+    group: 15,
+
+    shells: [2, 8, 18, 32, 32, 18, 5],
+
     electronAffinity: 35.3,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Livermorium",
+    appearance: null,
     atomicMass: 293,
     boil: 1085,
     category: "unknown, probably post-transition metal",
@@ -2859,19 +3786,27 @@ const data: AtomInfo[] = [
     density: 12.9,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 709,
+    molarHeat: null,
 
     number: 116,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Livermorium",
+
     summary:
       "Livermorium is a synthetic superheavy element with symbol Lv and atomic number 116. It is an extremely radioactive element that has only been created in the laboratory and has not been observed in nature. The element is named after the Lawrence Livermore National Laboratory in the United States, which collaborated with the Joint Institute for Nuclear Research in Dubna, Russia to discover livermorium in 2000.",
     symbol: "Lv",
+    group: 16,
+
+    shells: [2, 8, 18, 32, 32, 18, 6],
+
     electronAffinity: 74.9,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Tennessine",
+    appearance: null,
     atomicMass: 294,
     boil: 883,
     category: "unknown, probably metalloid",
@@ -2879,19 +3814,27 @@ const data: AtomInfo[] = [
     density: 7.17,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: 723,
+    molarHeat: null,
 
     number: 117,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Tennessine",
+
     summary:
       "Tennessine is a superheavy artificial chemical element with an atomic number of 117 and a symbol of Ts. Also known as eka-astatine or element 117, it is the second-heaviest known element and penultimate element of the 7th period of the periodic table. As of 2016, fifteen tennessine atoms have been observed:six when it was first synthesized in 2010, seven in 2012, and two in 2014.",
     symbol: "Ts",
+    group: 17,
+
+    shells: [2, 8, 18, 32, 32, 18, 7],
+
     electronAffinity: 165.9,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Oganesson",
+    appearance: null,
     atomicMass: 294,
     boil: 350,
     category: "unknown, predicted to be noble gas",
@@ -2899,19 +3842,27 @@ const data: AtomInfo[] = [
     density: 4.95,
     discoveredBy: "Joint Institute for Nuclear Research",
     melt: null,
+    molarHeat: null,
 
     number: 118,
     period: 7,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Oganesson",
+
     summary:
       "Oganesson is IUPAC's name for the transactinide element with the atomic number 118 and element symbol Og. It is also known as eka-radon or element 118, and on the periodic table of the elements it is a p-block element and the last one of the 7th period. Oganesson is currently the only synthetic member of group 18.",
     symbol: "Og",
+    group: 18,
+
+    shells: [2, 8, 18, 32, 32, 18, 8],
+
     electronAffinity: 5.40318,
     electronegativityPauling: null,
     ionizationEnergies: [],
   },
   {
     name: "Ununennium",
+    appearance: null,
     atomicMass: 315,
     boil: 630,
     category: "unknown, but predicted to be an alkali metal",
@@ -2919,13 +3870,20 @@ const data: AtomInfo[] = [
     density: 3,
     discoveredBy: "GSI Helmholtz Centre for Heavy Ion Research",
     melt: null,
+    molarHeat: null,
 
     number: 119,
     period: 8,
     phase: "Solid",
+    source: "https://en.wikipedia.org/wiki/Ununennium",
+
     summary:
       "Ununennium, also known as eka-francium or simply element 119, is the hypothetical chemical element with symbol Uue and atomic number 119. Ununennium and Uue are the temporary systematic IUPAC name and symbol respectively, until a permanent name is decided upon. In the periodic table of the elements, it is expected to be an s-block element, an alkali metal, and the first element in the eighth period.",
     symbol: "Uue",
+    group: 1,
+
+    shells: [2, 8, 18, 32, 32, 18, 8, 1],
+
     electronAffinity: 63.87,
     electronegativityPauling: null,
     ionizationEnergies: [],

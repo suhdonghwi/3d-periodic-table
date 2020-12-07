@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Mesh, BoxBufferGeometry } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
@@ -18,6 +18,8 @@ export default function AtomPillar({
   height,
   color,
 }: AtomPillarProps) {
+  const [hover, setHover] = useState(false);
+
   const mesh = useRef<Mesh>();
   const geometry = useRef<BoxBufferGeometry>();
 
@@ -44,10 +46,19 @@ export default function AtomPillar({
       <animated.mesh
         ref={mesh}
         position={[position[0], position[1], position[2]]}
+        onPointerUp={(e) => e.stopPropagation()}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHover(true);
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setHover(false);
+        }}
         {...meshProps}
       >
         <boxBufferGeometry ref={geometry} args={[1, 1, 1]} />
-        <meshStandardMaterial color={color} />
+        <meshStandardMaterial color={hover ? "#ff8787" : color} />
       </animated.mesh>
       <animated.group {...textProps}>
         <Text

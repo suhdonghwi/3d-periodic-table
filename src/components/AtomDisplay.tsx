@@ -26,10 +26,16 @@ export default function AtomDisplay({ atom }: AtomDisplayProps) {
     const radius = initialPadding + delta * (i + 1);
 
     electrons.push(
-      <Ring position={[0, 0, 0.1]} args={[radius - 0.005, radius + 0.005, 32]}>
+      <Ring
+        key={key}
+        position={[0, 0, 0.1]}
+        args={[radius - 0.005, radius + 0.005, 32]}
+      >
         <meshStandardMaterial color="#ced4da" />
       </Ring>
     );
+
+    key++;
 
     for (let j = 0; j < atom.shells[i]; j++) {
       electrons.push(

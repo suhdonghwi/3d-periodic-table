@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useControl } from "react-three-gui";
 
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import AtomInfoBoard from "./AtomInfoBoard";
 import * as properties from "../atomData";
-
 interface PeriodicTableProps {
   placement: number[][];
   position: [number, number, number];
@@ -62,6 +61,15 @@ export default function PeriodicTable({
       heightData = [];
   }
 
+  const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
+  function onClickPillar(atom: AtomInfo) {
+    setShowingAtom(atom);
+  }
+
+  function onClickBoard() {
+    setShowingAtom(null);
+  }
+
   const pillars = [];
   const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
@@ -85,6 +93,7 @@ export default function PeriodicTable({
             position={[position[0] + j, position[1], position[2] + i]}
             height={realHeight}
             color={color}
+            onClick={onClickPillar}
           />
         );
       }
@@ -93,7 +102,8 @@ export default function PeriodicTable({
 
   return (
     <group>
-      {pillars} <AtomInfoBoard visible atom={atomData[101]} />
+      {pillars}
+      <AtomInfoBoard atom={showingAtom} onClick={onClickBoard} />
     </group>
   );
 }

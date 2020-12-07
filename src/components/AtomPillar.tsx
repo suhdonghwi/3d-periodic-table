@@ -10,6 +10,8 @@ interface AtomPillarProps {
   position: [number, number, number];
   height: number;
   color: string;
+
+  onClick: (atom: AtomInfo) => void;
 }
 
 export default function AtomPillar({
@@ -17,6 +19,7 @@ export default function AtomPillar({
   position,
   height,
   color,
+  onClick,
 }: AtomPillarProps) {
   const [hover, setHover] = useState(false);
 
@@ -34,11 +37,6 @@ export default function AtomPillar({
 
   useEffect(() => {
     geometry.current?.translate(0, 0.5, 0);
-
-    // @ts-ignore
-    //symbolText.current?.position.setY(height);
-    // @ts-ignore
-    //numberText.current?.position.setY(height);
   }, []);
 
   return (
@@ -46,7 +44,10 @@ export default function AtomPillar({
       <animated.mesh
         ref={mesh}
         position={[position[0], position[1], position[2]]}
-        onPointerUp={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick(atom);
+        }}
         onPointerOver={(e) => {
           e.stopPropagation();
           setHover(true);

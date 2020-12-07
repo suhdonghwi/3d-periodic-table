@@ -8,15 +8,15 @@ import AtomInfo from "../types/AtomInfo";
 import AtomDisplay from "./AtomDisplay";
 
 interface AtomInfoBoardProps {
-  visible: boolean;
-  atom: AtomInfo;
+  atom: AtomInfo | null;
+  onClick: () => void;
 }
 
-export default function AtomInfoBoard({ visible, atom }: AtomInfoBoardProps) {
+export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
   const mesh = useRef<Mesh>();
   const geometry = useRef<BoxBufferGeometry>();
 
-  const opacityProps = useSpring({ opacity: visible ? 1 : 0 });
+  const opacityProps = useSpring({ opacity: atom !== null ? 1 : 0 });
 
   useFrame(({ camera }) => {
     const vec = new Vector3(0, 0, -3);
@@ -24,14 +24,27 @@ export default function AtomInfoBoard({ visible, atom }: AtomInfoBoardProps) {
 
     mesh.current?.position.copy(pos);
     mesh.current?.lookAt(camera.position);
+    mesh.current?.rotateX(-0.2);
   });
 
   return (
-    <mesh ref={mesh}>
+    <mesh
+      ref={mesh}
+      onClick={(e) => {
+        if (atom !== null) {
+          e.stopPropagation();
+          onClick();
+        }
+      }}
+    >
       <boxBufferGeometry ref={geometry} args={[2.3, 3.25, 0.1]} />
-      <animated.meshStandardMaterial color="#f8f9fa" {...opacityProps} />
+      <animated.meshStandardMaterial
+        color="#f8f9fa"
+        transparent
+        {...opacityProps}
+      />
 
-      <AtomDisplay atom={atom} />
+      {atom !== null && <AtomDisplay atom={atom} />}
     </mesh>
   );
 }

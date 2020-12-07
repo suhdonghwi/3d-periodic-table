@@ -78,7 +78,7 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
             position={[0, 1.25, 0.1]}
             fontSize={0.3}
             color="#212529"
-            font="http://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
+            font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
           >
             {atom.name}
           </Text>
@@ -88,14 +88,14 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
             fontSize={0.065}
             color="#343a40"
             maxWidth={1.9}
-            font="http://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
+            font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
             anchorY="middle"
           >
             "{atom.summary}"
           </Text>
 
           {properties.map((property, i) => (
-            <>
+            <group key={i}>
               <Text
                 position={[-0.3, -0.45 - i * 0.15, 0.1]}
                 fontSize={0.08}
@@ -110,7 +110,7 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
               <Text
                 position={[-0.2, -0.45 - i * 0.15, 0.1]}
                 fontSize={0.08}
-                font="http://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
+                font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
                 color="#212529"
                 anchorX="left"
                 anchorY="top"
@@ -118,7 +118,7 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
               >
                 {property.value}
               </Text>
-            </>
+            </group>
           ))}
           <AtomDisplay position={[0, 0.05, 0.1]} atom={atom} />
         </>

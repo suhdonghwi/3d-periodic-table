@@ -93,7 +93,7 @@ export default function PeriodicTable({
 
   return (
     <group>
-      {pillars} <AtomInfoBoard visible atom={atomData[20]} />
+      {pillars} <AtomInfoBoard visible atom={atomData[101]} />
     </group>
   );
 }

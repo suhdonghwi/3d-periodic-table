@@ -18,18 +18,23 @@ export default function PeriodicTable({
   const property: string = useControl("Property", {
     type: "select",
     items: [
+      "Group",
       "Period",
       "Atomic mass",
       "Electronegativity",
       "First ionization energy",
       "Melting point",
       "Boiling point",
+      "Molar heat capacity",
     ],
     value: "Electronegativity",
   });
 
   let heightData: (number | null)[];
   switch (property) {
+    case "Group":
+      heightData = atomData.map((a) => a.group);
+      break;
     case "Period":
       heightData = atomData.map((a) => a.period);
       break;
@@ -47,6 +52,9 @@ export default function PeriodicTable({
       break;
     case "Boiling point":
       heightData = atomData.map((a) => a.boil);
+      break;
+    case "Molar heat capacity":
+      heightData = atomData.map((a) => a.molarHeat);
       break;
     default:
       heightData = [];

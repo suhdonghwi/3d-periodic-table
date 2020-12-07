@@ -33,11 +33,12 @@ function App() {
       >
         <ambientLight intensity={0.25} />
         <spotLight intensity={0.6} position={[30, 30, 50]} />
+        <spotLight intensity={0.2} position={[0, 0, -50]} />
 
         <PeriodicTable
           position={[-9, 0, -5]}
           placement={placement}
-          heightData={atomData.map((a) => a.density)}
+          heightData={atomData.map((a) => a.atomicMass)}
         />
         <OrbitControls />
       </Canvas>

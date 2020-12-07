@@ -24,7 +24,7 @@ export default function PeriodicTable({
         const height = heightData[number - 1];
         const realHeight = height !== null ? (height / maxHeight) * 4 : 0.01;
         const color = height !== null
-          ? "hsl(" + (height / maxHeight) * 250 + ", 66%, 56%)"
+          ? "hsl(" + (120 + (height / maxHeight) * 120).toFixed() + ", 89%, 63%)"
           : "#7a7a7a";
 
         pillars.push(

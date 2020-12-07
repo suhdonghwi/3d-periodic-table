@@ -1,19 +1,57 @@
 import React from "react";
+import { useControl } from "react-three-gui";
 
 import AtomPillar from "./AtomPillar";
-import atomData from "../atomData";
+import AtomInfo from "../types/AtomInfo";
 
 interface PeriodicTableProps {
   placement: number[][];
   position: [number, number, number];
-  heightData: (number | null)[];
+  atomData: AtomInfo[];
 }
 
 export default function PeriodicTable({
   placement,
   position,
-  heightData,
+  atomData,
 }: PeriodicTableProps) {
+  const property: string = useControl("Property", {
+    type: "select",
+    items: [
+      "Period",
+      "Atomic mass",
+      "Electronegativity",
+      "First ionization energy",
+      "Melting point",
+      "Boiling point",
+    ],
+    value: "Electronegativity",
+  });
+
+  let heightData: (number | null)[];
+  switch (property) {
+    case "Period":
+      heightData = atomData.map((a) => a.period);
+      break;
+    case "Atomic mass":
+      heightData = atomData.map((a) => a.atomicMass);
+      break;
+    case "Electronegativity":
+      heightData = atomData.map((a) => a.electronegativityPauling);
+      break;
+    case "First ionization energy":
+      heightData = atomData.map((a) => a.ionizationEnergies[0] || null);
+      break;
+    case "Melting point":
+      heightData = atomData.map((a) => a.melt);
+      break;
+    case "Boiling point":
+      heightData = atomData.map((a) => a.boil);
+      break;
+    default:
+      heightData = [];
+  }
+
   const pillars = [];
   const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
@@ -23,9 +61,12 @@ export default function PeriodicTable({
       if (number !== 0) {
         const height = heightData[number - 1];
         const realHeight = height !== null ? (height / maxHeight) * 4 : 0.01;
-        const color = height !== null
-          ? "hsl(" + (120 + (height / maxHeight) * 120).toFixed() + ", 89%, 63%)"
-          : "#7a7a7a";
+        const color =
+          height !== null
+            ? "hsl(" +
+              (120 + (height / maxHeight) * 120).toFixed() +
+              ", 89%, 63%)"
+            : "#7a7a7a";
 
         pillars.push(
           <AtomPillar

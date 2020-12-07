@@ -76,7 +76,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Lithium",
 
     summary:
-      'Lithium (from Greek:λίθος lithos, "stone") is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.',
+      'Lithium is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.',
     symbol: "Li",
     group: 1,
 
@@ -146,12 +146,12 @@ const data: AtomInfo[] = [
     name: "Carbon",
     appearance: null,
     atomicMass: 12.011,
-    boil: null,
+    boil: 5100,
     category: "polyatomic nonmetal",
     color: null,
     density: 1.821,
     discoveredBy: "Ancient Egypt",
-    melt: null,
+    melt: 3825,
     molarHeat: 8.517,
 
     number: 6,
@@ -331,7 +331,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Sodium",
 
     summary:
-      "Sodium /ˈsoʊdiəm/ is a chemical element with symbol Na (from Ancient Greek Νάτριο) and atomic number 11. It is a soft, silver-white, highly reactive metal. In the Periodic table it is in column 1 (alkali metals), and shares with the other six elements in that column that it has a single electron in its outer shell, which it readily donates, creating a positively charged atom - a cation.",
+      "Sodium /ˈsoʊdiəm/ is a chemical element with symbol Na and atomic number 11. It is a soft, silver-white, highly reactive metal. In the Periodic table it is in column 1 (alkali metals), and shares with the other six elements in that column that it has a single electron in its outer shell, which it readily donates, creating a positively charged atom - a cation.",
     symbol: "Na",
     group: 1,
 
@@ -371,7 +371,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Magnesium",
 
     summary:
-      "Magnesium is a chemical element with symbol Mg and atomic number 12. It is a shiny gray solid which bears a close physical resemblance to the other five elements in the second column (Group 2, or alkaline earth metals) of the periodic table:they each have the same electron configuration in their outer electron shell producing a similar crystal structure. Magnesium is the ninth most abundant element in the universe.",
+      "Magnesium is a chemical element with symbol Mg and atomic number 12. It is a shiny gray solid which bears a close physical resemblance to the other five elements in the second column of the periodic table:they each have the same electron configuration in their outer electron shell producing a similar crystal structure. Magnesium is the ninth most abundant element in the universe.",
     symbol: "Mg",
     group: 2,
 
@@ -633,7 +633,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Argon",
 
     summary:
-      "Argon is a chemical element with symbol Ar and atomic number 18. It is in group 18 of the periodic table and is a noble gas. Argon is the third most common gas in the Earth's atmosphere, at 0.934% (9,340 ppmv), making it over twice as abundant as the next most common atmospheric gas, water vapor (which averages about 4000 ppmv, but varies greatly), and 23 times as abundant as the next most common non-condensing atmospheric gas, carbon dioxide (400 ppmv), and more than 500 times as abundant as the next most common noble gas, neon (18 ppmv).",
+      "Argon is a chemical element with symbol Ar and atomic number 18. It is in group 18 of the periodic table and is a noble gas. Argon is the third most common gas in the Earth's atmosphere, at 0.934%, making it over twice as abundant as the next most common atmospheric gas, water vapor, and 23 times as abundant as the next most common non-condensing atmospheric gas, carbon dioxide.",
     symbol: "Ar",
     group: 18,
 
@@ -1425,7 +1425,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Bromine",
 
     summary:
-      'Bromine (from Ancient Greek:βρῶμος, brómos, meaning "stench") is a chemical element with symbol Br, and atomic number 35. It is a halogen. The element was isolated independently by two chemists, Carl Jacob Löwig and Antoine Jerome Balard, in 1825–1826.',
+      'Bromine is a chemical element with symbol Br, and atomic number 35. It is a halogen. The element was isolated independently by two chemists, Carl Jacob Löwig and Antoine Jerome Balard, in 1825–1826.',
     symbol: "Br",
     group: 17,
 
@@ -1454,7 +1454,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Krypton",
 
     summary:
-      'Krypton (from Greek:κρυπτός kryptos "the hidden one") is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere, is isolated by fractionally distilling liquefied air, and is often used with other rare gases in fluorescent lamps.',
+      'Krypton is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere, is isolated by fractionally distilling liquefied air, and is often used with other rare gases in fluorescent lamps.',
     symbol: "Kr",
     group: 18,
 
@@ -1689,7 +1689,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Molybdenum",
 
     summary:
-      "Molybdenum is a chemical element with symbol Mo and atomic number 42. The name is from Neo-Latin molybdaenum, from Ancient Greek Μόλυβδος molybdos, meaning lead, since its ores were confused with lead ores. Molybdenum minerals have been known throughout history, but the element was discovered (in the sense of differentiating it as a new entity from the mineral salts of other metals) in 1778 by Carl Wilhelm Scheele.",
+      "Molybdenum is a chemical element with symbol Mo and atomic number 42. The name is from Neo-Latin molybdaenum, from Ancient Greek molybdos, meaning lead, since its ores were confused with lead ores. Molybdenum minerals have been known throughout history, but the element was discovered (in the sense of differentiating it as a new entity from the mineral salts of other metals) in 1778 by Carl Wilhelm Scheele.",
     symbol: "Mo",
     group: 6,
 
@@ -1860,7 +1860,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Silver",
 
     summary:
-      'Silver is a chemical element with symbol Ag (Greek:άργυρος árguros, Latin:argentum, both from the Indo-European root *h₂erǵ- for "grey" or "shining") and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal. The metal occurs naturally in its pure, free form (native silver), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite.',
+      'Silver is a chemical element with symbol Ag and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal. The metal occurs naturally in its pure, free form (native silver), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite.',
     symbol: "Ag",
     group: 11,
 
@@ -2028,7 +2028,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Iodine",
 
     summary:
-      "Iodine is a chemical element with symbol I and atomic number 53. The name is from Greek ἰοειδής ioeidēs, meaning violet or purple, due to the color of iodine vapor. Iodine and its compounds are primarily used in nutrition, and industrially in the production of acetic acid and certain polymers.",
+      "Iodine is a chemical element with symbol I and atomic number 53. The name is from Greek ioeides, meaning violet or purple, due to the color of iodine vapor. Iodine and its compounds are primarily used in nutrition, and industrially in the production of acetic acid and certain polymers.",
     symbol: "I",
     group: 17,
 
@@ -2701,7 +2701,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Iridium",
 
     summary:
-      "Iridium is a chemical element with symbol Ir and atomic number 77. A very hard, brittle, silvery-white transition metal of the platinum group, iridium is generally credited with being the second densest element (after osmium) based on measured density, although calculations involving the space lattices of the elements show that iridium is denser. It is also the most corrosion-resistant metal, even at temperatures as high as 2000 °C. Although only certain molten salts and halogens are corrosive to solid iridium, finely divided iridium dust is much more reactive and can be flammable.",
+      "Iridium is a chemical element with symbol Ir and atomic number 77. A very hard, brittle, silvery-white transition metal of the platinum group, iridium is generally credited with being the second densest element (after osmium) based on measured density, although calculations involving the space lattices of the elements show that iridium is denser. It is also the most corrosion-resistant metal, even at temperatures as high as 2000 °C.",
     symbol: "Ir",
     group: 9,
 
@@ -3290,7 +3290,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Californium",
 
     summary:
-      "Californium is a radioactive metallic chemical element with symbol Cf and atomic number 98. The element was first made in 1950 at the University of California Radiation Laboratory in Berkeley, by bombarding curium with alpha particles (helium-4 ions). It is an actinide element, the sixth transuranium element to be synthesized, and has the second-highest atomic mass of all the elements that have been produced in amounts large enough to see with the unaided eye (after einsteinium).",
+      "Californium is a radioactive metallic chemical element with symbol Cf and atomic number 98. The element was first made in 1950 at the University of California Radiation Laboratory in Berkeley, by bombarding curium with alpha particles. It is an actinide element, the sixth transuranium element to be synthesized, and has the second-highest atomic mass of all the elements that have been produced in amounts large enough to see with the unaided eye.",
     symbol: "Cf",
     group: 12,
 
@@ -3458,7 +3458,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Rutherfordium",
 
     summary:
-      "Rutherfordium is a chemical element with symbol Rf and atomic number 104, named in honor of physicist Ernest Rutherford. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, 267Rf, has a half-life of approximately 1.3 hours. In the periodic table of the elements, it is a d - block element and the second of the fourth - row transition elements.",
+      "Rutherfordium is a chemical element with symbol Rf and atomic number 104, named in honor of physicist Ernest Rutherford. It is a synthetic element and radioactive; the most stable known isotope, 267Rf, has a half-life of approximately 1.3 hours. In the periodic table of the elements, it is a d - block element and the second of the fourth - row transition elements.",
     symbol: "Rf",
     group: 4,
 
@@ -3570,7 +3570,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Hassium",
 
     summary:
-      "Hassium is a chemical element with symbol Hs and atomic number 108, named after the German state of Hesse. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, 269Hs, has a half-life of approximately 9.7 seconds, although an unconfirmed metastable state, 277mHs, may have a longer half-life of about 130 seconds. More than 100 atoms of hassium have been synthesized to date.",
+      "Hassium is a chemical element with symbol Hs and atomic number 108, named after the German state of Hesse. It is a synthetic element and radioactive; the most stable known isotope, 269Hs, has a half-life of approximately 9.7 seconds, although an unconfirmed metastable state, 277mHs, may have a longer half-life of about 130 seconds. More than 100 atoms of hassium have been synthesized to date.",
     symbol: "Hs",
     group: 8,
 

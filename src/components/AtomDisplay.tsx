@@ -5,9 +5,10 @@ import Electron from "./Electron";
 
 interface AtomDisplayProps {
   atom: AtomInfo;
+  position: [number, number, number];
 }
 
-export default function AtomDisplay({ atom }: AtomDisplayProps) {
+export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
   const electrons = [];
 
   let key = 0;
@@ -52,20 +53,15 @@ export default function AtomDisplay({ atom }: AtomDisplayProps) {
   }
 
   return (
-    <group>
+    <group position={position}>
       <Text
         fontSize={0.07}
         position={[0, 0, 0.1]}
-        color="white"
+        color="#212529"
         depthOffset={-1}
       >
         {atom.symbol}
       </Text>
-
-      <mesh position={[0, 0, 0.1]}>
-        <circleBufferGeometry args={[0.06, 16, 16]} />
-        <meshStandardMaterial color="#ff6b6b" />
-      </mesh>
 
       {electrons}
     </group>

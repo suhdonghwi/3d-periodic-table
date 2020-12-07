@@ -3890,4 +3890,24 @@ const data: AtomInfo[] = [
   },
 ];
 
+export let groups: (number | null)[] = [];
+export let periods: (number | null)[] = [];
+export let atomicMasses: (number | null)[] = [];
+export let electronegativities: (number | null)[] = [];
+export let ionizationEnergies: (number | null)[] = [];
+export let meltingPoints: (number | null)[] = [];
+export let boilingPoints: (number | null)[] = [];
+export let molarHeats: (number | null)[] = [];
+
+for (const atom of data) {
+  groups.push(atom.group);
+  periods.push(atom.period);
+  atomicMasses.push(atom.atomicMass);
+  electronegativities.push(atom.electronegativityPauling);
+  ionizationEnergies.push(atom.ionizationEnergies[0] || null);
+  meltingPoints.push(atom.melt);
+  boilingPoints.push(atom.boil);
+  molarHeats.push(atom.molarHeat);
+}
+
 export default data;

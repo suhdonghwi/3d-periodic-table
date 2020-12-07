@@ -3,6 +3,7 @@ import { useControl } from "react-three-gui";
 
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
+import * as properties from "../atomData";
 
 interface PeriodicTableProps {
   placement: number[][];
@@ -33,28 +34,28 @@ export default function PeriodicTable({
   let heightData: (number | null)[];
   switch (property) {
     case "Group":
-      heightData = atomData.map((a) => a.group);
+      heightData = properties.groups;
       break;
     case "Period":
-      heightData = atomData.map((a) => a.period);
+      heightData = properties.periods;
       break;
     case "Atomic mass":
-      heightData = atomData.map((a) => a.atomicMass);
+      heightData = properties.atomicMasses;
       break;
     case "Electronegativity":
-      heightData = atomData.map((a) => a.electronegativityPauling);
+      heightData = properties.electronegativities;
       break;
     case "First ionization energy":
-      heightData = atomData.map((a) => a.ionizationEnergies[0] || null);
+      heightData = properties.ionizationEnergies;
       break;
     case "Melting point":
-      heightData = atomData.map((a) => a.melt);
+      heightData = properties.meltingPoints;
       break;
     case "Boiling point":
-      heightData = atomData.map((a) => a.boil);
+      heightData = properties.boilingPoints;
       break;
     case "Molar heat capacity":
-      heightData = atomData.map((a) => a.molarHeat);
+      heightData = properties.molarHeats;
       break;
     default:
       heightData = [];

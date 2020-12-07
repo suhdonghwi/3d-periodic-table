@@ -3,6 +3,7 @@ import { useControl } from "react-three-gui";
 
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
+import AtomInfoBoard from "./AtomInfoBoard";
 import * as properties from "../atomData";
 
 interface PeriodicTableProps {
@@ -90,5 +91,9 @@ export default function PeriodicTable({
     }
   }
 
-  return <group>{pillars}</group>;
+  return (
+    <group>
+      {pillars} <AtomInfoBoard visible atom={atomData[20]} />
+    </group>
+  );
 }

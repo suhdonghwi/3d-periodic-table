@@ -331,7 +331,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Sodium",
 
     summary:
-      "Sodium /ˈsoʊdiəm/ is a chemical element with symbol Na and atomic number 11. It is a soft, silver-white, highly reactive metal. In the Periodic table it is in column 1 (alkali metals), and shares with the other six elements in that column that it has a single electron in its outer shell, which it readily donates, creating a positively charged atom - a cation.",
+      "Sodium is a chemical element with symbol Na and atomic number 11. It is a soft, silver-white, highly reactive metal. In the Periodic table it is in column 1 (alkali metals), and shares with the other six elements in that column that it has a single electron in its outer shell, which it readily donates, creating a positively charged atom - a cation.",
     symbol: "Na",
     group: 1,
 
@@ -1748,7 +1748,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Technetium",
 
     summary:
-      "Technetium (/tɛkˈniːʃiəm/) is a chemical element with symbol Tc and atomic number 43. It is the element with the lowest atomic number in the periodic table that has no stable isotopes:every form of it is radioactive. Nearly all technetium is produced synthetically, and only minute amounts are found in nature.",
+      "Technetium is a chemical element with symbol Tc and atomic number 43. It is the element with the lowest atomic number in the periodic table that has no stable isotopes:every form of it is radioactive. Nearly all technetium is produced synthetically, and only minute amounts are found in nature.",
     symbol: "Tc",
     group: 7,
 
@@ -1928,7 +1928,7 @@ const data: AtomInfo[] = [
   },
   {
     name: "Tin",
-    appearance: "silvery-white (beta, β) or gray (alpha, α)",
+    appearance: "silvery-white (beta) or gray (alpha)",
     atomicMass: 118.7107,
     boil: 2875,
     category: "post-transition metal",
@@ -2673,7 +2673,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Osmium",
 
     summary:
-      'Osmium (from Greek osme (ὀσμή) meaning "smell") is a chemical element with symbol Os and atomic number 76. It is a hard, brittle, bluish-white transition metal in the platinum group that is found as a trace element in alloys, mostly in platinum ores. Osmium is the densest naturally occurring element, with a density of 22.59 g/cm3.',
+      'Osmium (from Greek osme meaning "smell") is a chemical element with symbol Os and atomic number 76. It is a hard, brittle, bluish-white transition metal in the platinum group that is found as a trace element in alloys, mostly in platinum ores. Osmium is the densest naturally occurring element, with a density of 22.59 g/cm3.',
     symbol: "Os",
     group: 8,
 
@@ -2841,7 +2841,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Lead_(element)",
 
     summary:
-      "Lead (/lɛd/) is a chemical element in the carbon group with symbol Pb (from Latin:plumbum) and atomic number 82. Lead is a soft, malleable and heavy post-transition metal. Metallic lead has a bluish-white color after being freshly cut, but it soon tarnishes to a dull grayish color when exposed to air.",
+      "Lead is a chemical element in the carbon group with symbol Pb (from Latin:plumbum) and atomic number 82. Lead is a soft, malleable and heavy post-transition metal. Metallic lead has a bluish-white color after being freshly cut, but it soon tarnishes to a dull grayish color when exposed to air.",
     symbol: "Pb",
     group: 14,
 
@@ -3585,7 +3585,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 278,
     boil: null,
-    category: "unknown, probably transition metal",
+    category: "probably transition metal",
     color: null,
     density: 37.4,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
@@ -3613,7 +3613,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 281,
     boil: null,
-    category: "unknown, probably transition metal",
+    category: "probably transition metal",
     color: null,
     density: 34.8,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
@@ -3641,7 +3641,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 282,
     boil: null,
-    category: "unknown, probably transition metal",
+    category: "probably transition metal",
     color: null,
     density: 28.7,
     discoveredBy: "Gesellschaft für Schwerionenforschung",
@@ -3697,7 +3697,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 286,
     boil: 1430,
-    category: "unknown, probably transition metal",
+    category: "probably transition metal",
     color: null,
     density: 16,
     discoveredBy: "RIKEN",
@@ -3753,7 +3753,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 289,
     boil: 1400,
-    category: "unknown, probably post-transition metal",
+    category: "probably post-transition metal",
     color: null,
     density: 13.5,
     discoveredBy: "Joint Institute for Nuclear Research",
@@ -3781,7 +3781,7 @@ const data: AtomInfo[] = [
     appearance: null,
     atomicMass: 293,
     boil: 1085,
-    category: "unknown, probably post-transition metal",
+    category: "post-transition metal",
     color: null,
     density: 12.9,
     discoveredBy: "Joint Institute for Nuclear Research",

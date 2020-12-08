@@ -114,7 +114,7 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
                 color="#212529"
                 anchorX="left"
                 anchorY="top"
-                maxWidth={1}
+                maxWidth={1.2}
               >
                 {property.value}
               </Text>

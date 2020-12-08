@@ -70,10 +70,6 @@ export default function PeriodicTable({
     setShowingAtom(atom);
   }
 
-  function onClickBoard() {
-    setShowingAtom(null);
-  }
-
   const pillars = [];
   const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
@@ -107,7 +103,7 @@ export default function PeriodicTable({
   return (
     <group>
       {pillars}
-      <AtomInfoBoard atom={showingAtom} onClick={onClickBoard} />
+      <AtomInfoBoard atom={showingAtom} onClose={() => setShowingAtom(null)} />
     </group>
   );
 }

@@ -10,10 +10,10 @@ import AtomDisplay from "./AtomDisplay";
 
 interface AtomInfoBoardProps {
   atom: AtomInfo | null;
-  onClick: () => void;
+  onClose: () => void;
 }
 
-export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
+export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
   const mesh = useRef<Mesh>();
   const geometry = useRef<BoxBufferGeometry>();
 
@@ -61,7 +61,6 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
       onClick={(e) => {
         if (atom !== null) {
           e.stopPropagation();
-          onClick();
         }
       }}
     >
@@ -71,6 +70,41 @@ export default function AtomInfoBoard({ atom, onClick }: AtomInfoBoardProps) {
         transparent
         {...opacityProps}
       />
+
+      <group
+        onClick={(e) => {
+          if (atom !== null) {
+            e.stopPropagation();
+            onClose();
+          }
+        }}
+      >
+        <mesh
+          position={[1, 1.45, 0]}
+          rotation={[0, 0, Math.PI / 4]}
+          visible={false}
+        >
+          <boxBufferGeometry ref={geometry} args={[0.2, 0.2, 0.15]} />
+        </mesh>
+
+        <mesh position={[1, 1.45, 0]} rotation={[0, 0, Math.PI / 4]}>
+          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <animated.meshStandardMaterial
+            color="#fa5252"
+            transparent
+            {...opacityProps}
+          />
+        </mesh>
+
+        <mesh position={[1, 1.45, 0]} rotation={[0, 0, -Math.PI / 4]}>
+          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <animated.meshStandardMaterial
+            color="#fa5252"
+            transparent
+            {...opacityProps}
+          />
+        </mesh>
+      </group>
 
       {atom !== null && (
         <>

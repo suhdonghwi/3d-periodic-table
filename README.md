@@ -2,4 +2,4 @@
 
 View periodic table in 3D.
 
-![](./images/demo.gif)
+<img src="./images/demo.gif" width="100%" />

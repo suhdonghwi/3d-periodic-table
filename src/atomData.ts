@@ -76,7 +76,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Lithium",
 
     summary:
-      'Lithium is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.',
+      "Lithium is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.",
     symbol: "Li",
     group: 1,
 
@@ -1425,7 +1425,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Bromine",
 
     summary:
-      'Bromine is a chemical element with symbol Br, and atomic number 35. It is a halogen. The element was isolated independently by two chemists, Carl Jacob Löwig and Antoine Jerome Balard, in 1825–1826.',
+      "Bromine is a chemical element with symbol Br, and atomic number 35. It is a halogen. The element was isolated independently by two chemists, Carl Jacob Löwig and Antoine Jerome Balard, in 1825–1826.",
     symbol: "Br",
     group: 17,
 
@@ -1454,7 +1454,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Krypton",
 
     summary:
-      'Krypton is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere, is isolated by fractionally distilling liquefied air, and is often used with other rare gases in fluorescent lamps.',
+      "Krypton is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere, is isolated by fractionally distilling liquefied air, and is often used with other rare gases in fluorescent lamps.",
     symbol: "Kr",
     group: 18,
 
@@ -1860,7 +1860,7 @@ const data: AtomInfo[] = [
     source: "https://en.wikipedia.org/wiki/Silver",
 
     summary:
-      'Silver is a chemical element with symbol Ag and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal. The metal occurs naturally in its pure, free form (native silver), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite.',
+      "Silver is a chemical element with symbol Ag and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal. The metal occurs naturally in its pure, free form (native silver), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite.",
     symbol: "Ag",
     group: 11,
 
@@ -3898,6 +3898,7 @@ export let ionizationEnergies: (number | null)[] = [];
 export let meltingPoints: (number | null)[] = [];
 export let boilingPoints: (number | null)[] = [];
 export let molarHeats: (number | null)[] = [];
+export let densities: (number | null)[] = [];
 
 for (const atom of data) {
   groups.push(atom.group);
@@ -3908,6 +3909,7 @@ for (const atom of data) {
   meltingPoints.push(atom.melt);
   boilingPoints.push(atom.boil);
   molarHeats.push(atom.molarHeat);
+  densities.push(atom.density);
 }
 
 export default data;

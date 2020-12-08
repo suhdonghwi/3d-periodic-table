@@ -22,6 +22,7 @@ export default function PeriodicTable({
       "Group",
       "Period",
       "Atomic mass",
+      "Density",
       "Electronegativity",
       "First ionization energy",
       "Melting point",
@@ -41,6 +42,9 @@ export default function PeriodicTable({
       break;
     case "Atomic mass":
       heightData = properties.atomicMasses;
+      break;
+    case "Density":
+      heightData = properties.densities;
       break;
     case "Electronegativity":
       heightData = properties.electronegativities;

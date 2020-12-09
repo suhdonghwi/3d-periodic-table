@@ -29,10 +29,20 @@ export default function AtomPillar({
   const symbolText = useRef<Text>();
   const numberText = useRef<Text>();
 
-  const meshProps = useSpring({ scale: [1, Math.max(height, 0.00001), 1] as any });
+  const meshProps = useSpring({
+    scale: [1, Math.max(height, 0.00001), 1] as any,
+  });
 
   const textProps = useSpring({
     position: [position[0], position[1] + height, position[2]] as any,
+  });
+  const colorProps = useSpring({
+    to: {
+      color: color,
+    },
+    config: {
+      tension: 150,
+    },
   });
 
   useEffect(() => {
@@ -59,7 +69,9 @@ export default function AtomPillar({
         {...meshProps}
       >
         <boxBufferGeometry ref={geometry} args={[1, 1, 1]} />
-        <meshStandardMaterial color={hover ? "#ff8787" : color} />
+        <animated.meshStandardMaterial
+          color={hover ? "#ff8787" : colorProps.color}
+        />
       </animated.mesh>
       <animated.group {...textProps}>
         <Text

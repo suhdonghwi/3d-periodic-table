@@ -29,7 +29,7 @@ export default function AtomPillar({
   const symbolText = useRef<Text>();
   const numberText = useRef<Text>();
 
-  const meshProps = useSpring({ scale: [1, height, 1] as any });
+  const meshProps = useSpring({ scale: [1, Math.max(height, 0.00001), 1] as any });
 
   const textProps = useSpring({
     position: [position[0], position[1] + height, position[2]] as any,

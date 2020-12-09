@@ -20,4 +20,5 @@ export default interface AtomInfo {
   electronAffinity: number | null;
   electronegativityPauling: number | null;
   ionizationEnergies: number[];
+  earthAbundance: number | null;
 }

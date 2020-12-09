@@ -11,6 +11,19 @@ interface PeriodicTableProps {
   atomData: AtomInfo[];
 }
 
+const propertyNames = [
+  "Group",
+  "Period",
+  "Atomic mass",
+  "Density",
+  "Electronegativity (Pauling)",
+  "First ionization energy",
+  "Melting point",
+  "Boiling point",
+  "Molar heat capacity",
+  "Abundance in Earth's crust (Log scale)",
+];
+
 export default function PeriodicTable({
   placement,
   position,
@@ -18,48 +31,41 @@ export default function PeriodicTable({
 }: PeriodicTableProps) {
   const property: string = useControl("Property", {
     type: "select",
-    items: [
-      "Group",
-      "Period",
-      "Atomic mass",
-      "Density",
-      "Electronegativity (Pauling)",
-      "First ionization energy",
-      "Melting point",
-      "Boiling point",
-      "Molar heat capacity",
-    ],
+    items: propertyNames,
     value: "Electronegativity (Pauling)",
   });
 
   let heightData: (number | null)[];
-  switch (property) {
-    case "Group":
+  switch (propertyNames.indexOf(property)) {
+    case 0:
       heightData = properties.groups;
       break;
-    case "Period":
+    case 1:
       heightData = properties.periods;
       break;
-    case "Atomic mass":
+    case 2:
       heightData = properties.atomicMasses;
       break;
-    case "Density":
+    case 3:
       heightData = properties.densities;
       break;
-    case "Electronegativity (Pauling)":
+    case 4:
       heightData = properties.electronegativities;
       break;
-    case "First ionization energy":
+    case 5:
       heightData = properties.ionizationEnergies;
       break;
-    case "Melting point":
+    case 6:
       heightData = properties.meltingPoints;
       break;
-    case "Boiling point":
+    case 7:
       heightData = properties.boilingPoints;
       break;
-    case "Molar heat capacity":
+    case 8:
       heightData = properties.molarHeats;
+      break;
+    case 9:
+      heightData = properties.earthAbundance;
       break;
     default:
       heightData = [];

@@ -24,10 +24,10 @@ const data: AtomInfo[] = [
     group: 1,
 
     shells: [1],
-
     electronAffinity: 72.769,
     electronegativityPauling: 2.2,
     ionizationEnergies: [1312],
+    earthAbundance: 1400,
   },
   {
     name: "Helium",
@@ -57,6 +57,7 @@ const data: AtomInfo[] = [
     electronAffinity: -48,
     electronegativityPauling: null,
     ionizationEnergies: [2372.3, 5250.5],
+    earthAbundance: 0.008,
   },
   {
     name: "Lithium",
@@ -85,6 +86,7 @@ const data: AtomInfo[] = [
     electronAffinity: 59.6326,
     electronegativityPauling: 0.98,
     ionizationEnergies: [520.2, 7298.1, 11815],
+    earthAbundance: 20,
   },
   {
     name: "Beryllium",
@@ -113,6 +115,7 @@ const data: AtomInfo[] = [
     electronAffinity: -48,
     electronegativityPauling: 1.57,
     ionizationEnergies: [899.5, 1757.1, 14848.7, 21006.6],
+    earthAbundance: 2.8,
   },
   {
     name: "Boron",
@@ -141,6 +144,7 @@ const data: AtomInfo[] = [
     electronAffinity: 26.989,
     electronegativityPauling: 2.04,
     ionizationEnergies: [800.6, 2427.1, 3659.7, 25025.8, 32826.7],
+    earthAbundance: 10,
   },
   {
     name: "Carbon",
@@ -169,6 +173,7 @@ const data: AtomInfo[] = [
     electronAffinity: 121.7763,
     electronegativityPauling: 2.55,
     ionizationEnergies: [1086.5, 2352.6, 4620.5, 6222.7, 37831, 47277],
+    earthAbundance: 200,
   },
   {
     name: "Nitrogen",
@@ -197,6 +202,7 @@ const data: AtomInfo[] = [
     electronAffinity: -6.8,
     electronegativityPauling: 3.04,
     ionizationEnergies: [1402.3, 2856, 4578.1, 7475, 9444.9, 53266.6, 64360],
+    earthAbundance: 19,
   },
   {
     name: "Oxygen",
@@ -234,6 +240,7 @@ const data: AtomInfo[] = [
       71330,
       84078,
     ],
+    earthAbundance: 461000,
   },
   {
     name: "Fluorine",
@@ -272,6 +279,7 @@ const data: AtomInfo[] = [
       92038.1,
       106434.3,
     ],
+    earthAbundance: 585,
   },
   {
     name: "Neon",
@@ -312,6 +320,7 @@ const data: AtomInfo[] = [
       115379.5,
       131432,
     ],
+    earthAbundance: 0.0051,
   },
   {
     name: "Sodium",
@@ -352,6 +361,7 @@ const data: AtomInfo[] = [
       141362,
       159076,
     ],
+    earthAbundance: 23600,
   },
   {
     name: "Magnesium",
@@ -393,6 +403,7 @@ const data: AtomInfo[] = [
       169988,
       189368,
     ],
+    earthAbundance: 23300,
   },
   {
     name: "Aluminium",
@@ -435,6 +446,7 @@ const data: AtomInfo[] = [
       201266,
       222316,
     ],
+    earthAbundance: 82300,
   },
   {
     name: "Silicon",
@@ -478,6 +490,7 @@ const data: AtomInfo[] = [
       235196,
       257923,
     ],
+    earthAbundance: 282000,
   },
   {
     name: "Phosphorus",
@@ -522,6 +535,7 @@ const data: AtomInfo[] = [
       271791,
       296195,
     ],
+    earthAbundance: 1050,
   },
   {
     name: "Sulfur",
@@ -567,6 +581,7 @@ const data: AtomInfo[] = [
       311048,
       337138,
     ],
+    earthAbundance: 350,
   },
   {
     name: "Chlorine",
@@ -613,6 +628,7 @@ const data: AtomInfo[] = [
       352994,
       380760,
     ],
+    earthAbundance: 145,
   },
   {
     name: "Argon",
@@ -661,6 +677,7 @@ const data: AtomInfo[] = [
       397605,
       427066,
     ],
+    earthAbundance: 3.5,
   },
   {
     name: "Potassium",
@@ -709,6 +726,7 @@ const data: AtomInfo[] = [
       444880,
       476063,
     ],
+    earthAbundance: 20900,
   },
   {
     name: "Calcium",
@@ -758,6 +776,7 @@ const data: AtomInfo[] = [
       494850,
       527762,
     ],
+    earthAbundance: 41500,
   },
   {
     name: "Scandium",
@@ -808,6 +827,7 @@ const data: AtomInfo[] = [
       547530,
       582163,
     ],
+    earthAbundance: 22,
   },
   {
     name: "Titanium",
@@ -859,6 +879,7 @@ const data: AtomInfo[] = [
       602930,
       639294,
     ],
+    earthAbundance: 5650,
   },
   {
     name: "Vanadium",
@@ -911,6 +932,7 @@ const data: AtomInfo[] = [
       661050,
       699144,
     ],
+    earthAbundance: 120,
   },
   {
     name: "Chromium",
@@ -964,6 +986,7 @@ const data: AtomInfo[] = [
       721870,
       761733,
     ],
+    earthAbundance: 102,
   },
   {
     name: "Manganese",
@@ -1018,6 +1041,7 @@ const data: AtomInfo[] = [
       785450,
       827067,
     ],
+    earthAbundance: 950,
   },
   {
     name: "Iron",
@@ -1073,6 +1097,7 @@ const data: AtomInfo[] = [
       851800,
       895161,
     ],
+    earthAbundance: 56300,
   },
   {
     name: "Cobalt",
@@ -1129,6 +1154,7 @@ const data: AtomInfo[] = [
       920870,
       966023,
     ],
+    earthAbundance: 25,
   },
   {
     name: "Nickel",
@@ -1186,6 +1212,7 @@ const data: AtomInfo[] = [
       992718,
       1039668,
     ],
+    earthAbundance: 84,
   },
   {
     name: "Copper",
@@ -1244,6 +1271,7 @@ const data: AtomInfo[] = [
       1067358,
       1116105,
     ],
+    earthAbundance: 60,
   },
   {
     name: "Zinc",
@@ -1294,6 +1322,7 @@ const data: AtomInfo[] = [
       71200,
       179100,
     ],
+    earthAbundance: 70,
   },
   {
     name: "Gallium",
@@ -1322,6 +1351,7 @@ const data: AtomInfo[] = [
     electronAffinity: 41,
     electronegativityPauling: 1.81,
     ionizationEnergies: [578.8, 1979.3, 2963, 6180],
+    earthAbundance: 19,
   },
   {
     name: "Germanium",
@@ -1350,6 +1380,7 @@ const data: AtomInfo[] = [
     electronAffinity: 118.9352,
     electronegativityPauling: 2.01,
     ionizationEnergies: [762, 1537.5, 3302.1, 4411, 9020],
+    earthAbundance: 1.5,
   },
   {
     name: "Arsenic",
@@ -1378,6 +1409,7 @@ const data: AtomInfo[] = [
     electronAffinity: 77.65,
     electronegativityPauling: 2.18,
     ionizationEnergies: [947, 1798, 2735, 4837, 6043, 12310],
+    earthAbundance: 1.8,
   },
   {
     name: "Selenium",
@@ -1406,6 +1438,7 @@ const data: AtomInfo[] = [
     electronAffinity: 194.9587,
     electronegativityPauling: 2.55,
     ionizationEnergies: [941, 2045, 2973.7, 4144, 6590, 7880, 14990],
+    earthAbundance: 0.05,
   },
   {
     name: "Bromine",
@@ -1434,6 +1467,7 @@ const data: AtomInfo[] = [
     electronAffinity: 324.537,
     electronegativityPauling: 2.96,
     ionizationEnergies: [1139.9, 2103, 3470, 4560, 5760, 8550, 9940, 18600],
+    earthAbundance: 2.4,
   },
   {
     name: "Krypton",
@@ -1494,6 +1528,7 @@ const data: AtomInfo[] = [
       311400,
       326200,
     ],
+    earthAbundance: 0.0001,
   },
   {
     name: "Rubidium",
@@ -1533,6 +1568,7 @@ const data: AtomInfo[] = [
       14500,
       26740,
     ],
+    earthAbundance: 90,
   },
   {
     name: "Strontium",
@@ -1573,6 +1609,7 @@ const data: AtomInfo[] = [
       17100,
       31270,
     ],
+    earthAbundance: 370,
   },
   {
     name: "Yttrium",
@@ -1614,6 +1651,7 @@ const data: AtomInfo[] = [
       19900,
       36090,
     ],
+    earthAbundance: 33,
   },
   {
     name: "Zirconium",
@@ -1642,6 +1680,7 @@ const data: AtomInfo[] = [
     electronAffinity: 41.806,
     electronegativityPauling: 1.33,
     ionizationEnergies: [640.1, 1270, 2218, 3313, 7752, 9500],
+    earthAbundance: 165,
   },
   {
     name: "Niobium",
@@ -1670,6 +1709,7 @@ const data: AtomInfo[] = [
     electronAffinity: 88.516,
     electronegativityPauling: 1.6,
     ionizationEnergies: [652.1, 1380, 2416, 3700, 4877, 9847, 12100],
+    earthAbundance: 20,
   },
   {
     name: "Molybdenum",
@@ -1729,6 +1769,7 @@ const data: AtomInfo[] = [
       148100,
       154500,
     ],
+    earthAbundance: 1.2,
   },
   {
     name: "Technetium",
@@ -1757,6 +1798,7 @@ const data: AtomInfo[] = [
     electronAffinity: 53,
     electronegativityPauling: 1.9,
     ionizationEnergies: [702, 1470, 2850],
+    earthAbundance: 0.00000000000135,
   },
   {
     name: "Ruthenium",
@@ -1785,6 +1827,7 @@ const data: AtomInfo[] = [
     electronAffinity: 100.96,
     electronegativityPauling: 2.2,
     ionizationEnergies: [710.2, 1620, 2747],
+    earthAbundance: 0.001,
   },
   {
     name: "Rhodium",
@@ -1813,6 +1856,7 @@ const data: AtomInfo[] = [
     electronAffinity: 110.27,
     electronegativityPauling: 2.28,
     ionizationEnergies: [719.7, 1740, 2997],
+    earthAbundance: 0.001,
   },
   {
     name: "Palladium",
@@ -1841,6 +1885,7 @@ const data: AtomInfo[] = [
     electronAffinity: 54.24,
     electronegativityPauling: 2.2,
     ionizationEnergies: [804.4, 1870, 3177],
+    earthAbundance: 0.015,
   },
   {
     name: "Silver",
@@ -1869,6 +1914,7 @@ const data: AtomInfo[] = [
     electronAffinity: 125.862,
     electronegativityPauling: 1.93,
     ionizationEnergies: [731, 2070, 3361],
+    earthAbundance: 0.075,
   },
   {
     name: "Cadmium",
@@ -1897,6 +1943,7 @@ const data: AtomInfo[] = [
     electronAffinity: -68,
     electronegativityPauling: 1.69,
     ionizationEnergies: [867.8, 1631.4, 3616],
+    earthAbundance: 0.15,
   },
   {
     name: "Indium",
@@ -1925,6 +1972,7 @@ const data: AtomInfo[] = [
     electronAffinity: 37.043,
     electronegativityPauling: 1.78,
     ionizationEnergies: [558.3, 1820.7, 2704, 5210],
+    earthAbundance: 0.25,
   },
   {
     name: "Tin",
@@ -1953,6 +2001,7 @@ const data: AtomInfo[] = [
     electronAffinity: 107.2984,
     electronegativityPauling: 1.96,
     ionizationEnergies: [708.6, 1411.8, 2943, 3930.3, 7456],
+    earthAbundance: 2.3,
   },
   {
     name: "Antimony",
@@ -1981,6 +2030,7 @@ const data: AtomInfo[] = [
     electronAffinity: 101.059,
     electronegativityPauling: 2.05,
     ionizationEnergies: [834, 1594.9, 2440, 4260, 5400, 10400],
+    earthAbundance: 0.2,
   },
   {
     name: "Tellurium",
@@ -2009,6 +2059,7 @@ const data: AtomInfo[] = [
     electronAffinity: 190.161,
     electronegativityPauling: 2.1,
     ionizationEnergies: [869.3, 1790, 2698, 3610, 5668, 6820, 13200],
+    earthAbundance: 0.001,
   },
   {
     name: "Iodine",
@@ -2037,6 +2088,7 @@ const data: AtomInfo[] = [
     electronAffinity: 295.1531,
     electronegativityPauling: 2.66,
     ionizationEnergies: [1008.4, 1845.9, 3180],
+    earthAbundance: 0.45,
   },
   {
     name: "Xenon",
@@ -2066,6 +2118,7 @@ const data: AtomInfo[] = [
     electronAffinity: -77,
     electronegativityPauling: 2.6,
     ionizationEnergies: [1170.4, 2046.4, 3099.4],
+    earthAbundance: 0.00003,
   },
   {
     name: "Cesium",
@@ -2094,6 +2147,7 @@ const data: AtomInfo[] = [
     electronAffinity: 45.505,
     electronegativityPauling: 0.79,
     ionizationEnergies: [375.7, 2234.3, 3400],
+    earthAbundance: 3,
   },
   {
     name: "Barium",
@@ -2122,6 +2176,7 @@ const data: AtomInfo[] = [
     electronAffinity: 13.954,
     electronegativityPauling: 0.89,
     ionizationEnergies: [502.9, 965.2, 3600],
+    earthAbundance: 425,
   },
   {
     name: "Lanthanum",
@@ -2150,6 +2205,7 @@ const data: AtomInfo[] = [
     electronAffinity: 53,
     electronegativityPauling: 1.1,
     ionizationEnergies: [538.1, 1067, 1850.3, 4819, 5940],
+    earthAbundance: 39,
   },
   {
     name: "Cerium",
@@ -2178,6 +2234,7 @@ const data: AtomInfo[] = [
     electronAffinity: 55,
     electronegativityPauling: 1.12,
     ionizationEnergies: [534.4, 1050, 1949, 3547, 6325, 7490],
+    earthAbundance: 66.5,
   },
   {
     name: "Praseodymium",
@@ -2206,6 +2263,7 @@ const data: AtomInfo[] = [
     electronAffinity: 93,
     electronegativityPauling: 1.13,
     ionizationEnergies: [527, 1020, 2086, 3761, 5551],
+    earthAbundance: 9.2,
   },
   {
     name: "Neodymium",
@@ -2234,6 +2292,7 @@ const data: AtomInfo[] = [
     electronAffinity: 184.87,
     electronegativityPauling: 1.14,
     ionizationEnergies: [533.1, 1040, 2130, 3900],
+    earthAbundance: 41.5,
   },
   {
     name: "Promethium",
@@ -2262,6 +2321,7 @@ const data: AtomInfo[] = [
     electronAffinity: 12.45,
     electronegativityPauling: 1.13,
     ionizationEnergies: [540, 1050, 2150, 3970],
+    earthAbundance: 0.00000000000000002,
   },
   {
     name: "Samarium",
@@ -2290,6 +2350,7 @@ const data: AtomInfo[] = [
     electronAffinity: 15.63,
     electronegativityPauling: 1.17,
     ionizationEnergies: [544.5, 1070, 2260, 3990],
+    earthAbundance: 7.05,
   },
   {
     name: "Europium",
@@ -2318,6 +2379,7 @@ const data: AtomInfo[] = [
     electronAffinity: 11.2,
     electronegativityPauling: 1.2,
     ionizationEnergies: [547.1, 1085, 2404, 4120],
+    earthAbundance: 2.0,
   },
   {
     name: "Gadolinium",
@@ -2346,6 +2408,7 @@ const data: AtomInfo[] = [
     electronAffinity: 13.22,
     electronegativityPauling: 1.2,
     ionizationEnergies: [593.4, 1170, 1990, 4250],
+    earthAbundance: 6.2,
   },
   {
     name: "Terbium",
@@ -2374,6 +2437,7 @@ const data: AtomInfo[] = [
     electronAffinity: 112.4,
     electronegativityPauling: 1.1,
     ionizationEnergies: [565.8, 1110, 2114, 3839],
+    earthAbundance: 1.2,
   },
   {
     name: "Dysprosium",
@@ -2402,6 +2466,7 @@ const data: AtomInfo[] = [
     electronAffinity: 33.96,
     electronegativityPauling: 1.22,
     ionizationEnergies: [573, 1130, 2200, 3990],
+    earthAbundance: 5.2,
   },
   {
     name: "Holmium",
@@ -2430,6 +2495,7 @@ const data: AtomInfo[] = [
     electronAffinity: 32.61,
     electronegativityPauling: 1.23,
     ionizationEnergies: [581, 1140, 2204, 4100],
+    earthAbundance: 1.3,
   },
   {
     name: "Erbium",
@@ -2458,6 +2524,7 @@ const data: AtomInfo[] = [
     electronAffinity: 30.1,
     electronegativityPauling: 1.24,
     ionizationEnergies: [589.3, 1150, 2194, 4120],
+    earthAbundance: 3.5,
   },
   {
     name: "Thulium",
@@ -2486,6 +2553,7 @@ const data: AtomInfo[] = [
     electronAffinity: 99,
     electronegativityPauling: 1.25,
     ionizationEnergies: [596.7, 1160, 2285, 4120],
+    earthAbundance: 0.52,
   },
   {
     name: "Ytterbium",
@@ -2514,6 +2582,7 @@ const data: AtomInfo[] = [
     electronAffinity: -1.93,
     electronegativityPauling: 1.1,
     ionizationEnergies: [603.4, 1174.8, 2417, 4203],
+    earthAbundance: 3.2,
   },
   {
     name: "Lutetium",
@@ -2542,6 +2611,7 @@ const data: AtomInfo[] = [
     electronAffinity: 33.4,
     electronegativityPauling: 1.27,
     ionizationEnergies: [523.5, 1340, 2022.3, 4370, 6445],
+    earthAbundance: 0.8,
   },
   {
     name: "Hafnium",
@@ -2570,6 +2640,7 @@ const data: AtomInfo[] = [
     electronAffinity: 17.18,
     electronegativityPauling: 1.3,
     ionizationEnergies: [658.5, 1440, 2250, 3216],
+    earthAbundance: 3.0,
   },
   {
     name: "Tantalum",
@@ -2598,6 +2669,7 @@ const data: AtomInfo[] = [
     electronAffinity: 31,
     electronegativityPauling: 1.5,
     ionizationEnergies: [761, 1500],
+    earthAbundance: 2.0,
   },
   {
     name: "Tungsten",
@@ -2626,6 +2698,7 @@ const data: AtomInfo[] = [
     electronAffinity: 78.76,
     electronegativityPauling: 2.36,
     ionizationEnergies: [770, 1700],
+    earthAbundance: 1.25,
   },
   {
     name: "Rhenium",
@@ -2654,6 +2727,7 @@ const data: AtomInfo[] = [
     electronAffinity: 5.8273,
     electronegativityPauling: 1.9,
     ionizationEnergies: [760, 1260, 2510, 3640],
+    earthAbundance: 0.0007,
   },
   {
     name: "Osmium",
@@ -2682,6 +2756,7 @@ const data: AtomInfo[] = [
     electronAffinity: 103.99,
     electronegativityPauling: 2.2,
     ionizationEnergies: [840, 1600],
+    earthAbundance: 0.0015,
   },
   {
     name: "Iridium",
@@ -2710,6 +2785,7 @@ const data: AtomInfo[] = [
     electronAffinity: 150.94,
     electronegativityPauling: 2.2,
     ionizationEnergies: [880, 1600],
+    earthAbundance: 0.001,
   },
   {
     name: "Platinum",
@@ -2738,6 +2814,7 @@ const data: AtomInfo[] = [
     electronAffinity: 205.041,
     electronegativityPauling: 2.28,
     ionizationEnergies: [870, 1791],
+    earthAbundance: 0.005,
   },
   {
     name: "Gold",
@@ -2766,6 +2843,7 @@ const data: AtomInfo[] = [
     electronAffinity: 222.747,
     electronegativityPauling: 2.54,
     ionizationEnergies: [890.1, 1980],
+    earthAbundance: 0.004,
   },
   {
     name: "Mercury",
@@ -2794,6 +2872,7 @@ const data: AtomInfo[] = [
     electronAffinity: -48,
     electronegativityPauling: 2,
     ionizationEnergies: [1007.1, 1810, 3300],
+    earthAbundance: 0.085,
   },
   {
     name: "Thallium",
@@ -2822,6 +2901,7 @@ const data: AtomInfo[] = [
     electronAffinity: 36.4,
     electronegativityPauling: 1.62,
     ionizationEnergies: [589.4, 1971, 2878],
+    earthAbundance: 0.85,
   },
   {
     name: "Lead",
@@ -2850,6 +2930,7 @@ const data: AtomInfo[] = [
     electronAffinity: 34.4204,
     electronegativityPauling: 1.87,
     ionizationEnergies: [715.6, 1450.5, 3081.5, 4083, 6640],
+    earthAbundance: 14,
   },
   {
     name: "Bismuth",
@@ -2878,6 +2959,7 @@ const data: AtomInfo[] = [
     electronAffinity: 90.924,
     electronegativityPauling: 2.02,
     ionizationEnergies: [703, 1610, 2466, 4370, 5400, 8520],
+    earthAbundance: 0.0085,
   },
   {
     name: "Polonium",
@@ -2906,6 +2988,7 @@ const data: AtomInfo[] = [
     electronAffinity: 136,
     electronegativityPauling: 2,
     ionizationEnergies: [812.1],
+    earthAbundance: 0.0000000002,
   },
   {
     name: "Astatine",
@@ -2934,6 +3017,7 @@ const data: AtomInfo[] = [
     electronAffinity: 233,
     electronegativityPauling: 2.2,
     ionizationEnergies: [899.003],
+    earthAbundance: 0.00000000000000000003,
   },
   {
     name: "Radon",
@@ -2963,6 +3047,7 @@ const data: AtomInfo[] = [
     electronAffinity: -68,
     electronegativityPauling: 2.2,
     ionizationEnergies: [1037],
+    earthAbundance: 0.0000000000004,
   },
   {
     name: "Francium",
@@ -2991,6 +3076,7 @@ const data: AtomInfo[] = [
     electronAffinity: 46.89,
     electronegativityPauling: 0.79,
     ionizationEnergies: [380],
+    earthAbundance: 0.000000000000000001,
   },
   {
     name: "Radium",
@@ -3019,6 +3105,7 @@ const data: AtomInfo[] = [
     electronAffinity: 9.6485,
     electronegativityPauling: 0.9,
     ionizationEnergies: [509.3, 979],
+    earthAbundance: 0.0000009,
   },
   {
     name: "Actinium",
@@ -3047,6 +3134,7 @@ const data: AtomInfo[] = [
     electronAffinity: 33.77,
     electronegativityPauling: 1.1,
     ionizationEnergies: [499, 1170],
+    earthAbundance: 0.0000000000006,
   },
   {
     name: "Thorium",
@@ -3075,6 +3163,7 @@ const data: AtomInfo[] = [
     electronAffinity: 112.72,
     electronegativityPauling: 1.3,
     ionizationEnergies: [587, 1110, 1930, 2780],
+    earthAbundance: 9.6,
   },
   {
     name: "Protactinium",
@@ -3103,6 +3192,7 @@ const data: AtomInfo[] = [
     electronAffinity: 53.03,
     electronegativityPauling: 1.5,
     ionizationEnergies: [568],
+    earthAbundance: 0.0000014,
   },
   {
     name: "Uranium",
@@ -3131,6 +3221,7 @@ const data: AtomInfo[] = [
     electronAffinity: 50.94,
     electronegativityPauling: 1.38,
     ionizationEnergies: [597.6, 1420],
+    earthAbundance: 2.7,
   },
   {
     name: "Neptunium",
@@ -3159,6 +3250,7 @@ const data: AtomInfo[] = [
     electronAffinity: 45.85,
     electronegativityPauling: 1.36,
     ionizationEnergies: [604.5],
+    earthAbundance: 0.000000000003,
   },
   {
     name: "Plutonium",
@@ -3187,6 +3279,7 @@ const data: AtomInfo[] = [
     electronAffinity: -48.33,
     electronegativityPauling: 1.28,
     ionizationEnergies: [584.7],
+    earthAbundance: 0.00000000003,
   },
   {
     name: "Americium",
@@ -3215,6 +3308,7 @@ const data: AtomInfo[] = [
     electronAffinity: 9.93,
     electronegativityPauling: 1.13,
     ionizationEnergies: [578],
+    earthAbundance: null,
   },
   {
     name: "Curium",
@@ -3243,6 +3337,7 @@ const data: AtomInfo[] = [
     electronAffinity: 27.17,
     electronegativityPauling: 1.28,
     ionizationEnergies: [581],
+    earthAbundance: null,
   },
   {
     name: "Berkelium",
@@ -3271,6 +3366,7 @@ const data: AtomInfo[] = [
     electronAffinity: -165.24,
     electronegativityPauling: 1.3,
     ionizationEnergies: [601],
+    earthAbundance: null,
   },
   {
     name: "Californium",
@@ -3299,6 +3395,7 @@ const data: AtomInfo[] = [
     electronAffinity: -97.31,
     electronegativityPauling: 1.3,
     ionizationEnergies: [608],
+    earthAbundance: null,
   },
   {
     name: "Einsteinium",
@@ -3327,6 +3424,7 @@ const data: AtomInfo[] = [
     electronAffinity: -28.6,
     electronegativityPauling: 1.3,
     ionizationEnergies: [619],
+    earthAbundance: null,
   },
   {
     name: "Fermium",
@@ -3355,6 +3453,7 @@ const data: AtomInfo[] = [
     electronAffinity: 33.96,
     electronegativityPauling: 1.3,
     ionizationEnergies: [627],
+    earthAbundance: null,
   },
   {
     name: "Mendelevium",
@@ -3383,6 +3482,7 @@ const data: AtomInfo[] = [
     electronAffinity: 93.91,
     electronegativityPauling: 1.3,
     ionizationEnergies: [635],
+    earthAbundance: null,
   },
   {
     name: "Nobelium",
@@ -3411,6 +3511,7 @@ const data: AtomInfo[] = [
     electronAffinity: -223.22,
     electronegativityPauling: 1.3,
     ionizationEnergies: [642],
+    earthAbundance: null,
   },
   {
     name: "Lawrencium",
@@ -3439,6 +3540,7 @@ const data: AtomInfo[] = [
     electronAffinity: -30.04,
     electronegativityPauling: 1.3,
     ionizationEnergies: [470],
+    earthAbundance: null,
   },
   {
     name: "Rutherfordium",
@@ -3467,6 +3569,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [580],
+    earthAbundance: null,
   },
   {
     name: "Dubnium",
@@ -3495,6 +3598,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Seaborgium",
@@ -3523,6 +3627,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Bohrium",
@@ -3551,6 +3656,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Hassium",
@@ -3579,6 +3685,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Meitnerium",
@@ -3607,6 +3714,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Darmstadtium",
@@ -3635,6 +3743,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Roentgenium",
@@ -3663,6 +3772,7 @@ const data: AtomInfo[] = [
     electronAffinity: 151,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Copernicium",
@@ -3691,6 +3801,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Nihonium",
@@ -3719,6 +3830,7 @@ const data: AtomInfo[] = [
     electronAffinity: 66.6,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Flerovium",
@@ -3747,6 +3859,7 @@ const data: AtomInfo[] = [
     electronAffinity: null,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Moscovium",
@@ -3775,6 +3888,7 @@ const data: AtomInfo[] = [
     electronAffinity: 35.3,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Livermorium",
@@ -3803,6 +3917,7 @@ const data: AtomInfo[] = [
     electronAffinity: 74.9,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Tennessine",
@@ -3831,6 +3946,7 @@ const data: AtomInfo[] = [
     electronAffinity: 165.9,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Oganesson",
@@ -3859,6 +3975,7 @@ const data: AtomInfo[] = [
     electronAffinity: 5.40318,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
   {
     name: "Ununennium",
@@ -3887,6 +4004,7 @@ const data: AtomInfo[] = [
     electronAffinity: 63.87,
     electronegativityPauling: null,
     ionizationEnergies: [],
+    earthAbundance: null,
   },
 ];
 
@@ -3899,6 +4017,7 @@ export let meltingPoints: (number | null)[] = [];
 export let boilingPoints: (number | null)[] = [];
 export let molarHeats: (number | null)[] = [];
 export let densities: (number | null)[] = [];
+export let earthAbundance: (number | null)[] = [];
 
 for (const atom of data) {
   groups.push(atom.group);
@@ -3910,6 +4029,10 @@ for (const atom of data) {
   boilingPoints.push(atom.boil);
   molarHeats.push(atom.molarHeat);
   densities.push(atom.density);
+
+  if (atom.earthAbundance === null) earthAbundance.push(null);
+  else
+    earthAbundance.push(Math.log10(Math.max(atom.earthAbundance, 0.00001)) + 5);
 }
 
 export default data;

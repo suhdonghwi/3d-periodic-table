@@ -23,13 +23,13 @@ export default function PeriodicTable({
       "Period",
       "Atomic mass",
       "Density",
-      "Electronegativity",
+      "Electronegativity (Pauling)",
       "First ionization energy",
       "Melting point",
       "Boiling point",
       "Molar heat capacity",
     ],
-    value: "Electronegativity",
+    value: "Electronegativity (Pauling)",
   });
 
   let heightData: (number | null)[];
@@ -46,7 +46,7 @@ export default function PeriodicTable({
     case "Density":
       heightData = properties.densities;
       break;
-    case "Electronegativity":
+    case "Electronegativity (Pauling)":
       heightData = properties.electronegativities;
       break;
     case "First ionization energy":

@@ -4008,16 +4008,16 @@ const data: AtomInfo[] = [
   },
 ];
 
-export let groups: (number | null)[] = [];
-export let periods: (number | null)[] = [];
-export let atomicMasses: (number | null)[] = [];
-export let electronegativities: (number | null)[] = [];
-export let ionizationEnergies: (number | null)[] = [];
-export let meltingPoints: (number | null)[] = [];
-export let boilingPoints: (number | null)[] = [];
-export let molarHeats: (number | null)[] = [];
-export let densities: (number | null)[] = [];
-export let earthAbundance: (number | null)[] = [];
+let groups: (number | null)[] = [];
+let periods: (number | null)[] = [];
+let atomicMasses: (number | null)[] = [];
+let electronegativities: (number | null)[] = [];
+let ionizationEnergies: (number | null)[] = [];
+let meltingPoints: (number | null)[] = [];
+let boilingPoints: (number | null)[] = [];
+let molarHeats: (number | null)[] = [];
+let densities: (number | null)[] = [];
+let earthAbundance: (number | null)[] = [];
 
 for (const atom of data) {
   groups.push(atom.group);
@@ -4034,5 +4034,18 @@ for (const atom of data) {
   else
     earthAbundance.push(Math.log10(Math.max(atom.earthAbundance, 0.00001)) + 5);
 }
+
+export const properties = [
+  { name: "Group", value: groups },
+  { name: "Period", value: periods },
+  { name: "Atomic mass", value: atomicMasses },
+  { name: "Density", value: densities },
+  { name: "Electronegativity (Pauling)", value: electronegativities },
+  { name: "First ionization energy", value: ionizationEnergies },
+  { name: "Melting point", value: meltingPoints },
+  { name: "Boiling point", value: boilingPoints },
+  { name: "Molar heat capacity", value: molarHeats },
+  { name: "Abundance in Earth's crust (Log scale)", value: earthAbundance },
+];
 
 export default data;

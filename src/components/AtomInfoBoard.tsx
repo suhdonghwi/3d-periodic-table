@@ -71,6 +71,18 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
             value: withUnit(atom.melt, "g/L (at STP)"),
           },
           {
+            name: "electron affinity",
+            value: withUnit(atom.electronAffinity, ""),
+          },
+          {
+            name: "electronegativity",
+            value: withUnit(atom.electronegativityPauling, "(pauling scale)"),
+          },
+          {
+            name: "ionization energy",
+            value: withUnit(atom.ionizationEnergies[0] || null, "kJ/mol"),
+          },
+          {
             name: "discovered by",
             value: atom.discoveredBy,
           },
@@ -158,7 +170,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           {properties.slice(5 * page, 5 * page + 5).map((property, i) => (
             <group key={i}>
               <Text
-                position={[-0.3, -0.45 - i * 0.15, 0.1]}
+                position={[-0.23, -0.42 - i * 0.15, 0.1]}
                 fontSize={0.08}
                 font="https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwK4vaqI.woff"
                 color="#212529"
@@ -169,7 +181,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
               </Text>
 
               <Text
-                position={[-0.2, -0.45 - i * 0.15, 0.1]}
+                position={[-0.16, -0.42 - i * 0.15, 0.1]}
                 fontSize={0.08}
                 font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
                 color="#212529"

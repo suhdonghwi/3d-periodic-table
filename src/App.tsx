@@ -42,7 +42,7 @@ function App() {
         />
         <OrbitControls />
       </Controls.Canvas>
-      <Controls title="3D Periodic Table" collapsed={false} />
+      <Controls title="3D Periodic Table" collapsed={true} />
     </Controls.Provider>
   );
 }

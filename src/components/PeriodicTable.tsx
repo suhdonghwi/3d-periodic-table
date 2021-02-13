@@ -19,7 +19,7 @@ function hslToHex(h: number, s: number, l: number) {
     const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
     return Math.round(255 * color)
       .toString(16)
-      .padStart(2, "0"); // convert to Hex and prefix "0" if needed
+      .padStart(2, "0");
   };
   return `#${f(0)}${f(8)}${f(4)}`;
 }
@@ -33,6 +33,13 @@ export default function PeriodicTable({
     type: "select",
     items: properties.map((p) => p.name),
     value: "Electronegativity (Pauling)",
+  });
+
+  const maxRealHeight = useControl("Max height", {
+    type: "number",
+    value: 4,
+    min: 2,
+    max: 10,
   });
 
   let heightData: (number | null)[] = properties.find(
@@ -52,7 +59,8 @@ export default function PeriodicTable({
       const number = placement[i][j];
       if (number !== 0) {
         const height = heightData[number - 1];
-        const realHeight = height !== null ? (height / maxHeight) * 4 : 0.01;
+        const realHeight =
+          height !== null ? (height / maxHeight) * maxRealHeight : 0.01;
         const color =
           height !== null
             ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)

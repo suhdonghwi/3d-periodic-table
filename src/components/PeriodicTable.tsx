@@ -71,8 +71,10 @@ export default function PeriodicTable({
       if (number !== 0) {
         let height = heightData[number - 1];
 
-        const realHeight =
-          height !== null ? (height / maxHeight) * maxRealHeight : 0.01;
+        const realHeight = Math.max(
+          height !== null ? (height / maxHeight) * maxRealHeight : 0,
+          0.01
+        );
         const color =
           height !== null
             ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)

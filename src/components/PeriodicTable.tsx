@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useControl } from "react-three-gui";
-import { Text } from "@react-three/drei";
+import BaseBoard from "./BaseBoard";
 
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
@@ -97,29 +97,7 @@ export default function PeriodicTable({
   return (
     <group>
       {pillars}
-      <mesh position={[-0.5, -0.5, 0.7]}>
-        <boxBufferGeometry args={[20, 1, 14]} />
-        <meshLambertMaterial color="#495057" />
-
-        <Text
-          position={[0, 0.5, 5.2]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          fontSize={0.6}
-          depthOffset={-1}
-        >
-          3D Periodic Table
-        </Text>
-
-        <Text
-          position={[0, 0.5, 6]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          fontSize={0.3}
-          depthOffset={-1}
-          color="#4263eb"
-        >
-          github.com/suhdonghwi/3d-periodic-table
-        </Text>
-      </mesh>
+      <BaseBoard />
       <AtomInfoBoard atom={showingAtom} onClose={() => setShowingAtom(null)} />
     </group>
   );

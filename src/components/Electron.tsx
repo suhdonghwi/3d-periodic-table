@@ -16,15 +16,14 @@ export default function Electron({
   const mesh = useRef<Mesh>();
   const geometry = useRef<SphereBufferGeometry>();
 
-  let t = 0;
   useFrame(() => {
+    const t = performance.now() * 0.07;
     mesh.current?.position.setX(
       Math.cos(t * coefficient + initialAngle) * radius
     );
     mesh.current?.position.setY(
       Math.sin(t * coefficient + initialAngle) * radius
     );
-    t++;
   });
 
   return (

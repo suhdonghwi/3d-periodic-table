@@ -40,7 +40,7 @@ function App() {
           placement={placement}
           atomData={atomData}
         />
-        <OrbitControls />
+        <OrbitControls minDistance={5} maxDistance={20} />
       </Controls.Canvas>
       <Controls title="3D Periodic Table" collapsed={true} />
     </Controls.Provider>

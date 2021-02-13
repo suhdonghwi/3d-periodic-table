@@ -28,7 +28,7 @@ function App() {
   return (
     <Controls.Provider>
       <Controls.Canvas
-        style={{ background: "#212529" }}
+        style={{ background: "#101112" }}
         camera={{ position: [0, 13, 10] }}
       >
         <ambientLight intensity={0.25} />

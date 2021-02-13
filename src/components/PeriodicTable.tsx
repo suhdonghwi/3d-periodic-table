@@ -94,6 +94,10 @@ export default function PeriodicTable({
   return (
     <group>
       {pillars}
+      <mesh position={[-0.5, -0.5, 0]}>
+        <boxBufferGeometry args={[20, 1, 12]} />
+        <meshLambertMaterial color="#495057" />
+      </mesh>
       <AtomInfoBoard atom={showingAtom} onClose={() => setShowingAtom(null)} />
     </group>
   );

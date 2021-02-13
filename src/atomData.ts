@@ -4008,16 +4008,18 @@ const data: AtomInfo[] = [
   },
 ];
 
-let groups: (number | null)[] = [];
-let periods: (number | null)[] = [];
-let atomicMasses: (number | null)[] = [];
-let electronegativities: (number | null)[] = [];
-let ionizationEnergies: (number | null)[] = [];
-let meltingPoints: (number | null)[] = [];
-let boilingPoints: (number | null)[] = [];
-let molarHeats: (number | null)[] = [];
-let densities: (number | null)[] = [];
-let earthAbundance: (number | null)[] = [];
+type DataList = (number | null)[];
+
+let groups: DataList = [];
+let periods: DataList = [];
+let atomicMasses: DataList = [];
+let electronegativities: DataList = [];
+let ionizationEnergies: DataList = [];
+let meltingPoints: DataList = [];
+let boilingPoints: DataList = [];
+let molarHeats: DataList = [];
+let densities: DataList = [];
+let earthAbundance: DataList = [];
 
 for (const atom of data) {
   groups.push(atom.group);
@@ -4029,10 +4031,13 @@ for (const atom of data) {
   boilingPoints.push(atom.boil);
   molarHeats.push(atom.molarHeat);
   densities.push(atom.density);
+  earthAbundance.push(atom.earthAbundance);
 
+  /*
   if (atom.earthAbundance === null) earthAbundance.push(null);
   else
-    earthAbundance.push(Math.log10(Math.max(atom.earthAbundance, 0.00001)) + 5);
+    earthAbundance.push(Math.log10(Math.max(atom.earthAbundance, 0.00001) + 1));
+  */
 }
 
 export const properties = [

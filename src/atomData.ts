@@ -4050,7 +4050,7 @@ export const properties = [
   { name: "Melting point", value: meltingPoints },
   { name: "Boiling point", value: boilingPoints },
   { name: "Molar heat capacity", value: molarHeats },
-  { name: "Abundance in Earth's crust (Log scale)", value: earthAbundance },
+  { name: "Abundance in Earth's crust", value: earthAbundance },
 ];
 
 export default data;

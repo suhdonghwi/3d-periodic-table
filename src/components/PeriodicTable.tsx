@@ -42,9 +42,19 @@ export default function PeriodicTable({
     max: 10,
   });
 
+  const isLogScale = useControl("Log scale", {
+    type: "boolean",
+    value: false,
+  });
+
   let heightData: (number | null)[] = properties.find(
     (v) => v.name === property
   )!.value;
+
+  if (isLogScale)
+    heightData = heightData.map((v) =>
+      v === null ? null : Math.log10(Math.max(v, 0.00001) + 1)
+    );
 
   const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
   function onClickPillar(atom: AtomInfo) {
@@ -58,7 +68,8 @@ export default function PeriodicTable({
     for (let j = 0; j < placement[i].length; j++) {
       const number = placement[i][j];
       if (number !== 0) {
-        const height = heightData[number - 1];
+        let height = heightData[number - 1];
+
         const realHeight =
           height !== null ? (height / maxHeight) * maxRealHeight : 0.01;
         const color =

@@ -62,7 +62,7 @@ export default function PeriodicTable({
   const property: string = useControl("Property", {
     type: "select",
     items: properties.map((p) => p.name),
-    value: properties[0].name,
+    value: properties[13].name,
   });
 
   const maxRealHeight = useControl("Max height", {

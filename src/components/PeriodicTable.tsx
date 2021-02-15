@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { GroupProps } from "react-three-fiber";
 import { useControl } from "react-three-gui";
 import BaseBoard from "./BaseBoard";
 
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
-import AtomInfoBoard from "./AtomInfoBoard";
 import atomData from "../atomData";
 
 function hslToHex(h: number, s: number, l: number) {

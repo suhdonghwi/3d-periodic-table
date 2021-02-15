@@ -45,7 +45,15 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "atomic weight",
-            value: withUnit(atom.atomicWeight, "g/mol"),
+            value: atom.atomicWeight?.toString(),
+          },
+          {
+            name: "atomic radius",
+            value: withUnit(atom.atomicRadius, "pm"),
+          },
+          {
+            name: "atomic volume",
+            value: withUnit(atom.atomicVolume, "cm3/mol"),
           },
           {
             name: "density",
@@ -92,7 +100,7 @@ export default function PropertyList({ atom }: PropertyListProps) {
             anchorY="top"
             maxWidth={1.2}
           >
-            {property.value || "(unknown)"}
+            {property.value || "(no data)"}
           </Text>
         </group>
       ))}

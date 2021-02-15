@@ -8,13 +8,13 @@ export default function BaseBoard(props: MeshProps) {
       <boxBufferGeometry args={[21.5, 1, 16]} />
       <meshLambertMaterial color="#495057" />
 
-      <group position={[0, 0.5, 5.5]}>
+      <group position={[-7, 0.5, 5.7]}>
         <Text rotation={[-Math.PI / 2, 0, 0]} fontSize={0.6} depthOffset={-1}>
           3D Periodic Table
         </Text>
 
         <Text
-          position={[0, 0, 0.7]}
+          position={[0.5, 0, 0.7]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.3}
           depthOffset={-1}

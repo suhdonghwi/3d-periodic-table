@@ -27,7 +27,6 @@ for n in range(1, 119):
         'discoveryYear': el.discovery_year,
         'electrons': el.electrons,
         'electronegativity': el.en_pauling,
-        'configuration': el.econf,
         'evaporationHeat': el.evaporation_heat,  # kJ/mol
         'fusionHeat': el.fusion_heat,  # kJ/mol
         # eV, 1st ionazation energy

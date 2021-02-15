@@ -12,7 +12,7 @@ function withUnit(value: number | undefined, unit: string) {
 }
 
 export default function PropertyList({ atom }: PropertyListProps) {
-  const properties =
+  const properties: { name: string; value?: string }[] =
     atom !== undefined
       ? [
           {
@@ -61,7 +61,7 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "discover year",
-            value: atom.discoveryYear,
+            value: atom.discoveryYear?.toString(),
           },
         ]
       : [];

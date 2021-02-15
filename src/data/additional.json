@@ -888,7 +888,6 @@
   {
     "name": "Mendelevium",
     "category": "actinide",
-    "density": null,
     "phase": "Solid",
     "summary": "Mendelevium is a synthetic element with chemical symbol Md (formerly Mv) and atomic number 101. A metallic radioactive transuranic element in the actinide series, it is the first element that currently cannot be produced in macroscopic quantities through neutron bombardment of lighter elements. It is the antepenultimate actinide and the ninth transuranic element.",
     "shells": [2, 8, 18, 32, 31, 8, 2]
@@ -896,7 +895,6 @@
   {
     "name": "Nobelium",
     "category": "actinide",
-    "density": null,
     "phase": "Solid",
     "summary": "Nobelium is a synthetic chemical element with symbol No and atomic number 102. It is named in honor of Alfred Nobel, the inventor of dynamite and benefactor of science. A radioactive metal, it is the tenth transuranic element and is the penultimate member of the actinide series.",
     "shells": [2, 8, 18, 32, 32, 8, 2]
@@ -904,7 +902,6 @@
   {
     "name": "Lawrencium",
     "category": "actinide",
-    "density": null,
     "phase": "Solid",
     "summary": "Lawrencium is a synthetic chemical element with chemical symbol Lr (formerly Lw) and atomic number 103. It is named in honor of Ernest Lawrence, inventor of the cyclotron, a device that was used to discover many artificial radioactive elements. A radioactive metal, lawrencium is the eleventh transuranic element and is also the final member of the actinide series.",
     "shells": [2, 8, 18, 32, 32, 8, 3]

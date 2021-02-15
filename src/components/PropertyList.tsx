@@ -36,6 +36,18 @@ export default function PropertyList({ atom }: PropertyListProps) {
             value: atom.appearance,
           },
           {
+            name: "block",
+            value: atom.block + " block",
+          },
+          {
+            name: "structure",
+            value: atom.structure,
+          },
+          {
+            name: "mass number",
+            value: atom.massNumber.toString(),
+          },
+          {
             name: "boiling point",
             value: withUnit(atom.boilingPoint, "K"),
           },
@@ -52,6 +64,30 @@ export default function PropertyList({ atom }: PropertyListProps) {
             value: withUnit(atom.atomicRadius, "pm"),
           },
           {
+            name: "vdw radius",
+            value: withUnit(atom.vdwRadius, "pm"),
+          },
+          {
+            name: "covalent radius",
+            value: withUnit(atom.covalentRadius, "pm"),
+          },
+          {
+            name: "atomic weight",
+            value: atom.atomicWeight.toString(),
+          },
+          {
+            name: "electrons",
+            value: atom.electrons.toString(),
+          },
+          {
+            name: "protons",
+            value: atom.protons.toString(),
+          },
+          {
+            name: "neutrons",
+            value: atom.neutrons.toString(),
+          },
+          {
             name: "atomic volume",
             value: withUnit(atom.atomicVolume, "cm3/mol"),
           },
@@ -64,8 +100,24 @@ export default function PropertyList({ atom }: PropertyListProps) {
             value: withUnit(atom.electronegativity, "(pauling scale)"),
           },
           {
+            name: "fusion heat",
+            value: withUnit(atom.fusionHeat, "kJ/mol"),
+          },
+          {
+            name: "evaporation heat",
+            value: withUnit(atom.evaporationHeat, "kJ/mol"),
+          },
+          {
             name: "1st ion energy",
             value: withUnit(atom.ionEnergy, "eV"),
+          },
+          {
+            name: "crust abundance",
+            value: withUnit(atom.abundanceCrust, "mg/kg"),
+          },
+          {
+            name: "sea abundance",
+            value: withUnit(atom.abundanceCrust, "mg/L"),
           },
           {
             name: "discover year",

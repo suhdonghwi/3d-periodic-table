@@ -5,11 +5,11 @@ import BaseBoard from "./BaseBoard";
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import AtomInfoBoard from "./AtomInfoBoard";
-import { properties } from "../atomData";
+import atomData from "../atomData";
+
 interface PeriodicTableProps {
   placement: number[][];
   position: [number, number, number];
-  atomData: AtomInfo[];
 }
 
 function hslToHex(h: number, s: number, l: number) {
@@ -25,15 +25,44 @@ function hslToHex(h: number, s: number, l: number) {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
+const properties: {
+  name: string;
+  property: (a: AtomInfo) => number | undefined;
+}[] = [
+  { name: "Abundance in Earth crust", property: (v) => v.abundanceCrust },
+  { name: "Abundance in Sea", property: (v) => v.abundanceSea },
+  { name: "Atomic Radius", property: (v) => v.atomicRadius },
+  { name: "Van der waals Radius", property: (v) => v.vdwRadius },
+  { name: "Covalent Radius", property: (v) => v.covalentRadius },
+  { name: "Atomic Volume", property: (v) => v.atomicVolume },
+  { name: "Atomic Weight", property: (v) => v.atomicWeight },
+  { name: "Boiling Point", property: (v) => v.boilingPoint },
+  { name: "Melting Point", property: (v) => v.meltingPoint },
+  { name: "Electrons Count", property: (v) => v.electrons },
+  {
+    name: "Outermost Electrons Count",
+    property: (v) => v.shells[v.shells.length - 1],
+  },
+  { name: "Protons Count", property: (v) => v.protons },
+  { name: "Neutrons Count", property: (v) => v.neutrons },
+  { name: "Electronegativity (Pauling)", property: (v) => v.electronegativity },
+  { name: "Evaporation Heat", property: (v) => v.evaporationHeat },
+  { name: "Fusion Heat", property: (v) => v.fusionHeat },
+  { name: "First ionization energy", property: (v) => v.ionEnergy },
+  { name: "Mass Number", property: (v) => v.massNumber },
+  { name: "Density", property: (v) => v.density },
+  { name: "Group", property: (v) => v.group },
+  { name: "Period", property: (v) => v.period },
+];
+
 export default function PeriodicTable({
   placement,
   position,
-  atomData,
 }: PeriodicTableProps) {
   const property: string = useControl("Property", {
     type: "select",
     items: properties.map((p) => p.name),
-    value: "Electronegativity (Pauling)",
+    value: properties[0].name,
   });
 
   const maxRealHeight = useControl("Max height", {
@@ -48,13 +77,13 @@ export default function PeriodicTable({
     value: false,
   });
 
-  let heightData: (number | null)[] = properties.find(
-    (v) => v.name === property
-  )!.value;
+  let heightData: (number | undefined)[] = atomData.map(
+    properties.find((v) => v.name === property)!.property
+  );
 
   if (isLogScale)
     heightData = heightData.map((v) =>
-      v === null ? null : Math.log10(Math.max(v, 0.00001) + 1)
+      v === undefined ? undefined : Math.log10(Math.max(v, 0.00001) + 1)
     );
 
   const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
@@ -72,11 +101,11 @@ export default function PeriodicTable({
         let height = heightData[number - 1];
 
         const realHeight = Math.max(
-          height !== null ? (height / maxHeight) * maxRealHeight : 0,
+          height !== undefined ? (height / maxHeight) * maxRealHeight : 0,
           0.01
         );
         const color =
-          height !== null
+          height !== undefined
             ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
             : "#7a7a7a";
 

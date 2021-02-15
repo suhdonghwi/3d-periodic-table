@@ -11,7 +11,7 @@ type Structure =
   | "ORC"
   | "RHL";
 
-export interface AtomInfo {
+export default interface AtomInfo {
   name: string;
   symbol: string;
   number: number;

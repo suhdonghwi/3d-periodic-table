@@ -38,7 +38,6 @@ function App() {
         <PeriodicTable
           position={[-9, 0, -5]}
           placement={placement}
-          atomData={atomData}
         />
         <OrbitControls minDistance={5} maxDistance={20} />
       </Controls.Canvas>

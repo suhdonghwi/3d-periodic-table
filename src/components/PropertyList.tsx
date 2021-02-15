@@ -7,13 +7,13 @@ interface PropertyListProps {
   atom: AtomInfo;
 }
 
-function withUnit(value: number | null, unit: string) {
-  return value !== null ? value + " " + unit : null;
+function withUnit(value: number | undefined, unit: string) {
+  return value !== undefined ? value + " " + unit : undefined;
 }
 
 export default function PropertyList({ atom }: PropertyListProps) {
   const properties =
-    atom !== null
+    atom !== undefined
       ? [
           {
             name: "phase",
@@ -21,7 +21,7 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "group",
-            value: atom.group.toString(),
+            value: atom.group?.toString(),
           },
           {
             name: "period",
@@ -37,35 +37,31 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "boiling point",
-            value: withUnit(atom.boil, "K"),
+            value: withUnit(atom.boilingPoint, "K"),
           },
           {
             name: "melting point",
-            value: withUnit(atom.melt, "K"),
+            value: withUnit(atom.meltingPoint, "K"),
           },
           {
-            name: "atomic mass",
-            value: withUnit(atom.melt, "g/mol"),
+            name: "atomic weight",
+            value: withUnit(atom.atomicWeight, "g/mol"),
           },
           {
             name: "density",
-            value: withUnit(atom.melt, "g/L (at STP)"),
-          },
-          {
-            name: "electron affinity",
-            value: withUnit(atom.electronAffinity, ""),
+            value: withUnit(atom.density, "g/L (at STP)"),
           },
           {
             name: "electronegativity",
-            value: withUnit(atom.electronegativityPauling, "(pauling scale)"),
+            value: withUnit(atom.electronegativity, "(pauling scale)"),
           },
           {
-            name: "ionization energy",
-            value: withUnit(atom.ionizationEnergies[0] || null, "kJ/mol"),
+            name: "1st ion energy",
+            value: withUnit(atom.ionEnergy, "eV"),
           },
           {
-            name: "discovered by",
-            value: atom.discoveredBy,
+            name: "discover year",
+            value: atom.discoveryYear,
           },
         ]
       : [];

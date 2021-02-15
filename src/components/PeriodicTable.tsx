@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { GroupProps } from "react-three-fiber";
 import { useControl } from "react-three-gui";
 import BaseBoard from "./BaseBoard";
 
@@ -6,11 +7,6 @@ import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import AtomInfoBoard from "./AtomInfoBoard";
 import atomData from "../atomData";
-
-interface PeriodicTableProps {
-  placement: number[][];
-  position: [number, number, number];
-}
 
 function hslToHex(h: number, s: number, l: number) {
   l /= 100;
@@ -55,10 +51,16 @@ const properties: {
   { name: "Period", property: (v) => v.period },
 ];
 
+interface PeriodicTableProps {
+  placement: number[][];
+  onClickPillar: (v: AtomInfo) => void;
+}
+
 export default function PeriodicTable({
   placement,
-  position,
-}: PeriodicTableProps) {
+  onClickPillar,
+  ...props
+}: PeriodicTableProps & GroupProps) {
   const property: string = useControl("Property", {
     type: "select",
     items: properties.map((p) => p.name),
@@ -86,11 +88,6 @@ export default function PeriodicTable({
       v === undefined ? undefined : Math.log10(Math.max(v, 0.00001) + 1)
     );
 
-  const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
-  function onClickPillar(atom: AtomInfo) {
-    setShowingAtom(atom);
-  }
-
   const pillars = [];
   const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
@@ -113,10 +110,10 @@ export default function PeriodicTable({
           <AtomPillar
             key={number}
             atom={atomData[number - 1]}
-            position={[position[0] + j, position[1], position[2] + i]}
+            position={[j - 8.5, 0.5, i - 5.7]}
             height={realHeight}
             color={color}
-            onClick={onClickPillar}
+            onClick={() => onClickPillar(atomData[number - 1])}
           />
         );
       }
@@ -124,10 +121,10 @@ export default function PeriodicTable({
   }
 
   return (
-    <group>
-      {pillars}
-      <BaseBoard />
-      <AtomInfoBoard atom={showingAtom} onClose={() => setShowingAtom(null)} />
+    <group {...props}>
+      <BaseBoard>
+        <group>{pillars}</group>
+      </BaseBoard>
     </group>
   );
 }

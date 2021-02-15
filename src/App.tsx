@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Controls } from "react-three-gui";
 import { OrbitControls } from "@react-three/drei";
 
 import PeriodicTable from "./components/PeriodicTable";
-import atomData from "./atomData";
+import AtomInfo from "./types/AtomInfo";
+import AtomInfoBoard from "./components/AtomInfoBoard";
 
 function range(from: number, to: number) {
   const result = [];
@@ -25,6 +26,8 @@ const placement = [
 ];
 
 function App() {
+  const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
+
   return (
     <Controls.Provider>
       <Controls.Canvas
@@ -36,9 +39,15 @@ function App() {
         <spotLight intensity={0.2} position={[0, 0, -50]} />
 
         <PeriodicTable
-          position={[-9, 0, -5]}
+          position={[0, 0, 0]}
+          onClickPillar={(v) => setShowingAtom(v)}
           placement={placement}
         />
+        <AtomInfoBoard
+          atom={showingAtom}
+          onClose={() => setShowingAtom(null)}
+        />
+
         <OrbitControls minDistance={5} maxDistance={20} />
       </Controls.Canvas>
       <Controls title="3D Periodic Table" collapsed={true} />

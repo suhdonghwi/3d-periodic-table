@@ -7,8 +7,12 @@ interface PropertyListProps {
   atom: AtomInfo;
 }
 
-function withUnit(value: number | undefined, unit: string) {
-  return value !== undefined ? value + " " + unit : undefined;
+function numeric(value: number | undefined, unit?: string): string | undefined {
+  if (value === undefined) return undefined;
+
+  const fixed = Number(value.toFixed(8));
+  if (unit !== undefined) return fixed + " " + unit;
+  else return fixed.toString();
 }
 
 export default function PropertyList({ atom }: PropertyListProps) {
@@ -21,11 +25,11 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "group",
-            value: atom.group?.toString(),
+            value: numeric(atom.group),
           },
           {
             name: "period",
-            value: atom.period.toString(),
+            value: numeric(atom.period),
           },
           {
             name: "category",
@@ -45,83 +49,83 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "mass number",
-            value: atom.massNumber.toString(),
+            value: numeric(atom.massNumber),
           },
           {
             name: "boiling point",
-            value: withUnit(atom.boilingPoint, "K"),
+            value: numeric(atom.boilingPoint, "K"),
           },
           {
             name: "melting point",
-            value: withUnit(atom.meltingPoint, "K"),
+            value: numeric(atom.meltingPoint, "K"),
           },
           {
             name: "atomic weight",
-            value: atom.atomicWeight?.toString(),
+            value: numeric(atom.atomicWeight),
           },
           {
             name: "atomic radius",
-            value: withUnit(atom.atomicRadius, "pm"),
+            value: numeric(atom.atomicRadius, "pm"),
           },
           {
             name: "vdw radius",
-            value: withUnit(atom.vdwRadius, "pm"),
+            value: numeric(atom.vdwRadius, "pm"),
           },
           {
             name: "covalent radius",
-            value: withUnit(atom.covalentRadius, "pm"),
+            value: numeric(atom.covalentRadius, "pm"),
           },
           {
             name: "atomic weight",
-            value: atom.atomicWeight.toString(),
+            value: numeric(atom.atomicWeight),
           },
           {
             name: "electrons",
-            value: atom.electrons.toString(),
+            value: numeric(atom.electrons),
           },
           {
             name: "protons",
-            value: atom.protons.toString(),
+            value: numeric(atom.protons),
           },
           {
             name: "neutrons",
-            value: atom.neutrons.toString(),
+            value: numeric(atom.neutrons),
           },
           {
             name: "atomic volume",
-            value: withUnit(atom.atomicVolume, "cm3/mol"),
+            value: numeric(atom.atomicVolume, "cm3/mol"),
           },
           {
             name: "density",
-            value: withUnit(atom.density, "g/L (at STP)"),
+            value: numeric(atom.density, "g/L (at STP)"),
           },
           {
             name: "electronegativity",
-            value: withUnit(atom.electronegativity, "(pauling scale)"),
+            value: numeric(atom.electronegativity, "(pauling scale)"),
           },
           {
             name: "fusion heat",
-            value: withUnit(atom.fusionHeat, "kJ/mol"),
-          },
-          {
-            name: "evaporation heat",
-            value: withUnit(atom.evaporationHeat, "kJ/mol"),
-          },
-          {
-            name: "1st ion energy",
-            value: withUnit(atom.ionEnergy, "eV"),
+            value: numeric(atom.fusionHeat, "kJ/mol"),
           },
           {
             name: "crust abundance",
-            value: withUnit(atom.abundanceCrust, "mg/kg"),
+            value: numeric(atom.abundanceCrust, "mg/kg"),
           },
           {
             name: "sea abundance",
-            value: withUnit(atom.abundanceCrust, "mg/L"),
+            value: numeric(atom.abundanceSea, "mg/L"),
+          },
+          {
+            name: "evaporation heat",
+            value: numeric(atom.evaporationHeat, "kJ/mol"),
+          },
+          {
+            name: "1st ion energy",
+            value: numeric(atom.ionEnergy, "eV"),
           },
           {
             name: "discover year",
-            value: atom.discoveryYear?.toString(),
+            value: numeric(atom.discoveryYear),
           },
         ]
       : [];

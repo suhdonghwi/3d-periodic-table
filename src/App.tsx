@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
 import AtomInfoBoard from "./components/AtomInfoBoard";
+import Control from "./components/Control";
 
 function range(from: number, to: number) {
   const result = [];
@@ -51,6 +52,7 @@ function App() {
         <OrbitControls minDistance={5} maxDistance={20} />
       </Controls.Canvas>
       <Controls title="3D Periodic Table" collapsed={true} />
+      <Control />
     </Controls.Provider>
   );
 }

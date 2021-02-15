@@ -12,6 +12,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.7",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.1",
@@ -19,6 +20,7 @@
     "react-scripts": "4.0.1",
     "react-three-fiber": "^5.3.7",
     "react-three-gui": "^0.4.2",
+    "styled-components": "^5.2.1",
     "three": "^0.123.0",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"

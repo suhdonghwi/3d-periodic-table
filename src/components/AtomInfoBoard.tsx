@@ -37,7 +37,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
         }
       }}
     >
-      <boxBufferGeometry ref={geometry} args={[2.3, 3.25, 0.1]} />
+      <boxBufferGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
       <animated.meshStandardMaterial
         color="white"
         transparent
@@ -93,8 +93,8 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           <Text
             position={[0, 0.75, 0.1]}
             fontSize={0.065}
-            color="#2b2b2b"
-            maxWidth={1.9}
+            color="#1c1c1c"
+            maxWidth={2.1}
             font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
             anchorY="middle"
           >

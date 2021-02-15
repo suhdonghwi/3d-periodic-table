@@ -41,7 +41,7 @@ export default function PropertyList({ atom }: PropertyListProps) {
           },
           {
             name: "block",
-            value: atom.block + " block",
+            value: atom.block + "-block",
           },
           {
             name: "structure",

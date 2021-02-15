@@ -50,6 +50,19 @@ const properties: {
   { name: "Period", property: (v) => v.period },
 ];
 
+const styles: {
+  name: string;
+  toColor: (a: AtomInfo, maxHeight: number, height?: number) => string;
+}[] = [
+  {
+    name: "By height",
+    toColor: (_, maxHeight, height) =>
+      height !== undefined
+        ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
+        : "#868e96",
+  },
+];
+
 interface PeriodicTableProps {
   placement: number[][];
   onClickPillar: (v: AtomInfo) => void;
@@ -64,6 +77,12 @@ export default function PeriodicTable({
     type: "select",
     items: properties.map((p) => p.name),
     value: properties[13].name,
+  });
+
+  const style: string = useControl("Style", {
+    type: "select",
+    items: styles.map((s) => s.name),
+    value: styles[0].name,
   });
 
   const maxRealHeight = useControl("Max height", {
@@ -94,25 +113,26 @@ export default function PeriodicTable({
     for (let j = 0; j < placement[i].length; j++) {
       const number = placement[i][j];
       if (number !== 0) {
+        const atom = atomData[number - 1];
         let height = heightData[number - 1];
 
         const realHeight = Math.max(
           height !== undefined ? (height / maxHeight) * maxRealHeight : 0,
           0.01
         );
-        const color =
-          height !== undefined
-            ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
-            : "#868e96";
+
+        const color = styles
+          .find((s) => s.name === style)!
+          .toColor(atom, maxHeight, height);
 
         pillars.push(
           <AtomPillar
             key={number}
-            atom={atomData[number - 1]}
+            atom={atom}
             position={[j - 8.5, 0.5, i - 5.7]}
             height={realHeight}
             color={color}
-            onClick={() => onClickPillar(atomData[number - 1])}
+            onClick={() => onClickPillar(atom)}
           />
         );
       }

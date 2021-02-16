@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Controls } from "react-three-gui";
 import { OrbitControls } from "@react-three/drei";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
 import AtomInfoBoard from "./components/AtomInfoBoard";
 import Control from "./components/Control";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { Canvas } from "react-three-fiber";
 
 function range(from: number, to: number) {
   const result = [];
@@ -28,10 +29,11 @@ const placement = [
 
 function App() {
   const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
+  const theme = createMuiTheme({ palette: { type: "dark" } });
 
   return (
-    <Controls.Provider>
-      <Controls.Canvas
+    <ThemeProvider theme={theme}>
+      <Canvas
         style={{ background: "#101112" }}
         camera={{ position: [0, 13, 10] }}
       >
@@ -50,10 +52,9 @@ function App() {
         />
 
         <OrbitControls minDistance={5} maxDistance={20} />
-      </Controls.Canvas>
-      <Controls title="3D Periodic Table" collapsed={true} />
+      </Canvas>
       <Control />
-    </Controls.Provider>
+    </ThemeProvider>
   );
 }
 

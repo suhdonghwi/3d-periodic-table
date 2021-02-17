@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GroupProps } from "react-three-fiber";
 import { useControl } from "react-three-gui";
 import BaseBoard from "./BaseBoard";
@@ -66,11 +66,14 @@ const styles: {
 interface PeriodicTableProps {
   placement: number[][];
   onClickPillar: (v: AtomInfo) => void;
+
+  realMaxHeight: number;
 }
 
 export default function PeriodicTable({
   placement,
   onClickPillar,
+  realMaxHeight,
   ...props
 }: PeriodicTableProps & GroupProps) {
   const property: string = useControl("Property", {
@@ -83,13 +86,6 @@ export default function PeriodicTable({
     type: "select",
     items: styles.map((s) => s.name),
     value: styles[0].name,
-  });
-
-  const maxRealHeight = useControl("Max height", {
-    type: "number",
-    value: 4,
-    min: 2,
-    max: 10,
   });
 
   const isLogScale = useControl("Log scale", {
@@ -117,7 +113,7 @@ export default function PeriodicTable({
         let height = heightData[number - 1];
 
         const realHeight = Math.max(
-          height !== undefined ? (height / maxHeight) * maxRealHeight : 0,
+          height !== undefined ? (height / maxHeight) * realMaxHeight : 0,
           0.01
         );
 

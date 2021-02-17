@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Canvas } from "react-three-fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import blue from "@material-ui/core/colors/blue";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -29,7 +30,11 @@ const placement = [
 
 function App() {
   const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
-  const theme = createMuiTheme({ palette: { type: "dark" } });
+  const theme = createMuiTheme({
+    palette: { type: "dark", primary: { main: blue[500] } },
+  });
+
+  const [maxHeight, setMaxHeight] = useState(4);
 
   return (
     <ThemeProvider theme={theme}>
@@ -49,11 +54,15 @@ function App() {
           position={[0, 0, 0]}
           onClickPillar={(v) => setShowingAtom(v)}
           placement={placement}
+          realMaxHeight={maxHeight}
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />
       </Canvas>
-      <Control />
+      <Control
+        initialMaxHeight={maxHeight}
+        onUpdateMaxHeight={(v) => setMaxHeight(v)}
+      />
     </ThemeProvider>
   );
 }

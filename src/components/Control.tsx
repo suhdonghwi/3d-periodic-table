@@ -1,4 +1,5 @@
-import { Grid, Paper, Box, styled } from "@material-ui/core";
+import { useState } from "react";
+import { Paper, Typography, Slider, styled } from "@material-ui/core";
 
 const Container = styled(Paper)({
   position: "absolute",
@@ -6,28 +7,38 @@ const Container = styled(Paper)({
   right: "2rem",
   padding: "2rem 1.5rem",
   boxSizing: "border-box",
-  width: "22rem",
+  width: "20rem",
   height: "20rem",
 });
 
-export default function Control() {
+function SettingName(props: { children: React.ReactNode }) {
+  return <Typography gutterBottom>{props.children}</Typography>;
+}
+
+interface ControlProps {
+  initialMaxHeight: number;
+  onUpdateMaxHeight: (maxWidth: number) => void;
+}
+
+export default function Control({
+  initialMaxHeight,
+  onUpdateMaxHeight,
+}: ControlProps) {
+  const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
+
   return (
     <Container>
-      <Grid container justify="center" alignItems="center" spacing={2}>
-        <Grid item xs={3}>
-          Property
-        </Grid>
-        <Grid item xs={9}>
-          what asdf asd fasd fas dfa sdf asdf asdf asdf asdf asdf
-        </Grid>
-
-        <Grid item xs={3}>
-          Max width
-        </Grid>
-        <Grid item xs={9}>
-          what asdf asd fasd fas dfa sdf asdf asdf asdf asdf asdf
-        </Grid>
-      </Grid>
+      <SettingName>Max height</SettingName>
+      <Slider
+        value={internalMaxHeight}
+        onChange={(_, v) => setInternalMaxHeight(v as number)}
+        onChangeCommitted={(_, v) => onUpdateMaxHeight(v as number)}
+        valueLabelDisplay="auto"
+        step={1}
+        marks
+        min={2}
+        max={10}
+      />
     </Container>
   );
 }

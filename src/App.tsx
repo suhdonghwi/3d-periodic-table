@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "react-three-fiber";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
 import AtomInfoBoard from "./components/AtomInfoBoard";
 import Control from "./components/Control";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { Canvas } from "react-three-fiber";
 
 function range(from: number, to: number) {
   const result = [];
@@ -33,10 +33,14 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Canvas
-        style={{ background: "#101112" }}
-        camera={{ position: [0, 13, 10] }}
-      >
+      <Canvas style={{ background: "#101112" }}>
+        <PerspectiveCamera position={[0, 13, 10]} makeDefault>
+          <AtomInfoBoard
+            atom={showingAtom}
+            onClose={() => setShowingAtom(null)}
+          />
+        </PerspectiveCamera>
+
         <ambientLight intensity={0.25} />
         <spotLight intensity={0.6} position={[30, 30, 50]} />
         <spotLight intensity={0.2} position={[0, 0, -50]} />
@@ -46,12 +50,8 @@ function App() {
           onClickPillar={(v) => setShowingAtom(v)}
           placement={placement}
         />
-        <AtomInfoBoard
-          atom={showingAtom}
-          onClose={() => setShowingAtom(null)}
-        />
 
-        <OrbitControls minDistance={5} maxDistance={20} />
+        <OrbitControls minDistance={5} maxDistance={25} />
       </Canvas>
       <Control />
     </ThemeProvider>

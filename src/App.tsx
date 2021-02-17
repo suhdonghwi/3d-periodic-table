@@ -34,7 +34,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
-        <PerspectiveCamera position={[0, 13, 10]} makeDefault>
+        <PerspectiveCamera position={[0, 17, 14]} makeDefault>
           <AtomInfoBoard
             atom={showingAtom}
             onClose={() => setShowingAtom(null)}
@@ -51,7 +51,7 @@ function App() {
           placement={placement}
         />
 
-        <OrbitControls minDistance={5} maxDistance={25} />
+        <OrbitControls minDistance={5} maxDistance={45} />
       </Canvas>
       <Control />
     </ThemeProvider>

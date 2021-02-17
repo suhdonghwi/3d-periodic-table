@@ -1,4 +1,4 @@
-import { Grid, Paper, styled } from "@material-ui/core";
+import { Grid, Paper, Box, styled } from "@material-ui/core";
 
 const Container = styled(Paper)({
   position: "absolute",
@@ -6,14 +6,14 @@ const Container = styled(Paper)({
   right: "2rem",
   padding: "2rem 1.5rem",
   boxSizing: "border-box",
-  width: "20rem",
+  width: "22rem",
   height: "20rem",
 });
 
 export default function Control() {
   return (
     <Container>
-      <Grid container spacing={4}>
+      <Grid container justify="center" alignItems="center" spacing={2}>
         <Grid item xs={3}>
           Property
         </Grid>

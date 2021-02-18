@@ -20,36 +20,6 @@ function hslToHex(h: number, s: number, l: number) {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-const properties: {
-  name: string;
-  property: (a: AtomInfo) => number | undefined;
-}[] = [
-  { name: "Abundance in Earth crust", property: (v) => v.abundanceCrust },
-  { name: "Abundance in Sea", property: (v) => v.abundanceSea },
-  { name: "Atomic Radius", property: (v) => v.atomicRadius },
-  { name: "Van der waals Radius", property: (v) => v.vdwRadius },
-  { name: "Covalent Radius", property: (v) => v.covalentRadius },
-  { name: "Atomic Volume", property: (v) => v.atomicVolume },
-  { name: "Atomic Weight", property: (v) => v.atomicWeight },
-  { name: "Boiling Point", property: (v) => v.boilingPoint },
-  { name: "Melting Point", property: (v) => v.meltingPoint },
-  { name: "Electrons Count", property: (v) => v.electrons },
-  {
-    name: "Outermost Electrons Count",
-    property: (v) => v.shells[v.shells.length - 1],
-  },
-  { name: "Protons Count", property: (v) => v.protons },
-  { name: "Neutrons Count", property: (v) => v.neutrons },
-  { name: "Electronegativity (Pauling)", property: (v) => v.electronegativity },
-  { name: "Evaporation Heat", property: (v) => v.evaporationHeat },
-  { name: "Fusion Heat", property: (v) => v.fusionHeat },
-  { name: "First ionization energy", property: (v) => v.ionEnergy },
-  { name: "Mass Number", property: (v) => v.massNumber },
-  { name: "Density", property: (v) => v.density },
-  { name: "Group", property: (v) => v.group },
-  { name: "Period", property: (v) => v.period },
-];
-
 const styles: {
   name: string;
   toColor: (a: AtomInfo, maxHeight: number, height?: number) => string;
@@ -68,20 +38,16 @@ interface PeriodicTableProps {
   onClickPillar: (v: AtomInfo) => void;
 
   realMaxHeight: number;
+  propGetter: (v: AtomInfo) => number | undefined;
 }
 
 export default function PeriodicTable({
   placement,
   onClickPillar,
   realMaxHeight,
+  propGetter,
   ...props
 }: PeriodicTableProps & GroupProps) {
-  const property: string = useControl("Property", {
-    type: "select",
-    items: properties.map((p) => p.name),
-    value: properties[13].name,
-  });
-
   const style: string = useControl("Style", {
     type: "select",
     items: styles.map((s) => s.name),
@@ -93,9 +59,7 @@ export default function PeriodicTable({
     value: false,
   });
 
-  let heightData: (number | undefined)[] = atomData.map(
-    properties.find((v) => v.name === property)!.property
-  );
+  let heightData: (number | undefined)[] = atomData.map(propGetter);
 
   if (isLogScale)
     heightData = heightData.map((v) =>

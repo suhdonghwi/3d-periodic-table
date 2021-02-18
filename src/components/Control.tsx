@@ -8,6 +8,8 @@ import {
   styled,
 } from "@material-ui/core";
 
+import AtomInfo from "../types/AtomInfo";
+
 const Container = styled(Paper)({
   position: "absolute",
   top: "2rem",
@@ -34,17 +36,26 @@ function FormProp(props: { children: React.ReactNode }) {
   );
 }
 
+type Prop = { name: string; property: (v: AtomInfo) => number | undefined };
+export type Category = { category: string; props: Prop[] };
+
 interface ControlProps {
   initialMaxHeight: number;
   onUpdateMaxHeight: (maxWidth: number) => void;
+
+  categories: Category[];
+  property: string;
+  onUpdateProperty: (property: string) => void;
 }
 
 export default function Control({
   initialMaxHeight,
   onUpdateMaxHeight,
+  categories,
+  property,
+  onUpdateProperty,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
-  const [value, setValue] = useState(1);
 
   return (
     <Container>
@@ -53,18 +64,18 @@ export default function Control({
         <Select
           native
           aria-labelledby="property-select"
-          value={value}
-          onChange={(e) => setValue(e.target.value as number)}
+          value={property}
+          onChange={(e) => onUpdateProperty(e.target.value as string)}
         >
-          <option aria-label="None" value="" />
-          <optgroup label="Category 1">
-            <option value={1}>Option 1</option>
-            <option value={2}>Option 2</option>
-          </optgroup>
-          <optgroup label="Category 2">
-            <option value={3}>Option 3</option>
-            <option value={4}>Option 4</option>
-          </optgroup>
+          {categories.map((c) => (
+            <optgroup key={c.category} label={c.category}>
+              {c.props.map((p) => (
+                <option key={p.name} value={p.name}>
+                  {p.name}
+                </option>
+              ))}
+            </optgroup>
+          ))}
         </Select>
       </FormProp>
 

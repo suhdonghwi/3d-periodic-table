@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Mesh, BoxBufferGeometry } from "three";
 import { animated, useSpring } from "@react-spring/three";
-import { Text, useCamera } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 
 import AtomInfo from "../types/AtomInfo";
 import AtomDisplay from "./AtomDisplay";
@@ -16,24 +16,23 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
   const mesh = useRef<Mesh>();
   const geometry = useRef<BoxBufferGeometry>();
 
-  const opacityProps = useSpring({ opacity: atom !== null ? 1 : 0 });
+  const boardSpring = useSpring({
+    position: (atom !== null ? [0, 0, -5] : [0, -5, -5]) as any,
+    rotation: (atom !== null ? [0, 0, 0] : [-1, 0, 0]) as any,
+  });
 
   return (
-    <mesh
+    <animated.mesh
       ref={mesh}
-      position={[0, 0, -5]}
       onClick={(e) => {
         if (atom !== null) {
           e.stopPropagation();
         }
       }}
+      {...boardSpring}
     >
       <boxBufferGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
-      <animated.meshStandardMaterial
-        color="white"
-        transparent
-        {...opacityProps}
-      />
+      <meshStandardMaterial color="white" />
 
       <group
         onClick={(e) => {
@@ -53,20 +52,12 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, Math.PI / 4]}>
           <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
-          <animated.meshStandardMaterial
-            color="#fa5252"
-            transparent
-            {...opacityProps}
-          />
+          <meshStandardMaterial color="#fa5252" />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, -Math.PI / 4]}>
           <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
-          <animated.meshStandardMaterial
-            color="#fa5252"
-            transparent
-            {...opacityProps}
-          />
+          <meshStandardMaterial color="#fa5252" />
         </mesh>
       </group>
 
@@ -96,6 +87,6 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           <PropertyList atom={atom} />
         </>
       )}
-    </mesh>
+    </animated.mesh>
   );
 }

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/drei": "^2.2.7",
     "@testing-library/jest-dom": "^5.11.4",

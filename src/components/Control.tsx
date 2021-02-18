@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  Box,
   Paper,
   Typography,
   Slider,
@@ -9,6 +10,7 @@ import {
   Grid,
   styled,
 } from "@material-ui/core";
+import Layers from "@material-ui/icons/Layers";
 
 import AtomInfo from "../types/AtomInfo";
 
@@ -16,9 +18,9 @@ const Container = styled(Paper)({
   position: "absolute",
   top: "2rem",
   right: "2rem",
-  padding: "2rem 1.5rem",
+  padding: "1.5rem",
   boxSizing: "border-box",
-  width: "18rem",
+  width: "20rem",
   height: "20rem",
 });
 
@@ -40,9 +42,9 @@ function FormLabel(props: {
 
 function FormProp(props: { children: React.ReactNode }) {
   return (
-    <FormControl fullWidth style={{ marginBottom: "1.7rem" }}>
-      {props.children}
-    </FormControl>
+    <Box marginBottom={3}>
+      <FormControl fullWidth>{props.children}</FormControl>
+    </Box>
   );
 }
 
@@ -74,6 +76,13 @@ export default function Control({
 
   return (
     <Container>
+      <Box marginBottom={4}>
+        <Grid container alignItems="center" justify="center">
+          <Layers style={{ marginRight: "0.5rem" }} />
+          <Typography>3d periodic table</Typography>
+        </Grid>
+      </Box>
+
       <FormProp>
         <FormLabel id="property-select">Property</FormLabel>
         <Select
@@ -116,7 +125,7 @@ export default function Control({
               Log scale
             </FormLabel>
           </Grid>
-          <Grid item justify="flex-end">
+          <Grid item>
             <Checkbox
               aria-labelledby="log-scale-check"
               value={isLogScale}

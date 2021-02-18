@@ -86,6 +86,7 @@ function App() {
 
   const [maxHeight, setMaxHeight] = useState(4);
   const [property, setProperty] = useState("Group");
+  const [isLogScale, setIsLogScale] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -110,6 +111,7 @@ function App() {
             categories.flatMap((c) => c.props).find((v) => v.name === property)!
               .property
           }
+          isLogScale={isLogScale}
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />
@@ -120,6 +122,8 @@ function App() {
         categories={categories}
         property={property}
         onUpdateProperty={(v) => setProperty(v)}
+        isLogScale={isLogScale}
+        onUpdateIsLogScale={(v) => setIsLogScale(v)}
       />
     </ThemeProvider>
   );

@@ -4,7 +4,9 @@ import {
   Typography,
   Slider,
   Select,
+  Checkbox,
   FormControl,
+  Grid,
   styled,
 } from "@material-ui/core";
 
@@ -16,13 +18,21 @@ const Container = styled(Paper)({
   right: "2rem",
   padding: "2rem 1.5rem",
   boxSizing: "border-box",
-  width: "20rem",
+  width: "18rem",
   height: "20rem",
 });
 
-function FormLabel(props: { id: string; children: React.ReactNode }) {
+function FormLabel(props: {
+  id: string;
+  children: React.ReactNode;
+  noGutter?: boolean;
+}) {
   return (
-    <Typography id={props.id} gutterBottom color="textSecondary">
+    <Typography
+      id={props.id}
+      color="textSecondary"
+      gutterBottom={props.noGutter === undefined || !props.noGutter}
+    >
       {props.children}
     </Typography>
   );
@@ -46,6 +56,9 @@ interface ControlProps {
   categories: Category[];
   property: string;
   onUpdateProperty: (property: string) => void;
+
+  isLogScale: boolean;
+  onUpdateIsLogScale: (isLogScale: boolean) => void;
 }
 
 export default function Control({
@@ -54,6 +67,8 @@ export default function Control({
   categories,
   property,
   onUpdateProperty,
+  isLogScale,
+  onUpdateIsLogScale,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
 
@@ -92,6 +107,25 @@ export default function Control({
           min={2}
           max={10}
         />
+      </FormProp>
+
+      <FormProp>
+        <Grid container alignItems="center">
+          <Grid item xs>
+            <FormLabel id="log-scale-check" noGutter>
+              Log scale
+            </FormLabel>
+          </Grid>
+          <Grid item justify="flex-end">
+            <Checkbox
+              aria-labelledby="log-scale-check"
+              value={isLogScale}
+              onChange={(_, v) => onUpdateIsLogScale(v)}
+              color="primary"
+              style={{ padding: 0 }}
+            />
+          </Grid>
+        </Grid>
       </FormProp>
     </Container>
   );

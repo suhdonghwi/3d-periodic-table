@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { GroupProps } from "react-three-fiber";
-import { useControl } from "react-three-gui";
 import BaseBoard from "./BaseBoard";
 
 import AtomPillar from "./AtomPillar";
@@ -20,25 +19,14 @@ function hslToHex(h: number, s: number, l: number) {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-const styles: {
-  name: string;
-  toColor: (a: AtomInfo, maxHeight: number, height?: number) => string;
-}[] = [
-  {
-    name: "By height",
-    toColor: (_, maxHeight, height) =>
-      height !== undefined
-        ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
-        : "#868e96",
-  },
-];
-
 interface PeriodicTableProps {
   placement: number[][];
   onClickPillar: (v: AtomInfo) => void;
 
   realMaxHeight: number;
   propGetter: (v: AtomInfo) => number | undefined;
+
+  isLogScale: boolean;
 }
 
 export default function PeriodicTable({
@@ -46,19 +34,9 @@ export default function PeriodicTable({
   onClickPillar,
   realMaxHeight,
   propGetter,
+  isLogScale,
   ...props
 }: PeriodicTableProps & GroupProps) {
-  const style: string = useControl("Style", {
-    type: "select",
-    items: styles.map((s) => s.name),
-    value: styles[0].name,
-  });
-
-  const isLogScale = useControl("Log scale", {
-    type: "boolean",
-    value: false,
-  });
-
   let heightData: (number | undefined)[] = atomData.map(propGetter);
 
   if (isLogScale)
@@ -81,9 +59,10 @@ export default function PeriodicTable({
           0.01
         );
 
-        const color = styles
-          .find((s) => s.name === style)!
-          .toColor(atom, maxHeight, height);
+        const color =
+          height !== undefined
+            ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
+            : "#868e96";
 
         pillars.push(
           <AtomPillar

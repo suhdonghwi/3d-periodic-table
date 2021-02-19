@@ -8,20 +8,21 @@ import {
   Checkbox,
   FormControl,
   Grid,
+  Button,
   styled,
 } from "@material-ui/core";
-import Layers from "@material-ui/icons/Layers";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import ExpandLess from "@material-ui/icons/ExpandLess";
 
 import AtomInfo from "../types/AtomInfo";
 
 const Container = styled(Paper)({
   position: "absolute",
-  top: "2rem",
-  right: "2rem",
-  padding: "1.5rem",
+  padding: "0.7rem 1.5rem",
   boxSizing: "border-box",
-  width: "20rem",
-  height: "20rem",
+  overflow: "hidden",
+  transition: "all 0.3s",
 });
 
 function FormLabel(props: {
@@ -73,13 +74,31 @@ export default function Control({
   onUpdateIsLogScale,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
+  const [expand, setExpand] = useState(true);
+
+  const isMobile = useMediaQuery("(max-width: 400px)");
 
   return (
-    <Container>
-      <Box marginBottom={4}>
+    <Container
+      elevation={3}
+      style={{
+        height: expand ? "20rem" : "3.5rem",
+        width: expand ? "18rem" : "7rem",
+        top: isMobile ? "1rem" : "2rem",
+        right: isMobile ? "50%" : "2rem",
+        transform: isMobile ? "translateX(50%)" : "none",
+      }}
+    >
+      <Box marginBottom={2}>
         <Grid container alignItems="center" justify="center">
-          <Layers style={{ marginRight: "0.5rem" }} />
-          <Typography>3d periodic table</Typography>
+          <Grid item>
+            <Button
+              startIcon={expand ? <ExpandLess /> : <ExpandMore />}
+              onClick={() => setExpand(!expand)}
+            >
+              {expand ? "Collapse" : "Expand"}
+            </Button>
+          </Grid>
         </Grid>
       </Box>
 

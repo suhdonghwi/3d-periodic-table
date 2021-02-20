@@ -6,19 +6,6 @@ import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import atomData from "../atomData";
 
-function hslToHex(h: number, s: number, l: number) {
-  l /= 100;
-  const a = (s * Math.min(l, 1 - l)) / 100;
-  const f = (n: number) => {
-    const k = (n + h / 30) % 12;
-    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color)
-      .toString(16)
-      .padStart(2, "0");
-  };
-  return `#${f(0)}${f(8)}${f(4)}`;
-}
-
 interface PeriodicTableProps {
   placement: number[][];
   onClickPillar: (v: AtomInfo) => void;
@@ -27,6 +14,8 @@ interface PeriodicTableProps {
   propGetter: (v: AtomInfo) => number | undefined;
 
   isLogScale: boolean;
+
+  styler: (atom: AtomInfo, height: number, maxHeight: number) => string;
 }
 
 export default function PeriodicTable({
@@ -35,6 +24,7 @@ export default function PeriodicTable({
   realMaxHeight,
   propGetter,
   isLogScale,
+  styler,
   ...props
 }: PeriodicTableProps & GroupProps) {
   let heightData: (number | undefined)[] = atomData.map(propGetter);
@@ -60,9 +50,7 @@ export default function PeriodicTable({
         );
 
         const color =
-          height !== undefined
-            ? hslToHex(120 + (height / maxHeight) * 120, 89, 63)
-            : "#868e96";
+          height === undefined ? "#868e96" : styler(atom, height, maxHeight);
 
         pillars.push(
           <AtomPillar

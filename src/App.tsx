@@ -3,6 +3,7 @@ import { Canvas } from "react-three-fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import blue from "@material-ui/core/colors/blue";
+import colormap from "color-interpolate";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -88,6 +89,8 @@ function App() {
   const [property, setProperty] = useState("Group");
   const [isLogScale, setIsLogScale] = useState(false);
 
+  const colorRange = colormap(["#4df54d", "#4d4df5"]);
+
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
@@ -112,6 +115,9 @@ function App() {
               .property
           }
           isLogScale={isLogScale}
+          styler={(_, height, maxHeight) =>
+            height === undefined ? "#868e96" : colorRange(height / maxHeight)
+          }
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />

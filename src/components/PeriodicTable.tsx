@@ -5,6 +5,7 @@ import BaseBoard from "./BaseBoard";
 import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import atomData from "../atomData";
+import { Styler } from "./Control/stylers";
 
 interface PeriodicTableProps {
   placement: number[][];
@@ -15,7 +16,7 @@ interface PeriodicTableProps {
 
   isLogScale: boolean;
 
-  styler: (atom: AtomInfo, height: number, maxHeight: number) => string;
+  styler: Styler;
 }
 
 export default function PeriodicTable({

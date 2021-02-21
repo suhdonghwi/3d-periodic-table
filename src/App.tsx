@@ -3,7 +3,6 @@ import { Canvas } from "react-three-fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import blue from "@material-ui/core/colors/blue";
-import colormap from "color-interpolate";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -11,6 +10,7 @@ import AtomInfoBoard from "./components/AtomInfoBoard";
 
 import Control from "./components/Control";
 import categories from "./components/Control/categories";
+import stylers, { Config } from "./components/Control/stylers";
 
 function range(from: number, to: number) {
   const result = [];
@@ -41,7 +41,11 @@ function App() {
   const [property, setProperty] = useState("Group");
   const [isLogScale, setIsLogScale] = useState(false);
 
-  const colorRange = colormap(["#4df54d", "#4d4df5"]);
+  const [styler, setStyler] = useState("By height");
+  const config: Config = {
+    fromColor: { h: 120, s: 89, l: 63 },
+    toColor: { h: 240, s: 89, l: 63 },
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -67,7 +71,7 @@ function App() {
               .property
           }
           isLogScale={isLogScale}
-          styler={(_, height, maxHeight) => colorRange(height / maxHeight)}
+          styler={stylers.find((s) => s.name === styler)!.styler(config)}
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />
@@ -79,6 +83,8 @@ function App() {
         onUpdateProperty={(v) => setProperty(v)}
         isLogScale={isLogScale}
         onUpdateIsLogScale={(v) => setIsLogScale(v)}
+        styler={styler}
+        onUpdateStyler={(v) => setStyler(v)}
       />
     </ThemeProvider>
   );

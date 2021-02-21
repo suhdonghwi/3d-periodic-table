@@ -16,12 +16,13 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 
 import categories from "./categories";
+import stylers from "./stylers";
 
 const Container = styled(Paper)({
   position: "absolute",
   padding: "0.7rem 1.5rem",
   boxSizing: "border-box",
-  overflow: "hidden",
+  overflow: "scroll",
   transition: "all 0.3s",
 });
 
@@ -58,6 +59,9 @@ interface ControlProps {
 
   isLogScale: boolean;
   onUpdateIsLogScale: (isLogScale: boolean) => void;
+
+  styler: string;
+  onUpdateStyler: (styler: string) => void;
 }
 
 export default function Control({
@@ -67,6 +71,8 @@ export default function Control({
   onUpdateProperty,
   isLogScale,
   onUpdateIsLogScale,
+  styler,
+  onUpdateStyler,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
   const [expand, setExpand] = useState(true);
@@ -149,6 +155,22 @@ export default function Control({
             />
           </Grid>
         </Grid>
+      </FormProp>
+
+      <FormProp>
+        <FormLabel id="styler-select">Styler</FormLabel>
+        <Select
+          native
+          aria-labelledby="styler-select"
+          value={styler}
+          onChange={(e) => onUpdateStyler(e.target.value as string)}
+        >
+          {stylers.map((s) => (
+            <option key={s.name} value={s.name}>
+              {s.name}
+            </option>
+          ))}
+        </Select>
       </FormProp>
     </Container>
   );

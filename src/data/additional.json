@@ -948,7 +948,7 @@
   },
   {
     "name": "Meitnerium",
-    "category": "probably transition metal",
+    "category": "transition metal",
     "density": 37.4,
     "phase": "Solid",
     "summary": "Meitnerium is a chemical element with symbol Mt and atomic number 109. It is an extremely radioactive synthetic element (an element not found in nature that can be created in a laboratory). The most stable known isotope, meitnerium-278, has a half-life of 7.6 seconds.",
@@ -956,7 +956,7 @@
   },
   {
     "name": "Darmstadtium",
-    "category": "probably transition metal",
+    "category": "transition metal",
     "density": 34.8,
     "phase": "Solid",
     "summary": "Darmstadtium is a chemical element with symbol Ds and atomic number 110. It is an extremely radioactive synthetic element. The most stable known isotope, darmstadtium-281, has a half-life of approximately 10 seconds.",
@@ -964,7 +964,7 @@
   },
   {
     "name": "Roentgenium",
-    "category": "probably transition metal",
+    "category": "transition metal",
     "density": 28.7,
     "phase": "Solid",
     "summary": "Roentgenium is a chemical element with symbol Rg and atomic number 111. It is an extremely radioactive synthetic element (an element that can be created in a laboratory but is not found in nature); the most stable known isotope, roentgenium-282, has a half-life of 2.1 minutes. Roentgenium was first created in 1994 by the GSI Helmholtz Centre for Heavy Ion Research near Darmstadt, Germany.",
@@ -980,7 +980,7 @@
   },
   {
     "name": "Nihonium",
-    "category": "probably transition metal",
+    "category": "transition metal",
     "density": 16,
     "phase": "Solid",
     "summary": "Nihonium is a chemical element with atomic number 113. It has a symbol Nh. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and is extremely radioactive; its most stable known isotope, nihonium-286, has a half-life of 20 seconds.",
@@ -996,7 +996,7 @@
   },
   {
     "name": "Moscovium",
-    "category": "probably post-transition metal",
+    "category": "post-transition metal",
     "density": 13.5,
     "phase": "Solid",
     "summary": "Moscovium is the name of a synthetic superheavy element in the periodic table that has the symbol Mc and has the atomic number 115. It is an extremely radioactive element; its most stable known isotope, moscovium-289, has a half-life of only 220 milliseconds. It is also known as eka-bismuth or simply element 115.",
@@ -1012,7 +1012,7 @@
   },
   {
     "name": "Tennessine",
-    "category": "unknown, probably metalloid",
+    "category": "metalloid",
     "density": 7.17,
     "phase": "Solid",
     "summary": "Tennessine is a superheavy artificial chemical element with an atomic number of 117 and a symbol of Ts. Also known as eka-astatine or element 117, it is the second-heaviest known element and penultimate element of the 7th period of the periodic table. As of 2016, fifteen tennessine atoms have been observed:six when it was first synthesized in 2010, seven in 2012, and two in 2014.",

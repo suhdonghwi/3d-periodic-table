@@ -38,6 +38,19 @@ export function hslToHex({ h, s, l }: HSL): string {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
+const colorMap: Record<string, string> = {
+  "diatomic nonmetal": "#7950f2",
+  "polyatomic nonmetal": "#7950f2",
+  "alkali metal": "#fa5252",
+  "alkaline earth metal": "#fd7e14",
+  lanthanide: "#f783ac",
+  actinide: "#e64980",
+  "transition metal": "#fab005",
+  "post-transition metal": "#40c057",
+  metalloid: "#228be6",
+  "noble gas": "#be4bdb",
+};
+
 type Prop = { name: string; styler: (config: Config) => Styler };
 
 const stylers: Prop[] = [
@@ -45,6 +58,10 @@ const stylers: Prop[] = [
     name: "By height",
     styler: ({ fromColor, toColor }) => (_, height, maxHeight) =>
       hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
+  },
+  {
+    name: "By category",
+    styler: () => (atom) => colorMap[atom.category],
   },
 ];
 

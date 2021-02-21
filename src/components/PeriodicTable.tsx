@@ -50,8 +50,10 @@ export default function PeriodicTable({
           0.01
         );
 
-        const color =
-          height === undefined ? "#868e96" : styler(atom, height, maxHeight);
+        const style =
+          height === undefined
+            ? { color: "#868e96" }
+            : styler(atom, height, maxHeight);
 
         pillars.push(
           <AtomPillar
@@ -59,7 +61,7 @@ export default function PeriodicTable({
             atom={atom}
             position={[j - 8.5, 0.5, i - 5.7]}
             height={realHeight}
-            color={color}
+            color={style.color}
             onClick={() => onClickPillar(atom)}
           />
         );

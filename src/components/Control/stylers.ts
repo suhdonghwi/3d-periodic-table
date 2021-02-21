@@ -5,11 +5,15 @@ export type Config = {
   toColor: HSL;
 };
 
+export type Style = {
+  color: string;
+};
+
 export type Styler = (
   atom: AtomInfo,
   height: number,
   maxHeight: number
-) => string;
+) => Style;
 
 type HSL = { h: number; s: number; l: number };
 
@@ -63,16 +67,17 @@ type Prop = { name: string; styler: (config: Config) => Styler };
 const stylers: Prop[] = [
   {
     name: "Color by height",
-    styler: ({ fromColor, toColor }) => (_, height, maxHeight) =>
-      hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
+    styler: ({ fromColor, toColor }) => (_, height, maxHeight) => ({
+      color: hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
+    }),
   },
   {
     name: "Color by category",
-    styler: () => (atom) => categoryColorMap[atom.category],
+    styler: () => (atom) => ({ color: categoryColorMap[atom.category] }),
   },
   {
     name: "Color by block",
-    styler: () => (atom) => blockColorMap[atom.block],
+    styler: () => (atom) => ({ color: blockColorMap[atom.block] }),
   },
 ];
 

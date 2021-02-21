@@ -118,7 +118,7 @@ export default function Control({
   let stylerSettings: JSX.Element | null = null;
 
   switch (styler) {
-    case "By height":
+    case "Color by height":
       stylerSettings = (
         <>
           <InlineSetting label="from-color-picker" name="From color">
@@ -161,7 +161,7 @@ export default function Control({
       elevation={3}
       style={{
         height: expand ? "20rem" : "3.5rem",
-        width: expand ? "18rem" : "7rem",
+        width: expand ? "20rem" : "7rem",
         top: isMobile ? "0.5rem" : "2rem",
         right: isMobile ? "0.5rem" : "2rem",
       }}

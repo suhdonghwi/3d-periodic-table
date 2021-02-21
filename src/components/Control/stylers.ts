@@ -1,12 +1,9 @@
 import AtomInfo, { Block } from "../../types/AtomInfo";
+import Style from "./Style";
 
 export type Config = {
   fromColor: HSL;
   toColor: HSL;
-};
-
-export type Style = {
-  color: string;
 };
 
 export type Styler = (

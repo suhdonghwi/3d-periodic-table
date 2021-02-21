@@ -1,3 +1,5 @@
+import Style from "../components/Control/Style";
+
 export type Block = "s" | "p" | "d" | "f";
 export type Phase = "Gas" | "Liquid" | "Solid";
 export type Structure =
@@ -43,4 +45,5 @@ export default interface AtomInfo {
   phase: Phase;
   summary: string;
   shells: number[];
+  style?: Style;
 }

@@ -29,7 +29,7 @@ export default function Electron({
   return (
     <mesh ref={mesh} position={[0, 0, 0.1]}>
       <sphereBufferGeometry ref={geometry} args={[0.013, 32, 32]} />
-      <meshStandardMaterial color="#228be6" />
+      <meshLambertMaterial color="#228be6" />
     </mesh>
   );
 }

@@ -32,7 +32,7 @@ export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
         position={[0, 0, 0.1]}
         args={[radius - 0.005, radius + 0.005, 32]}
       >
-        <meshStandardMaterial color="#ced4da" />
+        <meshLambertMaterial color="#ced4da" />
       </Ring>
     );
 

@@ -15,7 +15,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 
-import AtomInfo from "../../types/AtomInfo";
+import categories from "./categories";
 
 const Container = styled(Paper)({
   position: "absolute",
@@ -49,14 +49,10 @@ function FormProp(props: { children: React.ReactNode }) {
   );
 }
 
-type Prop = { name: string; property: (v: AtomInfo) => number | undefined };
-export type Category = { category: string; props: Prop[] };
-
 interface ControlProps {
   initialMaxHeight: number;
   onUpdateMaxHeight: (maxWidth: number) => void;
 
-  categories: Category[];
   property: string;
   onUpdateProperty: (property: string) => void;
 
@@ -67,7 +63,6 @@ interface ControlProps {
 export default function Control({
   initialMaxHeight,
   onUpdateMaxHeight,
-  categories,
   property,
   onUpdateProperty,
   isLogScale,

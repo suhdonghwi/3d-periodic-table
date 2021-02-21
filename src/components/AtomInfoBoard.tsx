@@ -32,7 +32,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
       {...boardSpring}
     >
       <boxBufferGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
-      <meshStandardMaterial color="white" />
+      <meshLambertMaterial color="white" />
 
       <group
         onClick={(e) => {
@@ -52,12 +52,12 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, Math.PI / 4]}>
           <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
-          <meshStandardMaterial color="#fa5252" />
+          <meshLambertMaterial color="#fa5252" />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, -Math.PI / 4]}>
           <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
-          <meshStandardMaterial color="#fa5252" />
+          <meshLambertMaterial color="#fa5252" />
         </mesh>
       </group>
 

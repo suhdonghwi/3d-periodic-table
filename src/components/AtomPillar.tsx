@@ -65,7 +65,7 @@ export default function AtomPillar({
       {...props}
     >
       <boxBufferGeometry ref={geometry} args={[1, 1, 1]} />
-      <animated.meshStandardMaterial
+      <animated.meshLambertMaterial
         color={hover ? "#ff8787" : colorProps.color}
       />
 

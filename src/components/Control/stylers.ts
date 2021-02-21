@@ -38,7 +38,7 @@ export function hslToHex({ h, s, l }: HSL): string {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-const colorMap: Record<string, string> = {
+const categoryColorMap: Record<string, string> = {
   "diatomic nonmetal": "#7950f2",
   "polyatomic nonmetal": "#7950f2",
   "alkali metal": "#fa5252",
@@ -61,7 +61,7 @@ const stylers: Prop[] = [
   },
   {
     name: "By category",
-    styler: () => (atom) => colorMap[atom.category],
+    styler: () => (atom) => categoryColorMap[atom.category],
   },
 ];
 

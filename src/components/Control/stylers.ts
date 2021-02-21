@@ -76,6 +76,10 @@ const stylers: Prop[] = [
     name: "Color by block",
     styler: () => (atom) => ({ color: blockColorMap[atom.block] }),
   },
+  {
+    name: "Realistic",
+    styler: () => (atom) => atom.style ?? { color: "white" },
+  },
 ];
 
 export default stylers;

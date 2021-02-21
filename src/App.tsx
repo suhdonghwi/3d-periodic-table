@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Canvas } from "react-three-fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  useCubeTexture,
+} from "@react-three/drei";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import blue from "@material-ui/core/colors/blue";
 
@@ -47,6 +51,11 @@ function App() {
     toColor: { h: 240, s: 89, l: 63 },
   });
 
+  const envMap = useCubeTexture(
+    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
+    { path: "cube/" }
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
@@ -72,6 +81,7 @@ function App() {
           }
           isLogScale={isLogScale}
           styler={stylers.find((s) => s.name === styler)!.styler(config)}
+          envMap={envMap}
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />

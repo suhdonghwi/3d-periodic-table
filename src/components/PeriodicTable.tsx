@@ -6,6 +6,7 @@ import AtomPillar from "./AtomPillar";
 import AtomInfo from "../types/AtomInfo";
 import atomData from "../atomData";
 import { Styler } from "./Control/stylers";
+import { CubeTexture } from "three";
 
 interface PeriodicTableProps {
   placement: number[][];
@@ -17,6 +18,7 @@ interface PeriodicTableProps {
   isLogScale: boolean;
 
   styler: Styler;
+  envMap: CubeTexture;
 }
 
 export default function PeriodicTable({
@@ -26,6 +28,7 @@ export default function PeriodicTable({
   propGetter,
   isLogScale,
   styler,
+  envMap,
   ...props
 }: PeriodicTableProps & GroupProps) {
   let heightData: (number | undefined)[] = atomData.map(propGetter);
@@ -61,7 +64,8 @@ export default function PeriodicTable({
             atom={atom}
             position={[j - 8.5, 0.5, i - 5.7]}
             height={realHeight}
-            color={style.color}
+            style={style}
+            envMap={envMap}
             onClick={() => onClickPillar(atom)}
           />
         );

@@ -6,7 +6,8 @@
     "density": 0.08988,
     "phase": "Gas",
     "summary": "Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the Universe, constituting roughly 75% of all baryonic mass.",
-    "shells": [1]
+    "shells": [1],
+    "style": { "color": "#74c0fc", "opacity": 0.6 }
   },
   {
     "name": "Helium",
@@ -15,7 +16,8 @@
     "density": 0.1786,
     "phase": "Gas",
     "summary": "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among all the elements.",
-    "shells": [2]
+    "shells": [2],
+    "style": { "color": "#e7f5ff", "opacity": 0.3 }
   },
   {
     "name": "Lithium",
@@ -24,7 +26,8 @@
     "density": 0.534,
     "phase": "Solid",
     "summary": "Lithium is a chemical element with the symbol Li and atomic number 3. It is a soft, silver-white metal belonging to the alkali metal group of chemical elements. Under standard conditions it is the lightest metal and the least dense solid element.",
-    "shells": [2, 1]
+    "shells": [2, 1],
+    "style": { "color": "#ced4da", "opacity": 1, "metalness": 1, "roughness": 0.3 }
   },
   {
     "name": "Beryllium",

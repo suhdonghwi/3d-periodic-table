@@ -15,7 +15,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 
-import AtomInfo from "../types/AtomInfo";
+import AtomInfo from "../../types/AtomInfo";
 
 const Container = styled(Paper)({
   position: "absolute",

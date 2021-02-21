@@ -115,9 +115,7 @@ function App() {
               .property
           }
           isLogScale={isLogScale}
-          styler={(_, height, maxHeight) =>
-            height === undefined ? "#868e96" : colorRange(height / maxHeight)
-          }
+          styler={(_, height, maxHeight) => colorRange(height / maxHeight)}
         />
 
         <OrbitControls minDistance={5} maxDistance={45} />

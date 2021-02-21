@@ -25,7 +25,7 @@ function interpolateColor(from: HSL, to: HSL, point: number): HSL {
   };
 }
 
-function hslToHex({ h, s, l }: HSL): string {
+export function hslToHex({ h, s, l }: HSL): string {
   l /= 100;
   const a = (s * Math.min(l, 1 - l)) / 100;
   const f = (n: number) => {

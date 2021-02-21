@@ -14,9 +14,10 @@ import {
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
+import { ColorPicker } from "material-ui-color";
 
 import categories from "./categories";
-import stylers from "./stylers";
+import stylers, { Config, hslToHex } from "./stylers";
 
 const Container = styled(Paper)({
   position: "absolute",
@@ -35,7 +36,7 @@ function FormLabel(props: {
     <Typography
       id={props.id}
       color="textSecondary"
-      gutterBottom={props.noGutter === undefined || !props.noGutter}
+      gutterBottom={!props.noGutter ?? !props.noGutter}
     >
       {props.children}
     </Typography>
@@ -47,6 +48,36 @@ function FormProp(props: { children: React.ReactNode }) {
     <Box marginBottom={3}>
       <FormControl fullWidth>{props.children}</FormControl>
     </Box>
+  );
+}
+
+interface SettingProps {
+  label: string;
+  name: string;
+  children: React.ReactNode;
+}
+
+function Setting({ label, name, children }: SettingProps) {
+  return (
+    <FormProp>
+      <FormLabel id={label}>{name}</FormLabel>
+      {children}
+    </FormProp>
+  );
+}
+
+function InlineSetting({ label, name, children }: SettingProps) {
+  return (
+    <FormProp>
+      <Grid container alignItems="center">
+        <Grid item xs>
+          <FormLabel id={label} noGutter>
+            {name}
+          </FormLabel>
+        </Grid>
+        <Grid item>{children}</Grid>
+      </Grid>
+    </FormProp>
   );
 }
 
@@ -62,6 +93,9 @@ interface ControlProps {
 
   styler: string;
   onUpdateStyler: (styler: string) => void;
+
+  config: Config;
+  onUpdateConfig: (config: Config) => void;
 }
 
 export default function Control({
@@ -73,11 +107,54 @@ export default function Control({
   onUpdateIsLogScale,
   styler,
   onUpdateStyler,
+  config,
+  onUpdateConfig,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
   const [expand, setExpand] = useState(true);
 
   const isMobile = useMediaQuery("(max-width: 400px)");
+
+  let stylerSettings: JSX.Element | null = null;
+
+  switch (styler) {
+    case "By height":
+      stylerSettings = (
+        <>
+          <InlineSetting label="from-color-picker" name="From color">
+            <ColorPicker
+              aria-labelledby="from-color-select"
+              value={hslToHex(config.fromColor)}
+              hideTextfield
+              deferred
+              disableAlpha
+              onChange={(v) =>
+                onUpdateConfig({
+                  ...config,
+                  fromColor: { h: v.hsl[0], s: v.hsl[1], l: v.hsl[2] },
+                })
+              }
+            />
+          </InlineSetting>
+          <InlineSetting label="to-color-picker" name="To color">
+            <ColorPicker
+              aria-labelledby="to-color-select"
+              value={hslToHex(config.toColor)}
+              hideTextfield
+              deferred
+              disableAlpha
+              onChange={(v) =>
+                onUpdateConfig({
+                  ...config,
+                  toColor: { h: v.hsl[0], s: v.hsl[1], l: v.hsl[2] },
+                })
+              }
+            />
+          </InlineSetting>
+        </>
+      );
+      break;
+  }
 
   return (
     <Container
@@ -85,9 +162,8 @@ export default function Control({
       style={{
         height: expand ? "20rem" : "3.5rem",
         width: expand ? "18rem" : "7rem",
-        top: isMobile ? "1rem" : "2rem",
-        right: isMobile ? "50%" : "2rem",
-        transform: isMobile ? "translateX(50%)" : "none",
+        top: isMobile ? "0.5rem" : "2rem",
+        right: isMobile ? "0.5rem" : "2rem",
       }}
     >
       <Box marginBottom={2}>
@@ -103,8 +179,7 @@ export default function Control({
         </Grid>
       </Box>
 
-      <FormProp>
-        <FormLabel id="property-select">Property</FormLabel>
+      <Setting label="property-select" name="property">
         <Select
           native
           aria-labelledby="property-select"
@@ -121,10 +196,9 @@ export default function Control({
             </optgroup>
           ))}
         </Select>
-      </FormProp>
+      </Setting>
 
-      <FormProp>
-        <FormLabel id="max-height-slider">Max height</FormLabel>
+      <Setting label="max-height-slider" name="Max height">
         <Slider
           aria-labelledby="max-height-slider"
           value={internalMaxHeight}
@@ -136,29 +210,19 @@ export default function Control({
           min={2}
           max={10}
         />
-      </FormProp>
+      </Setting>
 
-      <FormProp>
-        <Grid container alignItems="center">
-          <Grid item xs>
-            <FormLabel id="log-scale-check" noGutter>
-              Log scale
-            </FormLabel>
-          </Grid>
-          <Grid item>
-            <Checkbox
-              aria-labelledby="log-scale-check"
-              value={isLogScale}
-              onChange={(_, v) => onUpdateIsLogScale(v)}
-              color="primary"
-              style={{ padding: 0 }}
-            />
-          </Grid>
-        </Grid>
-      </FormProp>
+      <InlineSetting label="log-scale-check" name="Log scale">
+        <Checkbox
+          aria-labelledby="log-scale-check"
+          value={isLogScale}
+          onChange={(_, v) => onUpdateIsLogScale(v)}
+          color="primary"
+          style={{ padding: 0 }}
+        />
+      </InlineSetting>
 
-      <FormProp>
-        <FormLabel id="styler-select">Styler</FormLabel>
+      <Setting label="styler-select" name="Styler">
         <Select
           native
           aria-labelledby="styler-select"
@@ -171,7 +235,9 @@ export default function Control({
             </option>
           ))}
         </Select>
-      </FormProp>
+      </Setting>
+
+      {stylerSettings}
     </Container>
   );
 }

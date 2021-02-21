@@ -42,10 +42,10 @@ function App() {
   const [isLogScale, setIsLogScale] = useState(false);
 
   const [styler, setStyler] = useState("By height");
-  const config: Config = {
+  const [config, setConfig] = useState<Config>({
     fromColor: { h: 120, s: 89, l: 63 },
     toColor: { h: 240, s: 89, l: 63 },
-  };
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -85,6 +85,8 @@ function App() {
         onUpdateIsLogScale={(v) => setIsLogScale(v)}
         styler={styler}
         onUpdateStyler={(v) => setStyler(v)}
+        config={config}
+        onUpdateConfig={(v) => setConfig(v)}
       />
     </ThemeProvider>
   );

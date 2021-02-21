@@ -1,6 +1,9 @@
 import AtomInfo from "../../types/AtomInfo";
 
-type Prop = { name: string; property: (v: AtomInfo) => number | undefined };
+type Prop = {
+  name: string;
+  property: (v: AtomInfo) => number | undefined;
+};
 type Category = { category: string; props: Prop[] };
 
 const categories: Category[] = [

@@ -1,6 +1,6 @@
-type Block = "s" | "p" | "d" | "f";
-type Phase = "Gas" | "Liquid" | "Solid";
-type Structure =
+export type Block = "s" | "p" | "d" | "f";
+export type Phase = "Gas" | "Liquid" | "Solid";
+export type Structure =
   | "HEX"
   | "TET"
   | "DIA"

@@ -1,4 +1,4 @@
-import AtomInfo from "../../types/AtomInfo";
+import AtomInfo, { Block } from "../../types/AtomInfo";
 
 export type Config = {
   fromColor: HSL;
@@ -51,17 +51,28 @@ const categoryColorMap: Record<string, string> = {
   "noble gas": "#be4bdb",
 };
 
+const blockColorMap: Record<Block, string> = {
+  s: "#ff922b",
+  d: "#f06595",
+  p: "#5c7cfa",
+  f: "#20c997",
+};
+
 type Prop = { name: string; styler: (config: Config) => Styler };
 
 const stylers: Prop[] = [
   {
-    name: "By height",
+    name: "Color by height",
     styler: ({ fromColor, toColor }) => (_, height, maxHeight) =>
       hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
   },
   {
-    name: "By category",
+    name: "Color by category",
     styler: () => (atom) => categoryColorMap[atom.category],
+  },
+  {
+    name: "Color by block",
+    styler: () => (atom) => blockColorMap[atom.block],
   },
 ];
 

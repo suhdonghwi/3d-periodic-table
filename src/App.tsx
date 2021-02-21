@@ -41,7 +41,7 @@ function App() {
   const [property, setProperty] = useState("Group");
   const [isLogScale, setIsLogScale] = useState(false);
 
-  const [styler, setStyler] = useState("By height");
+  const [styler, setStyler] = useState("Color by height");
   const [config, setConfig] = useState<Config>({
     fromColor: { h: 120, s: 89, l: 63 },
     toColor: { h: 240, s: 89, l: 63 },

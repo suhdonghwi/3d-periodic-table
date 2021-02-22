@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState } from "react";
-import { Mesh, BoxBufferGeometry, CubeTexture } from "three";
+import { useRef, useState } from "react";
+import { CubeTexture } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
+import RawPillar from "./RawPillar";
 import AtomInfo from "../types/AtomInfo";
 import { MeshProps } from "react-three-fiber";
 import Style from "./Control/Style";
@@ -26,9 +27,6 @@ export default function AtomPillar({
 }: AtomPillarProps & MeshProps) {
   const [hover, setHover] = useState(false);
 
-  const mesh = useRef<Mesh>();
-  const geometry = useRef<BoxBufferGeometry>();
-
   const symbolText = useRef<Text>();
   const numberText = useRef<Text>();
 
@@ -36,21 +34,8 @@ export default function AtomPillar({
     scale: [1, Math.max(height, 0.00001), 1] as any,
   });
 
-  const colorProps = useSpring({
-    color: style.color,
-    opacity: style.opacity ?? 1,
-    config: {
-      tension: 150,
-    },
-  });
-
-  useEffect(() => {
-    geometry.current?.translate(0, 0.5, 0);
-  }, []);
-
   return (
-    <animated.mesh
-      ref={mesh}
+    <RawPillar
       onClick={(e) => {
         e.stopPropagation();
         onClick(atom);
@@ -63,19 +48,13 @@ export default function AtomPillar({
         e.stopPropagation();
         setHover(false);
       }}
+      hover={hover}
+      style={style}
+      envMap={envMap}
+      length={1}
       {...meshProps}
       {...props}
     >
-      <boxBufferGeometry ref={geometry} args={[1, 1, 1]} />
-      <animated.meshStandardMaterial
-        color={hover ? "#ff8787" : colorProps.color}
-        transparent
-        opacity={colorProps.opacity}
-        metalness={style.metalness ?? 0}
-        roughness={style.roughness ?? 1}
-        envMap={envMap}
-      />
-
       <animated.group position={[0, 1, 0]}>
         <Text
           ref={symbolText}
@@ -97,6 +76,6 @@ export default function AtomPillar({
           {atom.number.toString()}
         </Text>
       </animated.group>
-    </animated.mesh>
+    </RawPillar>
   );
 }

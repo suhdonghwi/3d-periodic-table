@@ -1,7 +1,7 @@
 import Style from "../components/Control/Style";
 
 export type Block = "s" | "p" | "d" | "f";
-export type Phase = "Gas" | "Liquid" | "Solid";
+export type Phase = "gas" | "liquid" | "solid";
 export type Structure =
   | "HEX"
   | "TET"

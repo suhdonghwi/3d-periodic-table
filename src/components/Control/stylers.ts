@@ -1,4 +1,4 @@
-import AtomInfo, { Block } from "../../types/AtomInfo";
+import AtomInfo, { Block, Phase } from "../../types/AtomInfo";
 import Style from "./Style";
 
 export type Config = {
@@ -40,24 +40,31 @@ export function hslToHex({ h, s, l }: HSL): string {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-const categoryColorMap: Record<string, string> = {
-  "diatomic nonmetal": "#7950f2",
-  "polyatomic nonmetal": "#7950f2",
-  "alkali metal": "#fa5252",
-  "alkaline earth metal": "#fd7e14",
-  lanthanide: "#f783ac",
-  actinide: "#e64980",
-  "transition metal": "#fab005",
-  "post-transition metal": "#40c057",
-  metalloid: "#228be6",
-  "noble gas": "#be4bdb",
+const categoryColorMap: Record<string, Style> = {
+  "diatomic nonmetal": { color: "#7950f2" },
+  "polyatomic nonmetal": { color: "#7950f2" },
+  "alkali metal": { color: "#fa5252" },
+  "alkaline earth metal": { color: "#fd7e14" },
+  lanthanide: { color: "#f783ac" },
+  actinide: { color: "#e64980" },
+  "transition metal": { color: "#fab005" },
+  "post-transition metal": { color: "#40c057" },
+  metalloid: { color: "#228be6" },
+  "noble gas": { color: "#be4bdb" },
 };
 
-const blockColorMap: Record<Block, string> = {
-  s: "#ff922b",
-  d: "#f06595",
-  p: "#5c7cfa",
-  f: "#20c997",
+const blockColorMap: Record<Block, Style> = {
+  s: { color: "#ff922b" },
+  d: { color: "#f06595" },
+  p: { color: "#5c7cfa" },
+  f: { color: "#20c997" },
+};
+
+const phaseColorMap: Record<Phase | "unknown", Style> = {
+  unknown: { color: "#ffa8a8" },
+  solid: { color: "#20c997" },
+  liquid: { color: "#4dabf7", opacity: 0.7 },
+  gas: { color: "#ced4da", opacity: 0.3 },
 };
 
 type Prop = { name: string; styler: (config: Config) => Styler };
@@ -71,29 +78,20 @@ const stylers: Prop[] = [
   },
   {
     name: "Color by category",
-    styler: () => (atom) => ({
-      color: categoryColorMap[atom.category],
-    }),
+    styler: () => (atom) => categoryColorMap[atom.category],
   },
   {
     name: "Color by block",
-    styler: () => (atom) => ({
-      color: blockColorMap[atom.block],
-    }),
+    styler: () => (atom) => blockColorMap[atom.block],
   },
   {
     name: "Phase",
     styler: ({ temperature }) => (atom) => {
       if (atom.meltingPoint === undefined || atom.boilingPoint === undefined)
-        return { color: "#ffa8a8" };
-
-      if (temperature < atom.meltingPoint) {
-        return { color: "#20c997" };
-      } else if (temperature < atom.boilingPoint) {
-        return { color: "#4dabf7", opacity: 0.7 };
-      } else {
-        return { color: "#ced4da", opacity: 0.3 };
-      }
+        return phaseColorMap["unknown"];
+      else if (temperature < atom.meltingPoint) return phaseColorMap["solid"];
+      else if (temperature < atom.boilingPoint) return phaseColorMap["liquid"];
+      else return phaseColorMap["gas"];
     },
   },
   {

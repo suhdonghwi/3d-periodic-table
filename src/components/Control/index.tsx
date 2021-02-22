@@ -111,6 +111,7 @@ export default function Control({
   onUpdateConfig,
 }: ControlProps) {
   const [internalMaxHeight, setInternalMaxHeight] = useState(initialMaxHeight);
+  const [internalTemp, setInternalTemp] = useState(config.temperature);
   const [expand, setExpand] = useState(true);
 
   const isMobile = useMediaQuery("(max-width: 400px)");
@@ -153,6 +154,25 @@ export default function Control({
           </InlineSetting>
         </>
       );
+      break;
+    case "Phase":
+      stylerSettings = (
+        <Setting label="temperature-slider" name="Temperature (K)">
+          <Slider
+            aria-labelledby="temperature-slider"
+            value={internalTemp}
+            onChange={(_, v) => setInternalTemp(v as number)}
+            onChangeCommitted={(_, v) =>
+              onUpdateConfig({ ...config, temperature: v as number })
+            }
+            valueLabelDisplay="auto"
+            step={1}
+            min={0}
+            max={6000}
+          />
+        </Setting>
+      );
+
       break;
   }
 

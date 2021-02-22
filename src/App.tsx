@@ -49,6 +49,7 @@ function App() {
   const [config, setConfig] = useState<Config>({
     fromColor: { h: 120, s: 89, l: 63 },
     toColor: { h: 240, s: 89, l: 63 },
+    temperature: 273.15,
   });
 
   const envMap = useCubeTexture(
@@ -84,7 +85,7 @@ function App() {
           envMap={envMap}
         />
 
-        <OrbitControls minDistance={5} maxDistance={45} />
+        <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
       </Canvas>
       <Control
         initialMaxHeight={maxHeight}

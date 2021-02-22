@@ -4,11 +4,12 @@ import Style from "./Style";
 export type Config = {
   fromColor: HSL;
   toColor: HSL;
+  temperature: number;
 };
 
 export type Styler = (
   atom: AtomInfo,
-  height: number | undefined,
+  height: number,
   maxHeight: number
 ) => Style;
 
@@ -65,23 +66,35 @@ const stylers: Prop[] = [
   {
     name: "Color by height",
     styler: ({ fromColor, toColor }) => (_, height, maxHeight) => ({
-      color:
-        height === undefined
-          ? "#868e96"
-          : hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
+      color: hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
     }),
   },
   {
     name: "Color by category",
-    styler: () => (atom, height) => ({
-      color: height === undefined ? "#868e96" : categoryColorMap[atom.category],
+    styler: () => (atom) => ({
+      color: categoryColorMap[atom.category],
     }),
   },
   {
     name: "Color by block",
-    styler: () => (atom, height) => ({
-      color: height === undefined ? "#868e96" : blockColorMap[atom.block],
+    styler: () => (atom) => ({
+      color: blockColorMap[atom.block],
     }),
+  },
+  {
+    name: "Phase",
+    styler: ({ temperature }) => (atom) => {
+      if (atom.meltingPoint === undefined || atom.boilingPoint === undefined)
+        return { color: "#ffa8a8" };
+
+      if (temperature < atom.meltingPoint) {
+        return { color: "#20c997" };
+      } else if (temperature < atom.boilingPoint) {
+        return { color: "#4dabf7", opacity: 0.7 };
+      } else {
+        return { color: "#ced4da", opacity: 0.3 };
+      }
+    },
   },
   {
     name: "Realistic",

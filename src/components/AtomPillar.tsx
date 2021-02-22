@@ -38,6 +38,7 @@ export default function AtomPillar({
 
   const colorProps = useSpring({
     color: style.color,
+    opacity: style.opacity ?? 1,
     config: {
       tension: 150,
     },
@@ -69,7 +70,7 @@ export default function AtomPillar({
       <animated.meshStandardMaterial
         color={hover ? "#ff8787" : colorProps.color}
         transparent
-        opacity={style.opacity ?? 1}
+        opacity={colorProps.opacity}
         metalness={style.metalness ?? 0}
         roughness={style.roughness ?? 1}
         envMap={envMap}

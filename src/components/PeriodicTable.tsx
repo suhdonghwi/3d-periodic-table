@@ -49,11 +49,14 @@ export default function PeriodicTable({
         let height = heightData[number - 1];
 
         const realHeight = Math.max(
-          height !== undefined ? (height / maxHeight) * realMaxHeight : 0,
+          height === undefined ? 0 : (height / maxHeight) * realMaxHeight,
           0.01
         );
 
-        const style = styler(atom, height, maxHeight);
+        const style =
+          height === undefined
+            ? { color: "#ff6b6b", opacity: 0.5 }
+            : styler(atom, height, maxHeight);
 
         pillars.push(
           <AtomPillar

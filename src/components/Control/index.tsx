@@ -179,7 +179,7 @@ export default function Control({
         </Grid>
       </Box>
 
-      <Setting label="property-select" name="property">
+      <Setting label="property-select" name="Property">
         <Select
           native
           aria-labelledby="property-select"

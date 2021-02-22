@@ -42,7 +42,6 @@ export default interface AtomInfo {
   appearance?: string;
   category: string;
   density?: number;
-  phase: Phase;
   summary: string;
   shells: number[];
   style?: Style;

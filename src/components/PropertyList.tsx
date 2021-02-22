@@ -20,10 +20,6 @@ export default function PropertyList({ atom }: PropertyListProps) {
     atom !== undefined
       ? [
           {
-            name: "phase",
-            value: atom.phase,
-          },
-          {
             name: "group",
             value: numeric(atom.group),
           },

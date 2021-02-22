@@ -14,7 +14,13 @@ import AtomInfoBoard from "./components/AtomInfoBoard";
 
 import Control from "./components/Control";
 import categories from "./components/Control/categories";
-import stylers, { Config } from "./components/Control/stylers";
+import stylers, {
+  Config,
+  categoryColorMap,
+  blockColorMap,
+  phaseColorMap,
+} from "./components/Control/stylers";
+import Legend from "./components/Legend";
 
 function range(from: number, to: number) {
   const result = [];
@@ -57,6 +63,19 @@ function App() {
     { path: "cube/" }
   );
 
+  let legendData = null,
+    legendZ = 5.8,
+    legendPostfix;
+  if (styler === "Color by category") {
+    legendData = categoryColorMap;
+    legendZ = 5.1;
+  } else if (styler === "Color by block") {
+    legendData = blockColorMap;
+    legendPostfix = "block";
+  } else if (styler === "Phase") {
+    legendData = phaseColorMap;
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
@@ -84,6 +103,13 @@ function App() {
           styler={stylers.find((s) => s.name === styler)!.styler(config)}
           envMap={envMap}
         />
+        {legendData !== null && (
+          <Legend
+            data={legendData}
+            position={[-1, 0, legendZ]}
+            postfix={legendPostfix}
+          />
+        )}
 
         <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
       </Canvas>

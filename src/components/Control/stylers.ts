@@ -40,7 +40,7 @@ export function hslToHex({ h, s, l }: HSL): string {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-const categoryColorMap: Record<string, Style> = {
+export const categoryColorMap: Record<string, Style> = {
   "diatomic nonmetal": { color: "#7950f2" },
   "polyatomic nonmetal": { color: "#7950f2" },
   "alkali metal": { color: "#fa5252" },
@@ -53,14 +53,14 @@ const categoryColorMap: Record<string, Style> = {
   "noble gas": { color: "#be4bdb" },
 };
 
-const blockColorMap: Record<Block, Style> = {
+export const blockColorMap: Record<Block, Style> = {
   s: { color: "#ff922b" },
   d: { color: "#f06595" },
   p: { color: "#5c7cfa" },
   f: { color: "#20c997" },
 };
 
-const phaseColorMap: Record<Phase | "unknown", Style> = {
+export const phaseColorMap: Record<Phase | "unknown", Style> = {
   unknown: { color: "#ffa8a8" },
   solid: { color: "#20c997" },
   liquid: { color: "#4dabf7", opacity: 0.7 },

@@ -8,7 +8,7 @@ export type Config = {
 
 export type Styler = (
   atom: AtomInfo,
-  height: number,
+  height: number | undefined,
   maxHeight: number
 ) => Style;
 
@@ -65,20 +65,30 @@ const stylers: Prop[] = [
   {
     name: "Color by height",
     styler: ({ fromColor, toColor }) => (_, height, maxHeight) => ({
-      color: hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
+      color:
+        height === undefined
+          ? "#868e96"
+          : hslToHex(interpolateColor(fromColor, toColor, height / maxHeight)),
     }),
   },
   {
     name: "Color by category",
-    styler: () => (atom) => ({ color: categoryColorMap[atom.category] }),
+    styler: () => (atom, height) => ({
+      color: height === undefined ? "#868e96" : categoryColorMap[atom.category],
+    }),
   },
   {
     name: "Color by block",
-    styler: () => (atom) => ({ color: blockColorMap[atom.block] }),
+    styler: () => (atom, height) => ({
+      color: height === undefined ? "#868e96" : blockColorMap[atom.block],
+    }),
   },
   {
     name: "Realistic",
-    styler: () => (atom) => atom.style ?? { color: "white" },
+    styler: () => (atom, height) =>
+      height === undefined || atom.style === undefined
+        ? { color: "#ffa8a8" }
+        : atom.style,
   },
 ];
 

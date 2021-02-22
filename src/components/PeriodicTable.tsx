@@ -53,10 +53,7 @@ export default function PeriodicTable({
           0.01
         );
 
-        const style =
-          height === undefined
-            ? { color: "#868e96" }
-            : styler(atom, height, maxHeight);
+        const style = styler(atom, height, maxHeight);
 
         pillars.push(
           <AtomPillar

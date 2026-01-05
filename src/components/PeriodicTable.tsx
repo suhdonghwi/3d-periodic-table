@@ -1,5 +1,4 @@
-import { GroupProps } from "@react-three/fiber";
-import type { ReactElement } from "react";
+import type { JSX, ReactElement } from "react";
 import BaseBoard from "./BaseBoard";
 
 import AtomPillar from "./AtomPillar";
@@ -30,7 +29,7 @@ export default function PeriodicTable({
   styler,
   envMap,
   ...props
-}: PeriodicTableProps & GroupProps) {
+}: PeriodicTableProps & JSX.IntrinsicElements["group"]) {
   let heightData: (number | undefined)[] = atomData.map(propGetter);
 
   if (isLogScale)

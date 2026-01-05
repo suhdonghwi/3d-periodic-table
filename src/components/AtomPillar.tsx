@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
+import { JSX, useRef, useState } from "react";
 import { CubeTexture } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
-import { MeshProps } from "@react-three/fiber";
 
 import RawPillar from "./RawPillar";
 import AtomInfo from "../types/AtomInfo";
@@ -24,7 +23,7 @@ export default function AtomPillar({
   onClick,
   envMap,
   ...props
-}: AtomPillarProps & MeshProps) {
+}: AtomPillarProps & JSX.IntrinsicElements["mesh"]) {
   const [hover, setHover] = useState(false);
 
   const symbolText = useRef<typeof Text>(null);

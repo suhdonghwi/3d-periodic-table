@@ -12,10 +12,10 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@react-three/fiber": "^8.17.10",
-    "@react-three/drei": "^9.117.0",
+    "@react-three/fiber": "^9",
+    "@react-three/drei": "^10",
     "three": "^0.170.0",
-    "@react-spring/three": "^9.7.5",
+    "@react-spring/three": "^10",
     "@mui/material": "^6.3.0",
     "@mui/icons-material": "^6.3.0",
     "@emotion/react": "^11.14.0",

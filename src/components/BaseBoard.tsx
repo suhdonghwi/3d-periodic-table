@@ -1,7 +1,7 @@
 import { Text } from "@react-three/drei";
-import { MeshProps } from "@react-three/fiber";
+import { JSX } from "react";
 
-export default function BaseBoard(props: MeshProps) {
+export default function BaseBoard(props: JSX.IntrinsicElements["mesh"]) {
   return (
     <mesh position={[0, -0.5, 0]} {...props}>
       {props.children}

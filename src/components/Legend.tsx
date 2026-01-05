@@ -1,8 +1,8 @@
-import { GroupProps } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 
 import Style from "./Control/Style";
 import RawPillar from "./RawPillar";
+import { JSX } from "react";
 
 interface LegendProps {
   data: Record<string, Style>;
@@ -13,7 +13,7 @@ export default function Legend({
   data,
   postfix,
   ...props
-}: LegendProps & GroupProps) {
+}: LegendProps & JSX.IntrinsicElements["group"]) {
   return (
     <group {...props}>
       {Object.entries(data).map(([name, style], i) => (

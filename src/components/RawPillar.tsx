@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
-import type { ReactNode } from "react";
-import { MeshProps } from "@react-three/fiber";
+import type { JSX, ReactNode } from "react";
 import { AnimatedProps, animated, useSpring } from "@react-spring/three";
 import { BoxGeometry, CubeTexture } from "three";
 import Style from "./Control/Style";
@@ -12,7 +11,7 @@ interface RawPillarProps {
   hover?: boolean;
 }
 
-type RawPillarMeshProps = Omit<AnimatedProps<MeshProps>, "children"> & {
+type RawPillarMeshProps = Omit<AnimatedProps<JSX.IntrinsicElements["mesh"]>, "color"> & {
   children?: ReactNode;
 };
 

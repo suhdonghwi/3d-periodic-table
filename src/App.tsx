@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -145,17 +145,19 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
-        <Scene
-          showingAtom={showingAtom}
-          setShowingAtom={setShowingAtom}
-          maxHeight={maxHeight}
-          property={property}
-          isLogScale={isLogScale}
-          styler={styler}
-          legendData={legendData}
-          legendZ={legendZ}
-          legendPostfix={legendPostfix}
-        />
+        <Suspense fallback={null}>
+          <Scene
+            showingAtom={showingAtom}
+            setShowingAtom={setShowingAtom}
+            maxHeight={maxHeight}
+            property={property}
+            isLogScale={isLogScale}
+            styler={styler}
+            legendData={legendData}
+            legendZ={legendZ}
+            legendPostfix={legendPostfix}
+          />
+        </Suspense>
       </Canvas>
       <Control
         initialMaxHeight={maxHeight}

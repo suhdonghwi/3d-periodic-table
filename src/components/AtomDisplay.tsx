@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, Ring } from "@react-three/drei";
 import AtomInfo from "../types/AtomInfo";
 import Electron from "./Electron";

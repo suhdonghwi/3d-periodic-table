@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 import { CubeTexture } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
+import { MeshProps } from "@react-three/fiber";
 
 import RawPillar from "./RawPillar";
 import AtomInfo from "../types/AtomInfo";
-import { MeshProps } from "react-three-fiber";
 import Style from "./Control/Style";
 
 interface AtomPillarProps {
@@ -27,11 +27,11 @@ export default function AtomPillar({
 }: AtomPillarProps & MeshProps) {
   const [hover, setHover] = useState(false);
 
-  const symbolText = useRef<Text>();
-  const numberText = useRef<Text>();
+  const symbolText = useRef<typeof Text>(null);
+  const numberText = useRef<typeof Text>(null);
 
   const meshProps = useSpring({
-    scale: [1, Math.max(height, 0.00001), 1] as any,
+    scale: [1, Math.max(height, 0.00001), 1] as [number, number, number],
   });
 
   return (

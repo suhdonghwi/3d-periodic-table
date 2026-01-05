@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { Canvas } from "react-three-fiber";
+import { useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
   PerspectiveCamera,
   useCubeTexture,
 } from "@react-three/drei";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import blue from "@material-ui/core/colors/blue";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import blue from "@mui/material/colors/blue";
+import { CubeTexture } from "three";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -19,8 +20,10 @@ import stylers, {
   categoryColorMap,
   blockColorMap,
   phaseColorMap,
+  Styler,
 } from "./components/Control/stylers";
 import Legend from "./components/Legend";
+import Style from "./components/Control/Style";
 
 function range(from: number, to: number) {
   const result = [];
@@ -41,77 +44,119 @@ const placement = [
   [0, 0, 0].concat(range(89, 103)),
 ];
 
+interface SceneProps {
+  showingAtom: AtomInfo | null;
+  setShowingAtom: (atom: AtomInfo | null) => void;
+  maxHeight: number;
+  property: string;
+  isLogScale: boolean;
+  styler: Styler;
+  legendData: Record<string, Style> | null;
+  legendZ: number;
+  legendPostfix?: string;
+}
+
+function Scene({
+  showingAtom,
+  setShowingAtom,
+  maxHeight,
+  property,
+  isLogScale,
+  styler,
+  legendData,
+  legendZ,
+  legendPostfix,
+}: SceneProps) {
+  const envMap = useCubeTexture(
+    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
+    { path: "/cube/" }
+  );
+
+  return (
+    <>
+      <PerspectiveCamera position={[0, 17, 14]} makeDefault>
+        <AtomInfoBoard
+          atom={showingAtom}
+          onClose={() => setShowingAtom(null)}
+        />
+      </PerspectiveCamera>
+
+      <ambientLight intensity={0.25} />
+      <spotLight intensity={0.6} position={[30, 30, 50]} />
+      <spotLight intensity={0.2} position={[0, 0, -50]} />
+
+      <PeriodicTable
+        position={[0, 0, 0]}
+        onClickPillar={(v) => setShowingAtom(v)}
+        placement={placement}
+        realMaxHeight={maxHeight}
+        propGetter={
+          categories.flatMap((c) => c.props).find((v) => v.name === property)!
+            .property
+        }
+        isLogScale={isLogScale}
+        styler={styler}
+        envMap={envMap as CubeTexture}
+      />
+      {legendData !== null && (
+        <Legend
+          data={legendData}
+          position={[-1, 0, legendZ]}
+          postfix={legendPostfix}
+        />
+      )}
+
+      <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
+    </>
+  );
+}
+
 function App() {
   const [showingAtom, setShowingAtom] = useState<AtomInfo | null>(null);
-  const theme = createMuiTheme({
-    palette: { type: "dark", primary: { main: blue[500] } },
+  const theme = createTheme({
+    palette: { mode: "dark", primary: { main: blue[500] } },
   });
 
   const [maxHeight, setMaxHeight] = useState(4);
   const [property, setProperty] = useState("Group");
   const [isLogScale, setIsLogScale] = useState(false);
 
-  const [styler, setStyler] = useState("Color by height");
+  const [stylerName, setStylerName] = useState("Color by height");
   const [config, setConfig] = useState<Config>({
     fromColor: { h: 120, s: 89, l: 63 },
     toColor: { h: 240, s: 89, l: 63 },
     temperature: 273.15,
   });
 
-  const envMap = useCubeTexture(
-    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
-    { path: "cube/" }
-  );
-
-  let legendData = null,
-    legendZ = 5.8,
-    legendPostfix;
-  if (styler === "Color by category") {
+  let legendData: Record<string, Style> | null = null;
+  let legendZ = 5.8;
+  let legendPostfix: string | undefined;
+  if (stylerName === "Color by category") {
     legendData = categoryColorMap;
     legendZ = 5.1;
-  } else if (styler === "Color by block") {
+  } else if (stylerName === "Color by block") {
     legendData = blockColorMap;
     legendPostfix = "block";
-  } else if (styler === "Phase") {
+  } else if (stylerName === "Phase") {
     legendData = phaseColorMap;
   }
+
+  const styler = stylers.find((s) => s.name === stylerName)!.styler(config);
 
   return (
     <ThemeProvider theme={theme}>
       <Canvas style={{ background: "#101112" }}>
-        <PerspectiveCamera position={[0, 17, 14]} makeDefault>
-          <AtomInfoBoard
-            atom={showingAtom}
-            onClose={() => setShowingAtom(null)}
-          />
-        </PerspectiveCamera>
-
-        <ambientLight intensity={0.25} />
-        <spotLight intensity={0.6} position={[30, 30, 50]} />
-        <spotLight intensity={0.2} position={[0, 0, -50]} />
-
-        <PeriodicTable
-          position={[0, 0, 0]}
-          onClickPillar={(v) => setShowingAtom(v)}
-          placement={placement}
-          realMaxHeight={maxHeight}
-          propGetter={
-            categories.flatMap((c) => c.props).find((v) => v.name === property)!
-              .property
-          }
+        <Scene
+          showingAtom={showingAtom}
+          setShowingAtom={setShowingAtom}
+          maxHeight={maxHeight}
+          property={property}
           isLogScale={isLogScale}
-          styler={stylers.find((s) => s.name === styler)!.styler(config)}
-          envMap={envMap}
+          styler={styler}
+          legendData={legendData}
+          legendZ={legendZ}
+          legendPostfix={legendPostfix}
         />
-        {legendData !== null && (
-          <Legend
-            data={legendData}
-            position={[-1, 0, legendZ]}
-            postfix={legendPostfix}
-          />
-        )}
-
-        <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
       </Canvas>
       <Control
         initialMaxHeight={maxHeight}
@@ -120,8 +165,8 @@ function App() {
         onUpdateProperty={(v) => setProperty(v)}
         isLogScale={isLogScale}
         onUpdateIsLogScale={(v) => setIsLogScale(v)}
-        styler={styler}
-        onUpdateStyler={(v) => setStyler(v)}
+        styler={stylerName}
+        onUpdateStyler={(v) => setStylerName(v)}
         config={config}
         onUpdateConfig={(v) => setConfig(v)}
       />

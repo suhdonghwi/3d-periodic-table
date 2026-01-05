@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState, useMemo } from "react";
 import { Text } from "@react-three/drei";
+import { BufferGeometry, Float32BufferAttribute } from "three";
 
 import AtomInfo from "../types/AtomInfo";
 
@@ -13,6 +14,21 @@ function numeric(value: number | undefined, unit?: string): string | undefined {
   const fixed = Number(value.toFixed(8));
   if (unit !== undefined) return fixed + " " + unit;
   else return fixed.toString();
+}
+
+// Triangle geometry for navigation arrows
+function useTriangleGeometry() {
+  return useMemo(() => {
+    const geometry = new BufferGeometry();
+    const vertices = new Float32Array([
+      0, 0, 0,
+      0.2, 0, 0,
+      0.1, 0.17, 0
+    ]);
+    geometry.setAttribute("position", new Float32BufferAttribute(vertices, 3));
+    geometry.computeVertexNormals();
+    return geometry;
+  }, []);
 }
 
 export default function PropertyList({ atom }: PropertyListProps) {
@@ -128,6 +144,8 @@ export default function PropertyList({ atom }: PropertyListProps) {
 
   const [page, setPage] = useState(0);
   const maxPage = Math.floor((properties.length - 1) / 5);
+  const triangleGeometry = useTriangleGeometry();
+
   return (
     <group>
       {properties.slice(5 * page, 5 * page + 5).map((property, i) => (
@@ -162,17 +180,9 @@ export default function PropertyList({ atom }: PropertyListProps) {
         rotation={[0, 0, Math.PI / 2]}
         scale={[0.4, 0.4, 1]}
         onClick={() => setPage(Math.max(page - 1, 0))}
+        geometry={triangleGeometry}
       >
-        <geometry attach="geometry">
-          <vector3 attachArray="vertices" args={[0, 0, 0]}></vector3>
-          <vector3 attachArray="vertices" args={[0.2, 0, 0]}></vector3>
-          <vector3 attachArray="vertices" args={[0.1, 0.17, 0]}></vector3>
-          <face3 attachArray="faces" args={[0, 1, 2]}></face3>
-        </geometry>
-        <meshBasicMaterial
-          attach="material"
-          color={page === 0 ? "#868e96" : "#495057"}
-        />
+        <meshBasicMaterial color={page === 0 ? "#868e96" : "#495057"} />
       </mesh>
 
       <Text position={[0, -1.47, 0.1]} fontSize={0.08} color="#212529">
@@ -184,17 +194,9 @@ export default function PropertyList({ atom }: PropertyListProps) {
         rotation={[0, 0, -Math.PI / 2]}
         scale={[0.4, 0.4, 1]}
         onClick={() => setPage(Math.min(page + 1, maxPage))}
+        geometry={triangleGeometry}
       >
-        <geometry attach="geometry">
-          <vector3 attachArray="vertices" args={[0, 0, 0]}></vector3>
-          <vector3 attachArray="vertices" args={[0.2, 0, 0]}></vector3>
-          <vector3 attachArray="vertices" args={[0.1, 0.17, 0]}></vector3>
-          <face3 attachArray="faces" args={[0, 1, 2]}></face3>
-        </geometry>
-        <meshBasicMaterial
-          attach="material"
-          color={page === maxPage ? "#868e96" : "#495057"}
-        />
+        <meshBasicMaterial color={page === maxPage ? "#868e96" : "#495057"} />
       </mesh>
     </group>
   );

@@ -2,56 +2,34 @@
   "name": "3d-periodic-table",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@react-spring/three": "^9.0.0-rc.3",
-    "@react-three/drei": "^2.2.7",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "@types/styled-components": "^5.1.7",
-    "color-interpolate": "^1.0.5",
-    "material-ui-color": "^0.4.10",
-    "patch-package": "^6.2.2",
-    "postinstall-postinstall": "^2.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "react-three-fiber": "^5.3.7",
-    "react-three-gui": "^0.4.2",
-    "styled-components": "^5.2.1",
-    "three": "^0.123.0",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
-  },
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "patch-package"
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/drei": "^9.117.0",
+    "three": "^0.170.0",
+    "@react-spring/three": "^9.7.5",
+    "@mui/material": "^6.3.0",
+    "@mui/icons-material": "^6.3.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "styled-components": "^6.1.13",
+    "mui-color-input": "^6.0.0",
+    "color-interpolate": "^1.0.5"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "vite": "^6.0.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@types/three": "^0.170.0"
   }
 }

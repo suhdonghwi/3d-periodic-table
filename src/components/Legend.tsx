@@ -1,4 +1,4 @@
-import { GroupProps } from "react-three-fiber";
+import { GroupProps } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 
 import Style from "./Control/Style";
@@ -17,7 +17,7 @@ export default function Legend({
   return (
     <group {...props}>
       {Object.entries(data).map(([name, style], i) => (
-        <group>
+        <group key={name}>
           <RawPillar
             style={style}
             length={0.3}

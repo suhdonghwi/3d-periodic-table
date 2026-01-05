@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
-import { MeshProps } from "react-three-fiber";
+import { MeshProps } from "@react-three/fiber";
 import { animated, useSpring } from "@react-spring/three";
-import { BoxBufferGeometry, CubeTexture } from "three";
+import { BoxGeometry, CubeTexture } from "three";
 import Style from "./Control/Style";
 
 interface RawPillarProps {
@@ -18,7 +18,7 @@ export default function RawPillar({
   hover,
   ...props
 }: RawPillarProps & MeshProps) {
-  const geometry = useRef<BoxBufferGeometry>();
+  const geometry = useRef<BoxGeometry>(null);
 
   useEffect(() => {
     geometry.current?.translate(0, 0.5, 0);
@@ -34,7 +34,7 @@ export default function RawPillar({
 
   return (
     <animated.mesh {...props}>
-      <boxBufferGeometry ref={geometry} args={[length, 1, length]} />
+      <boxGeometry ref={geometry} args={[length, 1, length]} />
       <animated.meshStandardMaterial
         color={hover ? "#ff8787" : pillarSpring.color}
         transparent

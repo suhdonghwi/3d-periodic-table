@@ -1,11 +1,11 @@
 import { Text } from "@react-three/drei";
-import { MeshProps } from "react-three-fiber";
+import { MeshProps } from "@react-three/fiber";
 
 export default function BaseBoard(props: MeshProps) {
   return (
     <mesh position={[0, -0.5, 0]} {...props}>
       {props.children}
-      <boxBufferGeometry args={[21.5, 1, 16]} />
+      <boxGeometry args={[21.5, 1, 16]} />
       <meshLambertMaterial color="#495057" />
 
       <group position={[-7, 0.5, 5.7]}>

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Mesh, BoxBufferGeometry } from "three";
+import { useRef } from "react";
+import { Mesh, BoxGeometry } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { Text } from "@react-three/drei";
 
@@ -13,12 +13,12 @@ interface AtomInfoBoardProps {
 }
 
 export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
-  const mesh = useRef<Mesh>();
-  const geometry = useRef<BoxBufferGeometry>();
+  const mesh = useRef<Mesh>(null);
+  const geometry = useRef<BoxGeometry>(null);
 
   const boardSpring = useSpring({
-    position: (atom !== null ? [0, 0, -5] : [0, -5, -5]) as any,
-    rotation: (atom !== null ? [0, 0, 0] : [-1, 0, 0]) as any,
+    position: (atom !== null ? [0, 0, -5] : [0, -5, -5]) as [number, number, number],
+    rotation: (atom !== null ? [0, 0, 0] : [-1, 0, 0]) as [number, number, number],
   });
 
   return (
@@ -31,7 +31,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
       }}
       {...boardSpring}
     >
-      <boxBufferGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
+      <boxGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
       <meshLambertMaterial color="white" />
 
       <group
@@ -47,16 +47,16 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           rotation={[0, 0, Math.PI / 4]}
           visible={false}
         >
-          <boxBufferGeometry ref={geometry} args={[0.2, 0.2, 0.15]} />
+          <boxGeometry args={[0.2, 0.2, 0.15]} />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, Math.PI / 4]}>
-          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <boxGeometry args={[0.03, 0.2, 0.15]} />
           <meshLambertMaterial color="#fa5252" />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, -Math.PI / 4]}>
-          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <boxGeometry args={[0.03, 0.2, 0.15]} />
           <meshLambertMaterial color="#fa5252" />
         </mesh>
       </group>

@@ -5,7 +5,7 @@ import {
   PerspectiveCamera,
   useCubeTexture,
 } from "@react-three/drei";
-import { SRGBColorSpace } from "three";
+import { SRGBColorSpace, DirectionalLightHelper } from "three";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blue from "@mui/material/colors/blue";
 
@@ -90,14 +90,8 @@ function Scene({
       </PerspectiveCamera>
 
       <ambientLight intensity={0.25 * LIGHT_INTENSITY_SCALE} />
-      <spotLight
-        intensity={0.6 * LIGHT_INTENSITY_SCALE}
-        position={[30, 30, 50]}
-      />
-      <spotLight
-        intensity={0.2 * LIGHT_INTENSITY_SCALE}
-        position={[0, 0, -50]}
-      />
+      <directionalLight position={[20, 0, 20]} intensity={0.05 * LIGHT_INTENSITY_SCALE} />
+      <directionalLight position={[20, 20, 20]} intensity={0.05 * LIGHT_INTENSITY_SCALE} />
 
       <PeriodicTable
         position={[0, 0, 0]}

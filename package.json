@@ -10,26 +10,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@react-three/fiber": "^9",
-    "@react-three/drei": "^10",
-    "three": "^0.170.0",
-    "@react-spring/three": "^10",
-    "@mui/material": "^6.3.0",
-    "@mui/icons-material": "^6.3.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "styled-components": "^6.1.13",
+    "@mui/icons-material": "^6.3.0",
+    "@mui/material": "^6.3.0",
+    "@react-spring/three": "^10",
+    "@react-three/drei": "^10",
+    "@react-three/fiber": "^9",
+    "@vercel/analytics": "^1.6.1",
+    "color-interpolate": "^1.0.5",
     "mui-color-input": "^6.0.0",
-    "color-interpolate": "^1.0.5"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.13",
+    "three": "^0.170.0"
   },
   "devDependencies": {
-    "vite": "^6.0.7",
-    "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "^5.7.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "@types/three": "^0.170.0"
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
   }
 }

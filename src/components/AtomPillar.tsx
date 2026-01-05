@@ -26,12 +26,16 @@ export default function AtomPillar({
 }: AtomPillarProps & JSX.IntrinsicElements["group"]) {
   const [hover, setHover] = useState(false);
 
-  const meshProps = useSpring({
-    scaleY: Math.max(height, 0.00001),
+  const safeHeight = Math.max(height, 0.00001);
+  const meshProps = useSpring<{
+    scale: [number, number, number];
+    position: [number, number, number];
+    textPosition: [number, number, number];
+  }>({
+    scale: [1, safeHeight, 1],
+    position: [0, safeHeight / 2, 0],
+    textPosition: [0, safeHeight + 0.02, 0],
   });
-  const scale = meshProps.scaleY.to((y) => [1, y, 1]);
-  const pillarPosition = meshProps.scaleY.to((y) => [0, y / 2, 0]);
-  const textPosition = meshProps.scaleY.to((y) => [0, y + 0.02, 0]);
 
   return (
     <group
@@ -54,10 +58,10 @@ export default function AtomPillar({
         style={style}
         envMap={envMap}
         length={1}
-        scale={scale}
-        position={pillarPosition}
+        scale={meshProps.scale}
+        position={meshProps.position}
       />
-      <animated.group position={textPosition}>
+      <animated.group position={meshProps.textPosition}>
         <Text
           position={[0, 0, 0.05]}
           rotation={[-Math.PI / 2, 0, 0]}

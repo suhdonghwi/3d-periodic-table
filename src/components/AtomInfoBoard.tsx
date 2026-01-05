@@ -23,15 +23,16 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
     if (atom !== null) setDisplayAtom(atom);
   }, [atom]);
 
-  const boardSpring = useSpring({
-    positionY: atom !== null ? 0 : -5,
+  const boardSpring = useSpring<{
+    position: [number, number, number];
+    rotationX: number;
+  }>({
+    position: atom !== null ? [0, 0, -5] : [0, -5, -5],
     rotationX: atom !== null ? 0 : -1,
     onRest: () => {
       if (!isOpenRef.current) setDisplayAtom(null);
     },
   });
-  const position = boardSpring.positionY.to((y) => [0, y, -5]);
-  const rotation = boardSpring.rotationX.to((x) => [x, 0, 0]);
 
   return (
     <animated.mesh
@@ -41,8 +42,8 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           e.stopPropagation();
         }
       }}
-      position={position}
-      rotation={rotation}
+      position={boardSpring.position}
+      rotation-x={boardSpring.rotationX}
     >
       <boxGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
       <meshLambertMaterial color="white" />

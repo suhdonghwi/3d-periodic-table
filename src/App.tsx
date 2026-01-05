@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Canvas } from "react-three-fiber";
 import {
   OrbitControls,
@@ -57,6 +57,19 @@ function App() {
     toColor: { h: 240, s: 89, l: 63 },
     temperature: 273.15,
   });
+
+  // Initialize Vercel Web Analytics
+  useEffect(() => {
+    const initAnalytics = async () => {
+      try {
+        const { inject } = await import("@vercel/analytics");
+        inject();
+      } catch (error) {
+        console.error("Failed to load Vercel Analytics:", error);
+      }
+    };
+    initAnalytics();
+  }, []);
 
   const envMap = useCubeTexture(
     ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],

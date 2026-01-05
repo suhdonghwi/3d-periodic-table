@@ -20,6 +20,8 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
     positionY: atom !== null ? 0 : -5,
     rotationX: atom !== null ? 0 : -1,
   });
+  const position = boardSpring.positionY.to((y) => [0, y, -5]);
+  const rotation = boardSpring.rotationX.to((x) => [x, 0, 0]);
 
   return (
     <animated.mesh
@@ -29,8 +31,8 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           e.stopPropagation();
         }
       }}
-      position={[0, boardSpring.positionY, -5]}
-      rotation={[boardSpring.rotationX, 0, 0]}
+      position={position}
+      rotation={rotation}
     >
       <boxGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
       <meshLambertMaterial color="white" />

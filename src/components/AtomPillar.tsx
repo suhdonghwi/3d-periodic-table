@@ -32,6 +32,7 @@ export default function AtomPillar({
   const meshProps = useSpring({
     scaleY: Math.max(height, 0.00001),
   });
+  const scale = meshProps.scaleY.to((y) => [1, y, 1]);
 
   return (
     <RawPillar
@@ -51,7 +52,7 @@ export default function AtomPillar({
       style={style}
       envMap={envMap}
       length={1}
-      scale={[1, meshProps.scaleY, 1]}
+      scale={scale}
       {...props}
     >
       <animated.group position={[0, 1, 0]}>

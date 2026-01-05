@@ -1,4 +1,4 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Mesh, BoxGeometry } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { Text } from "@react-three/drei";
@@ -15,10 +15,20 @@ interface AtomInfoBoardProps {
 export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
   const mesh = useRef<Mesh>(null);
   const geometry = useRef<BoxGeometry>(null);
+  const [displayAtom, setDisplayAtom] = useState<AtomInfo | null>(atom);
+  const isOpenRef = useRef(atom !== null);
+
+  useEffect(() => {
+    isOpenRef.current = atom !== null;
+    if (atom !== null) setDisplayAtom(atom);
+  }, [atom]);
 
   const boardSpring = useSpring({
     positionY: atom !== null ? 0 : -5,
     rotationX: atom !== null ? 0 : -1,
+    onRest: () => {
+      if (!isOpenRef.current) setDisplayAtom(null);
+    },
   });
   const position = boardSpring.positionY.to((y) => [0, y, -5]);
   const rotation = boardSpring.rotationX.to((x) => [x, 0, 0]);
@@ -27,7 +37,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
     <animated.mesh
       ref={mesh}
       onClick={(e) => {
-        if (atom !== null) {
+        if (displayAtom !== null) {
           e.stopPropagation();
         }
       }}
@@ -39,7 +49,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
 
       <group
         onClick={(e) => {
-          if (atom !== null) {
+          if (displayAtom !== null) {
             e.stopPropagation();
             onClose();
           }
@@ -64,7 +74,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
         </mesh>
       </group>
 
-      {atom !== null && (
+      {displayAtom !== null && (
         <Suspense fallback={null}>
           <Text
             position={[0, 1.25, 0.1]}
@@ -72,7 +82,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
             color="#1c1c1c"
             font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
           >
-            {atom.name}
+            {displayAtom.name}
           </Text>
 
           <Text
@@ -83,11 +93,11 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
             font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
             anchorY="middle"
           >
-            {atom.summary}
+            {displayAtom.summary}
           </Text>
 
-          <AtomDisplay position={[0, 0.05, 0.1]} atom={atom} />
-          <PropertyList atom={atom} />
+          <AtomDisplay position={[0, 0.05, 0.1]} atom={displayAtom} />
+          <PropertyList atom={displayAtom} />
         </Suspense>
       )}
     </animated.mesh>

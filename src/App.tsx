@@ -7,7 +7,6 @@ import {
 } from "@react-three/drei";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blue from "@mui/material/colors/blue";
-import { CubeTexture } from "three";
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -96,7 +95,7 @@ function Scene({
         }
         isLogScale={isLogScale}
         styler={styler}
-        envMap={envMap as CubeTexture}
+        envMap={envMap}
       />
       {legendData !== null && (
         <Legend

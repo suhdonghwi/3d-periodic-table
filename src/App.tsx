@@ -1,10 +1,11 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
   PerspectiveCamera,
   useCubeTexture,
 } from "@react-three/drei";
+import { SRGBColorSpace } from "three";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blue from "@mui/material/colors/blue";
 
@@ -43,6 +44,9 @@ const placement: number[][] = [
   [0, 0, 0].concat(range(89, 103)),
 ];
 
+// Compensate for physically-correct light defaults after three/r3f upgrades.
+const LIGHT_INTENSITY_SCALE = 6;
+
 interface SceneProps {
   showingAtom: AtomInfo | null;
   setShowingAtom: (atom: AtomInfo | null) => void;
@@ -71,6 +75,11 @@ function Scene({
     { path: "/cube/" }
   );
 
+  useEffect(() => {
+    envMap.colorSpace = SRGBColorSpace;
+    envMap.needsUpdate = true;
+  }, [envMap]);
+
   return (
     <>
       <PerspectiveCamera position={[0, 17, 14]} makeDefault>
@@ -80,9 +89,15 @@ function Scene({
         />
       </PerspectiveCamera>
 
-      <ambientLight intensity={0.25} />
-      <spotLight intensity={0.6} position={[30, 30, 50]} />
-      <spotLight intensity={0.2} position={[0, 0, -50]} />
+      <ambientLight intensity={0.25 * LIGHT_INTENSITY_SCALE} />
+      <spotLight
+        intensity={0.6 * LIGHT_INTENSITY_SCALE}
+        position={[30, 30, 50]}
+      />
+      <spotLight
+        intensity={0.2 * LIGHT_INTENSITY_SCALE}
+        position={[0, 0, -50]}
+      />
 
       <PeriodicTable
         position={[0, 0, 0]}

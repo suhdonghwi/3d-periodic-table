@@ -8,6 +8,7 @@ import {
 import { SRGBColorSpace, DirectionalLightHelper } from "three";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blue from "@mui/material/colors/blue";
+import { Analytics } from "@vercel/analytics/react"
 
 import PeriodicTable from "./components/PeriodicTable";
 import AtomInfo from "./types/AtomInfo";
@@ -180,6 +181,7 @@ function App() {
         config={config}
         onUpdateConfig={(v) => setConfig(v)}
       />
+      <Analytics />
     </ThemeProvider>
   );
 }

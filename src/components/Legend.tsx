@@ -22,7 +22,7 @@ export default function Legend({
             style={style}
             length={0.3}
             scale={[1, 0.5, 1]}
-            position={[(i % 5) * 2, 0, Math.floor(i / 5) * 1.3]}
+            position={[(i % 5) * 2, 0.25, Math.floor(i / 5) * 1.3]}
           >
             <Text
               rotation={[-Math.PI / 2, 0, 0]}

@@ -26,12 +26,12 @@ import Legend from "./components/Legend";
 import Style from "./components/Control/Style";
 
 function range(from: number, to: number) {
-  const result = [];
+  const result: number[] = [];
   for (let i = from; i <= to; i++) result.push(i);
   return result;
 }
 
-const placement = [
+const placement: number[][] = [
   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 7, 8, 9, 10],
   [11, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 14, 15, 16, 17, 18],

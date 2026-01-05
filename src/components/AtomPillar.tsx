@@ -31,7 +31,7 @@ export default function AtomPillar({
   const numberText = useRef<typeof Text>(null);
 
   const meshProps = useSpring({
-    scale: [1, Math.max(height, 0.00001), 1] as [number, number, number],
+    scaleY: Math.max(height, 0.00001),
   });
 
   return (
@@ -52,7 +52,7 @@ export default function AtomPillar({
       style={style}
       envMap={envMap}
       length={1}
-      {...meshProps}
+      scale={[1, meshProps.scaleY, 1]}
       {...props}
     >
       <animated.group position={[0, 1, 0]}>

@@ -1,4 +1,5 @@
 import { Text, Ring } from "@react-three/drei";
+import type { ReactElement } from "react";
 import AtomInfo from "../types/AtomInfo";
 import Electron from "./Electron";
 
@@ -8,7 +9,7 @@ interface AtomDisplayProps {
 }
 
 export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
-  const electrons = [];
+  const electrons: ReactElement[] = [];
 
   let key = 0;
 

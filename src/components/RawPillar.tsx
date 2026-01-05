@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
+import type { ReactNode } from "react";
 import { MeshProps } from "@react-three/fiber";
-import { animated, useSpring } from "@react-spring/three";
+import { AnimatedProps, animated, useSpring } from "@react-spring/three";
 import { BoxGeometry, CubeTexture } from "three";
 import Style from "./Control/Style";
 
@@ -11,13 +12,17 @@ interface RawPillarProps {
   hover?: boolean;
 }
 
+type RawPillarMeshProps = Omit<AnimatedProps<MeshProps>, "children"> & {
+  children?: ReactNode;
+};
+
 export default function RawPillar({
   style,
   length,
   envMap,
   hover,
   ...props
-}: RawPillarProps & MeshProps) {
+}: RawPillarProps & RawPillarMeshProps) {
   const geometry = useRef<BoxGeometry>(null);
 
   useEffect(() => {

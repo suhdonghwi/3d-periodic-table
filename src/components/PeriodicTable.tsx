@@ -1,4 +1,5 @@
 import { GroupProps } from "@react-three/fiber";
+import type { ReactElement } from "react";
 import BaseBoard from "./BaseBoard";
 
 import AtomPillar from "./AtomPillar";
@@ -37,7 +38,7 @@ export default function PeriodicTable({
       v === undefined ? undefined : Math.log10(Math.max(v, 0.00001) + 1)
     );
 
-  const pillars = [];
+  const pillars: ReactElement[] = [];
   const maxHeight = Math.max(...heightData.map((v) => v || 0));
 
   for (let i = 0; i < placement.length; i++) {

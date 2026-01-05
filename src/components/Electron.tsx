@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { useFrame } from "react-three-fiber";
-import { Mesh, SphereBufferGeometry } from "three";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { Mesh, SphereGeometry } from "three";
 
 interface ElectronProps {
   radius: number;
@@ -13,8 +13,8 @@ export default function Electron({
   initialAngle,
   coefficient,
 }: ElectronProps) {
-  const mesh = useRef<Mesh>();
-  const geometry = useRef<SphereBufferGeometry>();
+  const mesh = useRef<Mesh>(null);
+  const geometry = useRef<SphereGeometry>(null);
 
   useFrame(() => {
     const t = performance.now() * 0.07;
@@ -28,7 +28,7 @@ export default function Electron({
 
   return (
     <mesh ref={mesh} position={[0, 0, 0.1]}>
-      <sphereBufferGeometry ref={geometry} args={[0.013, 32, 32]} />
+      <sphereGeometry ref={geometry} args={[0.013, 32, 32]} />
       <meshLambertMaterial color="#228be6" />
     </mesh>
   );

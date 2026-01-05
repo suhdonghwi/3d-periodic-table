@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
+import { JSX, useState } from "react";
 import { CubeTexture } from "three";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
 import RawPillar from "./RawPillar";
 import AtomInfo from "../types/AtomInfo";
-import { MeshProps } from "react-three-fiber";
 import Style from "./Control/Style";
 
 interface AtomPillarProps {
@@ -24,18 +23,23 @@ export default function AtomPillar({
   onClick,
   envMap,
   ...props
-}: AtomPillarProps & MeshProps) {
+}: AtomPillarProps & JSX.IntrinsicElements["group"]) {
   const [hover, setHover] = useState(false);
 
-  const symbolText = useRef<Text>();
-  const numberText = useRef<Text>();
-
-  const meshProps = useSpring({
-    scale: [1, Math.max(height, 0.00001), 1] as any,
+  const safeHeight = Math.max(height, 0.00001);
+  const meshProps = useSpring<{
+    scale: [number, number, number];
+    position: [number, number, number];
+    textPosition: [number, number, number];
+  }>({
+    scale: [1, safeHeight, 1],
+    position: [0, safeHeight / 2, 0],
+    textPosition: [0, safeHeight + 0.02, 0],
   });
 
   return (
-    <RawPillar
+    <group
+      {...props}
       onClick={(e) => {
         e.stopPropagation();
         onClick(atom);
@@ -48,34 +52,34 @@ export default function AtomPillar({
         e.stopPropagation();
         setHover(false);
       }}
-      hover={hover}
-      style={style}
-      envMap={envMap}
-      length={1}
-      {...meshProps}
-      {...props}
     >
-      <animated.group position={[0, 1, 0]}>
+      <RawPillar
+        hover={hover}
+        style={style}
+        envMap={envMap}
+        length={1}
+        scale={meshProps.scale}
+        position={meshProps.position}
+      />
+      <animated.group position={meshProps.textPosition}>
         <Text
-          ref={symbolText}
           position={[0, 0, 0.05]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.5}
-          depthOffset={-1}
+          depthOffset={-10}
         >
           {atom.symbol}
         </Text>
 
         <Text
-          ref={numberText}
           position={[0, 0, -0.3]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.15}
-          depthOffset={-1}
+          depthOffset={-10}
         >
           {atom.number.toString()}
         </Text>
       </animated.group>
-    </RawPillar>
+    </group>
   );
 }

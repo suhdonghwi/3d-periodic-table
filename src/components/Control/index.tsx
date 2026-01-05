@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Paper,
@@ -10,11 +10,11 @@ import {
   Grid,
   Button,
   styled,
-} from "@material-ui/core";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import { ColorPicker } from "material-ui-color";
+} from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import { MuiColorInput } from "mui-color-input";
 
 import categories from "./categories";
 import stylers, { Config, hslToHex } from "./stylers";
@@ -36,7 +36,7 @@ function FormLabel(props: {
     <Typography
       id={props.id}
       color="textSecondary"
-      gutterBottom={!props.noGutter ?? !props.noGutter}
+      gutterBottom={props.noGutter !== true}
     >
       {props.children}
     </Typography>
@@ -81,6 +81,41 @@ function InlineSetting({ label, name, children }: SettingProps) {
   );
 }
 
+// Helper function to convert hex to HSL
+function hexToHsl(hex: string): { h: number; s: number; l: number } {
+  // Remove the hash if present
+  hex = hex.replace(/^#/, "");
+
+  // Parse the hex values
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
+
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  let h = 0;
+  let s = 0;
+  const l = (max + min) / 2;
+
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r:
+        h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+        break;
+      case g:
+        h = ((b - r) / d + 2) / 6;
+        break;
+      case b:
+        h = ((r - g) / d + 4) / 6;
+        break;
+    }
+  }
+
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
 interface ControlProps {
   initialMaxHeight: number;
   onUpdateMaxHeight: (maxWidth: number) => void;
@@ -116,40 +151,32 @@ export default function Control({
 
   const isMobile = useMediaQuery("(max-width: 400px)");
 
-  let stylerSettings: JSX.Element | null = null;
+  let stylerSettings: React.ReactNode = null;
 
   switch (styler) {
     case "Color by height":
       stylerSettings = (
         <>
           <InlineSetting label="from-color-picker" name="From color">
-            <ColorPicker
-              aria-labelledby="from-color-select"
+            <MuiColorInput
+              format="hex"
               value={hslToHex(config.fromColor)}
-              hideTextfield
-              deferred
-              disableAlpha
-              onChange={(v) =>
-                onUpdateConfig({
-                  ...config,
-                  fromColor: { h: v.hsl[0], s: v.hsl[1], l: v.hsl[2] },
-                })
-              }
+              onChange={(value) => {
+                const hsl = hexToHsl(value);
+                onUpdateConfig({ ...config, fromColor: hsl });
+              }}
+              sx={{ width: 100 }}
             />
           </InlineSetting>
           <InlineSetting label="to-color-picker" name="To color">
-            <ColorPicker
-              aria-labelledby="to-color-select"
+            <MuiColorInput
+              format="hex"
               value={hslToHex(config.toColor)}
-              hideTextfield
-              deferred
-              disableAlpha
-              onChange={(v) =>
-                onUpdateConfig({
-                  ...config,
-                  toColor: { h: v.hsl[0], s: v.hsl[1], l: v.hsl[2] },
-                })
-              }
+              onChange={(value) => {
+                const hsl = hexToHsl(value);
+                onUpdateConfig({ ...config, toColor: hsl });
+              }}
+              sx={{ width: 100 }}
             />
           </InlineSetting>
         </>
@@ -187,7 +214,7 @@ export default function Control({
       }}
     >
       <Box marginBottom={2}>
-        <Grid container alignItems="center" justify="center">
+        <Grid container alignItems="center" justifyContent="center">
           <Grid item>
             <Button
               startIcon={expand ? <ExpandLess /> : <ExpandMore />}
@@ -235,7 +262,7 @@ export default function Control({
       <InlineSetting label="log-scale-check" name="Log scale">
         <Checkbox
           aria-labelledby="log-scale-check"
-          value={isLogScale}
+          checked={isLogScale}
           onChange={(_, v) => onUpdateIsLogScale(v)}
           color="primary"
           style={{ padding: 0 }}

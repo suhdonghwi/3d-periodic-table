@@ -1,5 +1,5 @@
-import React from "react";
 import { Text, Ring } from "@react-three/drei";
+import type { ReactElement } from "react";
 import AtomInfo from "../types/AtomInfo";
 import Electron from "./Electron";
 
@@ -9,7 +9,7 @@ interface AtomDisplayProps {
 }
 
 export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
-  const electrons = [];
+  const electrons: ReactElement[] = [];
 
   let key = 0;
 
@@ -58,7 +58,7 @@ export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
         fontSize={0.07}
         position={[0, 0, 0.1]}
         color="#212529"
-        depthOffset={-1}
+        depthOffset={-10}
       >
         {atom.symbol}
       </Text>

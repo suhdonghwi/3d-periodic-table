@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Mesh, BoxBufferGeometry } from "three";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Mesh, BoxGeometry } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { Text } from "@react-three/drei";
 
@@ -13,30 +13,44 @@ interface AtomInfoBoardProps {
 }
 
 export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
-  const mesh = useRef<Mesh>();
-  const geometry = useRef<BoxBufferGeometry>();
+  const mesh = useRef<Mesh>(null);
+  const geometry = useRef<BoxGeometry>(null);
+  const [displayAtom, setDisplayAtom] = useState<AtomInfo | null>(atom);
+  const isOpenRef = useRef(atom !== null);
 
-  const boardSpring = useSpring({
-    position: (atom !== null ? [0, 0, -5] : [0, -5, -5]) as any,
-    rotation: (atom !== null ? [0, 0, 0] : [-1, 0, 0]) as any,
+  useEffect(() => {
+    isOpenRef.current = atom !== null;
+    if (atom !== null) setDisplayAtom(atom);
+  }, [atom]);
+
+  const boardSpring = useSpring<{
+    position: [number, number, number];
+    rotationX: number;
+  }>({
+    position: atom !== null ? [0, 0, -5] : [0, -5, -5],
+    rotationX: atom !== null ? 0 : -1,
+    onRest: () => {
+      if (!isOpenRef.current) setDisplayAtom(null);
+    },
   });
 
   return (
     <animated.mesh
       ref={mesh}
       onClick={(e) => {
-        if (atom !== null) {
+        if (displayAtom !== null) {
           e.stopPropagation();
         }
       }}
-      {...boardSpring}
+      position={boardSpring.position}
+      rotation-x={boardSpring.rotationX}
     >
-      <boxBufferGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
+      <boxGeometry ref={geometry} args={[2.4, 3.25, 0.1]} />
       <meshLambertMaterial color="white" />
 
       <group
         onClick={(e) => {
-          if (atom !== null) {
+          if (displayAtom !== null) {
             e.stopPropagation();
             onClose();
           }
@@ -47,29 +61,29 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
           rotation={[0, 0, Math.PI / 4]}
           visible={false}
         >
-          <boxBufferGeometry ref={geometry} args={[0.2, 0.2, 0.15]} />
+          <boxGeometry args={[0.2, 0.2, 0.15]} />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, Math.PI / 4]}>
-          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <boxGeometry args={[0.03, 0.2, 0.15]} />
           <meshLambertMaterial color="#fa5252" />
         </mesh>
 
         <mesh position={[1, 1.45, 0]} rotation={[0, 0, -Math.PI / 4]}>
-          <boxBufferGeometry ref={geometry} args={[0.03, 0.2, 0.15]} />
+          <boxGeometry args={[0.03, 0.2, 0.15]} />
           <meshLambertMaterial color="#fa5252" />
         </mesh>
       </group>
 
-      {atom !== null && (
-        <>
+      {displayAtom !== null && (
+        <Suspense fallback={null}>
           <Text
             position={[0, 1.25, 0.1]}
             fontSize={0.3}
             color="#1c1c1c"
             font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
           >
-            {atom.name}
+            {displayAtom.name}
           </Text>
 
           <Text
@@ -80,12 +94,12 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
             font="https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOW3pzveS5Bw.woff"
             anchorY="middle"
           >
-            {atom.summary}
+            {displayAtom.summary}
           </Text>
 
-          <AtomDisplay position={[0, 0.05, 0.1]} atom={atom} />
-          <PropertyList atom={atom} />
-        </>
+          <AtomDisplay position={[0, 0.05, 0.1]} atom={displayAtom} />
+          <PropertyList atom={displayAtom} />
+        </Suspense>
       )}
     </animated.mesh>
   );

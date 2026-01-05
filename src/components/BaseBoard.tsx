@@ -1,15 +1,15 @@
 import { Text } from "@react-three/drei";
-import { MeshProps } from "react-three-fiber";
+import { JSX } from "react";
 
-export default function BaseBoard(props: MeshProps) {
+export default function BaseBoard(props: JSX.IntrinsicElements["mesh"]) {
   return (
     <mesh position={[0, -0.5, 0]} {...props}>
       {props.children}
-      <boxBufferGeometry args={[21.5, 1, 16]} />
+      <boxGeometry args={[21.5, 1, 16]} />
       <meshLambertMaterial color="#495057" />
 
       <group position={[-7, 0.5, 5.7]}>
-        <Text rotation={[-Math.PI / 2, 0, 0]} fontSize={0.6} depthOffset={-1}>
+        <Text rotation={[-Math.PI / 2, 0, 0]} fontSize={0.6} depthOffset={-10}>
           3D Periodic Table
         </Text>
 
@@ -17,7 +17,7 @@ export default function BaseBoard(props: MeshProps) {
           position={[0.5, 0, 0.7]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.3}
-          depthOffset={-1}
+          depthOffset={-10}
           color="#4263eb"
         >
           github.com/suhdonghwi/3d-periodic-table
@@ -29,7 +29,7 @@ export default function BaseBoard(props: MeshProps) {
           rotation={[-Math.PI / 2, 0, 0]}
           key={v}
           fontSize={0.4}
-          depthOffset={-1}
+          depthOffset={-10}
           position={[v - 8.5, 0.5, -6.8]}
         >
           {(v + 1).toString()}
@@ -41,7 +41,7 @@ export default function BaseBoard(props: MeshProps) {
           rotation={[-Math.PI / 2, 0, 0]}
           key={v}
           fontSize={0.4}
-          depthOffset={-1}
+          depthOffset={-10}
           position={[-9.8, 0.5, -5.7 + v]}
         >
           {(v + 1).toString()}

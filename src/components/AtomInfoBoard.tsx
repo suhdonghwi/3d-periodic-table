@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Mesh, BoxGeometry } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { Text } from "@react-three/drei";
@@ -65,7 +65,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
       </group>
 
       {atom !== null && (
-        <>
+        <Suspense fallback={null}>
           <Text
             position={[0, 1.25, 0.1]}
             fontSize={0.3}
@@ -88,7 +88,7 @@ export default function AtomInfoBoard({ atom, onClose }: AtomInfoBoardProps) {
 
           <AtomDisplay position={[0, 0.05, 0.1]} atom={atom} />
           <PropertyList atom={atom} />
-        </>
+        </Suspense>
       )}
     </animated.mesh>
   );

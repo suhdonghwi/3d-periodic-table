@@ -28,7 +28,7 @@ export default function Legend({
               rotation={[-Math.PI / 2, 0, 0]}
               position={[0, 0, 0.4]}
               fontSize={0.15}
-              depthOffset={-1}
+              depthOffset={-10}
             >
               {name} {postfix}
             </Text>

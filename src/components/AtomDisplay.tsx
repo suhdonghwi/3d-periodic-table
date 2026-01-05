@@ -58,7 +58,7 @@ export default function AtomDisplay({ atom, position }: AtomDisplayProps) {
         fontSize={0.07}
         position={[0, 0, 0.1]}
         color="#212529"
-        depthOffset={-1}
+        depthOffset={-10}
       >
         {atom.symbol}
       </Text>

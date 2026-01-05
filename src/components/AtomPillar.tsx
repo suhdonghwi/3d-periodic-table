@@ -66,7 +66,7 @@ export default function AtomPillar({
           position={[0, 0, 0.05]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.5}
-          depthOffset={-1}
+          depthOffset={-10}
         >
           {atom.symbol}
         </Text>
@@ -75,7 +75,7 @@ export default function AtomPillar({
           position={[0, 0, -0.3]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={0.15}
-          depthOffset={-1}
+          depthOffset={-10}
         >
           {atom.number.toString()}
         </Text>
